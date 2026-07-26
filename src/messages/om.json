@@ -1,0 +1,445 @@
+{
+  "site": {
+    "name": "Qaliye",
+    "tagline": "Onnee walitti qabatu",
+    "description": "Qaliye appiin fayyadamaa kan Oromootaa fi Itoophiyaa ta'aniif kan qophaa'e — afoora aadaa, nageenyaafi kabajaa irraa kan ka'e walqunnamtii maayiluu ta'eedha."
+  },
+  "nav": {
+    "home": "Fuula duraa",
+    "about": "Waa'ee keenya",
+    "features": "Amaloota",
+    "help": "Gargaarsa",
+    "contact": "Nu qunnamuu",
+    "menu": "Menyuu",
+    "close": "Cufi",
+    "skipToContent": "Gara qabiyyeeitti darbi",
+    "language": "Afaan"
+  },
+  "hero": {
+    "headline": "Onnee walitti qabatu",
+    "subheadline": "Qaliye appiin fayyadamaa kan Oromootaa fi Itoophiyaa ta'aniif kan qophaa'e. Aadaa, gatii fi dhaalaa waliin qabatamu irraa kan ka'e walqunnamtii maayiluu argadhuu.",
+    "downloadIOS": "App Store irraa gadisiisi",
+    "downloadAndroid": "Google Play irraa argadhuu",
+    "phoneAlt": "Qaliye appii ilaalcha bilbila irratti"
+  },
+  "trustBar": {
+    "verifiedProfiles": "Profaayilii mirkanaa'e",
+    "privacyFirst": "Iccitii duraa",
+    "fourLanguages": "Afaan 4",
+    "culturallyAligned": "Aadaa waliin qabatee"
+  },
+  "features": {
+    "sectionTitle": "Walqunnamuuf hunda gaarii",
+    "sectionSubtitle": "Akkaataa itti fayyadamaa fi nageenyaan walqunnamuu danda'anitti qopheeffame amaloota.",
+    "learnMore": "Dabalata beeku",
+    "viewAllFeatures": "Amaloota hunda ilaali",
+    "core": {
+      "discovery": {
+        "title": "Hubannoo fi Wal-morkii Olaanaa",
+        "description": "Kaardii irratti kan qophaa'e hubannoo — Like, Super Like fi Pass. Feedii kee mirkaneessituu keetiin qindaa'a. Wal-jabeessitni lama wal-morkii uuma.",
+        "benefit": "Hordoftuu hin dhaabne namoota walfakkaatan argadhuu."
+      },
+      "profiles": {
+        "title": "Profaayilii Bal'aa",
+        "description": "Suura, seelfii, hawwii fi amaloota kan qabatan — saala, umuri, dheerina, jireenyaa, lammummaa, amantii, barnootaa, hojii, kaka'umsa walqunnamtii fi kan kana fakkaatu. Suurri ogeeyyootan mirkanaa'ee booda ni mul'ata.",
+        "benefit": "Gatii fi aadaa irratti kan haa'u murtoo gaarii gochuu."
+      },
+      "preferences": {
+        "title": "Filannoo fi Gabaabsoo",
+        "description": "Saala, hanga umurii, fageenya guddaa, jireenyaa filannoo (Itoophiyaa, Eertiraa, Diaspora), mirkanaa'e qofa, fi haala hubannoo (Walakkaa, Addunyaa, Iccitii) filadhuu.",
+        "benefit": "Profaayilii sii gargaaru qofa ilaali."
+      },
+      "location": {
+        "title": "Bakka irratti kan haa'u Hubannoo",
+        "description": "GPS fageenya dhiyoo kan qabatu, manualii magaalaa barbaadu waliin. Gabaabsoo naannoo: Dhiyoo, Itoophiyaa, Eertiraa, Diaspora, Hunduma.",
+        "benefit": "Namoota dhiyoo kee ykn diaspora jiran argadhuu."
+      },
+      "chat": {
+        "title": "Haara'a Haasawaa",
+        "description": "Barreeffama erguu, suura erguu (ergaa tokko irratti hanga 5, 25 MB guddaa), fi sagalee erguu — ka'u, ilaaluu fi dhaggeeffatu.",
+        "benefit": "Uumamaafi ifa ta'een walqunnamuu."
+      },
+      "matches": {
+        "title": "Wal-morkii fi Jabeessitaa",
+        "description": "Fuula addaa irratti walqunnamtii kee hundi qindaa'a. Fuula jabeessitaa sii jabeessan ni arga (amala premium).",
+        "benefit": "Walqunnamtaa kee hin irraa dhabin."
+      }
+    },
+    "safety": {
+      "sectionTitle": "Nageenya fi Iccitii",
+      "verification": {
+        "title": "Mirkaneessituu Profaayilii",
+        "description": "Mallattoo mirkanaa'e argadhuu fi profaayilii mirkanaa'e qofa gabaabsi.",
+        "benefit": "Namoota dhugaa waliin haasawaa jiru irratti amantii qabaachuuf."
+      },
+      "photoModeration": {
+        "title": "Gabaabsoo Suuraa",
+        "description": "Autoomatikii fi harkaan gabaabsoo. Haala suuraa akka eegame, mirkanaa'e, ykn gabaabsoo jiru ni mul'ata.",
+        "benefit": "Hawaasa qulqulluu fi nageenyaa qabu."
+      },
+      "blockReport": {
+        "title": "Hambisuu fi Gabaasuu",
+        "description": "Hambisuun namoota waliin walqunnamtaa hunda dhoksa. Gabaasuun gabaabsoo garee keenyaatti geessa.",
+        "benefit": "Nageenya kee sadarkaa hunda irratti to'adi."
+      },
+      "incognito": {
+        "title": "Haala Iccitii (Premium)",
+        "description": "Kan biraatin hubannoo isaanii ke hin mul'anneen ilaali.",
+        "benefit": "Iccitii fi dhoksaadhaan yoo barbaaddu."
+      },
+      "dataSecurity": {
+        "title": "Nageenya Daataa",
+        "description": "TLS encryption, nageenya token qabachuu, fi Supabase row-level security daataa kee eega.",
+        "benefit": "Eegumsa sadarkaa industry daataa keef."
+      },
+      "accountDeletion": {
+        "title": "Akkaawuntii balleessuu",
+        "description": "Akkaawuntii kee Settings irraa dhabbisaan balleessi. Daataan kee hunda ni haqama — hin deebi'u.",
+        "benefit": "Qaliye irratti to'annoo guutuu qabaadhu."
+      }
+    },
+    "premium": {
+      "sectionTitle": "Amaloota Premium",
+      "sectionSubtitle": "Walqunnamtaa cimaa argachuuf amaloota premium qopheeffaman.",
+      "seeWhoLiked": {
+        "title": "Si Jabeessan Ilaali",
+        "description": "Profaayilii si jabeessan hunda ilaali.",
+        "benefit": "Yeroo qabi, kallattii walqunnamuu."
+      },
+      "advancedFilters": {
+        "title": "Gabaabsoo Olaanaa",
+        "description": "Gabaabsoo dabalataa barnootaa, amantii fi jireenyaaf.",
+        "benefit": "Hubannoo kee qopheessi."
+      },
+      "unlimitedLikes": {
+        "title": "Jabeessitaa Hin Danda'amne",
+        "description": "Guddaa guyyaa hin qabu.",
+        "benefit": "Hawwii kee ibbuuf hin eegitu."
+      },
+      "superLikes": {
+        "title": "Super Jabeessitaa",
+        "description": "Mallattoo addaa erguun namoota biraa irraa adda ba'i.",
+        "benefit": "Carraa wal-morkii guddisi."
+      },
+      "boost": {
+        "title": "Cimsuu",
+        "description": "Daqiiqaa 30 hubannoo guddisu qabaadhu.",
+        "benefit": "Wal-morkii dabalataa ilaali."
+      },
+      "rewind": {
+        "title": "Gara Duubatti Deebi'i",
+        "description": "Swiipee kee damdamaa deebisi.",
+        "benefit": "Soba nama hin darbi."
+      },
+      "chatQuotas": {
+        "title": "Kwootaa Haasawaa Guddaa",
+        "description": "Kwootaa sagalee fi suuraa ergaa guddisuu.",
+        "benefit": "Hin danda'amneen ibbuuf walqunnamuu."
+      }
+    },
+    "additional": {
+      "sectionTitle": "Amaloota Dabalataa",
+      "languages": {
+        "title": "Afaan 4",
+        "description": "Ingliffa, Amhariffa, Tigreegna fi Afaan Oromoo.",
+        "benefit": "Qaliye afaan filannoo keetiin fayyadami."
+      },
+      "notifications": {
+        "title": "Beeksisa Push",
+        "description": "Beeksisa haaraa gosa gosaan to'adhu.",
+        "benefit": "Walqunnamtaa maayiluu hin irraa dhabin."
+      },
+      "inAppSupport": {
+        "title": "Gargaarsa App Keessatti",
+        "description": "Gargaarsa garee keenya waliin haasawaa haaraa — barreeffama fi suura.",
+        "benefit": "App keessaa ba'iinii gargaarsa argadhuu."
+      },
+      "promotions": {
+        "title": "Kanjala",
+        "description": "Kanjalaa premium kan dubartoota, ayyaanaafi guyyaa hojiif kan bilisa.",
+        "benefit": "Amaloota premium bilisa yaali."
+      },
+      "localPayments": {
+        "title": "Kaffaltii Naannoo",
+        "description": "Android: Telebirr, banki, Chapa, galii harkaa. iOS: App Store.",
+        "benefit": "Kaffaltii karaa keetiin — kaardii kirediitii hin barbaachisu."
+      }
+    }
+  },
+  "howItWorks": {
+    "sectionTitle": "Qaliye akkamitti akka hojjatu",
+    "sectionSubtitle": "Sadarkaa afur qofa kan jalqabuuf.",
+    "steps": {
+      "1": {
+        "title": "Profaayilii kee uumi",
+        "description": "Suura, seelfii fi sii gaarii ta'e dabal. Suurri hawaasa nageenyaa qabuuf mirkanaa'ama."
+      },
+      "2": {
+        "title": "Namoota ilaali",
+        "description": "Profaayilii filannoo keetiin qindaa'e ilaali. Like, Super Like ykn Pass — filannoo keeti."
+      },
+      "3": {
+        "title": "Wal-morkii fi haasawaa",
+        "description": "Yommalu lamaan jabeessitan, wal-morkii. Barreeffama, suura fi sagaleen haasawaa jalqabi."
+      },
+      "4": {
+        "title": "Walqunnamtaa maayiluu",
+        "description": "Aadaa, gatii fi dhaalaa waliin qabatamu irraa kan ka'e walqunnamtaa dhugaa uumi."
+      }
+    }
+  },
+  "screenshots": {
+    "sectionTitle": "Hojiiratti ilaali",
+    "sectionSubtitle": "Qabiyyee Qaliye ilaalcha guddaa.",
+    "discovery": "Hubannoo — Profaayilii swiipi",
+    "match": "Wal-morkii — Walqunnamtaa!",
+    "chat": "Haasawaa — Barreeffama, suura fi sagalee",
+    "profile": "Profaayilii — Bal'aa fi dhugaa",
+    "premium": "Premium — Amaloota guddatuu"
+  },
+  "stats": {
+    "sectionTitle": "Mootummaa hirkataa",
+    "sectionSubtitle": "Walqunnamtaa maayiluu barbaadu Oromoo fi Eertiraan tokko-tokkooni kan guddatu hawaasa.",
+    "profiles": "Profaayilii socho'aa",
+    "languages": "Afaanota deeggaraman",
+    "countries": "Biyyaheeffannaa",
+    "safety": "Akkaataa nageenya qabu"
+  },
+  "testimonials": {
+    "sectionTitle": "Sheekoo hawaasaa irraa",
+    "sectionSubtitle": "Walqunnamtaa maayiluu Qaliye'n argatan namootaa kan dhugaa dhibbeentaa.",
+    "items": {
+      "1": {
+        "quote": "Qaliye'n gatii fi aadaa kiyya qoodu nama argachuu n gargaare. Appii biroo irraa adda ta'ee naa fakkaata.",
+        "name": "Selam",
+        "location": "Finfinnee, Oromiya"
+      },
+      "2": {
+        "quote": "Ani dibataa waan ta'eef, aadaa kiyya hubatu nama waliin walqunnamuu baradde era. Qaliye kun kan danda'eera.",
+        "name": "Dawit",
+        "location": "Washington DC, USA"
+      },
+      "3": {
+        "quote": "Profaayilii mirkanaa'ee fi suuraa moosa godhaan kiyya yaakkii naa kenne. Appii kana yaakkii'n fayyadame.",
+        "name": "Hanna",
+        "location": "Asmara, Eertira"
+      }
+    }
+  },
+  "downloadCTA": {
+    "title": "Walqunnamtaa kee argachuuf qophooftaa?",
+    "subtitle": "Qaliye har'a gadisiisi fi walqunnamtaa maayiluu uumuuf maatiilaa kee jalqabi.",
+    "downloadIOS": "App Store irraa gadisiisi",
+    "downloadAndroid": "Google Play irraa argadhuu",
+    "badge": "Gadisiisi"
+  },
+  "about": {
+    "title": "Waa'ee Qaliye",
+    "subtitle": "Aadaa fi walqunnamtaa gidduutti daandii ijaaruu.",
+    "mission": {
+      "title": "Misooma keenya",
+      "body": "Qaliye kan Oromootaa fi Itoophiyaa ta'an walqunnamtaa maayiluu akka argatan uumame — biyya keessaa ykn diaspora. Firiin aadaa, gatii fi kabaja waliin qabatamuun kan uumamu qabu, hin dhabne swiipiin hojjetamu miti. Misoomni keenya walqunnamtaa dhugaa uumuu fi aadaa fi dhaalaa hawaasa keenya adda baase kabajuu dha."
+    },
+    "audience": {
+      "title": "Yaa Nijjeessina",
+      "body": "Qaliye kan Oromootaa fi Itoophiyaa ta'an umuri 18 olif qopheeffame — Afriikaa Qubeetti fi diaspora addunyaa guutuus. Adiis Ababaatti, Asmaraatti, Washington DC ykn Londonitti yoo jiraatan, Qaliye addunyaa kee hubatu nama akka argattu si gargaara."
+    },
+    "value": {
+      "title": "Maali Nu Adda Baasa",
+      "body": "Qaliye appii fayyadamaa kan bira miti. Qaliye kan hawaasa Oromoo fi Itoophiyaa qofaf qopheeffame — afaan afur deggeruun, gabaabsoo aadaa, kaffaltii naannoo fi nageenyaaf mirkaneessuu fi gabaabsoo qabu. Walqunnamtaa maayiluu kan fayyadama osoo hin taane qofa ol kenne."
+    },
+    "values": {
+      "title": "Gatii keenya",
+      "items": {
+        "trust": {
+          "title": "Amantii fi Nageenya",
+          "description": "Mirkaneessuu, gabaabsoo suuraa fi meeshaa gabaasuu cimaa hawaasa keenya eega."
+        },
+        "culture": {
+          "title": "Waliin qabannoo Aadaa",
+          "description": "Dhaalaa fi aadaa Oromoo fi Itoophiyaa appii hunda irratti kabajna."
+        },
+        "privacy": {
+          "title": "Iccitii Duraa",
+          "description": "Daataan kee encrypted ta'e, sadiffaa hin gurguratamu. Jiruu kee ati to'ata."
+        },
+        "respect": {
+          "title": "Kabajaa",
+          "description": "Hawaasa hammamtaa fi kabajaa qabu uumna — hin lolkuu, hin dirqisu."
+        }
+      }
+    }
+  },
+  "help": {
+    "title": "Gargaarsa fi Deggersa",
+    "subtitle": "Gaaffii yeroo baayyee dhiheeffaman deebii argadhuu fi gargaarsa si barbaachisu qabaadhuu.",
+    "faqTitle": "Gaaffii Yeroo Baayyee Dhiheeffaman",
+    "contactSupport": "Gargaarsa dabalataa si barbaachisaa? Garee deggersa keenya qunnamuu.",
+    "contactButton": "Gargaarsa qunnamuu",
+    "faq": {
+      "1": {
+        "question": "Akkaawuntii Qaliye akkamitti uuma?",
+        "answer": "Appii App Store ykn Google Play irraa gadisiisi, booda appii keessatti qajeelfama hordofuun profaayilii kee suura, seelfii fi filannoo waliin uumi."
+      },
+      "2": {
+        "question": "Qaliye bilisa?",
+        "answer": "Eeyyee, Qaliye bilisa gadisiisuufi fayyadamuu dha. Amaloota premium akka si jabeessan ilaaluu, cimsuu fi jabeessitaa hin danda'amne akka guddisa ni argamu."
+      },
+      "3": {
+        "question": "Mirkaneessituu profaayilii akkamitti hojjata?",
+        "answer": "Appii keessatti mirkaneessituu gaafadhu. Yoo mirkanaa'e, mallattoo mirkanaa'e ni argatta. Hubannoo kee profaayilii mirkanaa'e qofa gabaabsuu danda'a."
+      },
+      "4": {
+        "question": "Akkaawuntii koo akkamitti balleessa?",
+        "answer": "Settings app keessatti galii, akkaawuntii balleessuu fili. Kun akkaawuntii fi daataa hunda dhabbisaan haqa. Kun hin deebi'u."
+      },
+      "5": {
+        "question": "Qaliye afaan kammi deggera?",
+        "answer": "Qaliye Ingliffa, Amhariffa, Tigreegna fi Afaan Oromoo deggera. Afaan appii settings keessatti yeroo hunda jijjiiruu danda'a."
+      },
+      "6": {
+        "question": "Gabaabsoo suuraa akkamitti hojjata?",
+        "answer": "Suurri hundi profaayilii kee irratti mul'atuuf autoomatikii fi harkaan gabaabsoo ni darba. Haala suuraa akka eegame, mirkanaa'e, ykn gabaabsoo jiru ni mul'ata."
+      },
+      "7": {
+        "question": "Karaa kaffaltii kam jira?",
+        "answer": "Android irratti Telebirr, banki, Chapa, ykn galii harkaan kaffaluu danda'a. iOS irratti kaffaltii App Store irraa hojjeta."
+      },
+      "8": {
+        "question": "Qaliye Itoophiyaa ykn Eertiraa alatti fayyadamaa?",
+        "answer": "Eeyyee! Qaliye addunyaa guutuutti ni jira. Hubannoo kee Dhiyoo, Itoophiyaa, Eertiraa, Diaspora, ykn Hunduma gabaabsuu danda'a."
+      }
+    }
+  },
+  "contact": {
+    "title": "Nu qunnamuu",
+    "subtitle": "Gaaffii ykn yaada qabda? Si dhaggeeffuuf jaallanna.",
+    "form": {
+      "name": "Maqaa",
+      "namePlaceholder": "Maqaa kee",
+      "email": "Imeyilii",
+      "emailPlaceholder": "your@email.com",
+      "subject": "Mata duree",
+      "subjectPlaceholder": "Waa'ee maalii?",
+      "message": "Ergaa",
+      "messagePlaceholder": "Dabalata nutti himi...",
+      "submit": "Ergaa ergi",
+      "sending": "Ergaa jiru...",
+      "success": "Galatoomi! Ergaan kee ergameera.",
+      "error": "Waanti dogoggora ta'e. Irra deebi'ii yaali ykn to'annoo imeeyilii nu qunnamii."
+    },
+    "emailLabel": "Imeyilii nu ergi",
+    "socialLabel": "Nu hordofi",
+    "inAppSupport": "Appiif gargaarsa si barbaachisaa? Gargaarsa haaraa appii keessatti fayyadami."
+  },
+  "privacy": {
+    "title": "Iccitii Paalii",
+    "lastUpdated": "Dhumarratti kan fooyya'e: Caamsaa 2026",
+    "intro": "Iccitii Paalii kun Qaliye akkamitti daataa shakala, fayyadama fi eegu dha. Barreeffamni kun ogeeyya seeraatiin fooyya'aa ka'iinsa booda qophaa'u qaba.",
+    "sections": {
+      "1": {
+        "title": "Daataa Nu Shakallannu",
+        "body": "Daataa ati kallattiin kennitu ni shakallanna — maqaa, imeeyilii, suura, seelfii, filannoo fi amaloota profaayilii. Akkasumas daataa fayyadama appii fi ogeeyyaa mee shakallanna."
+      },
+      "2": {
+        "title": "Akkamitti Daataa Ke Fayyadamma",
+        "body": "Daataa kee tajaasila fi guddisuuf, wal-morkii fi haasawaa gargaaruuf, nageenyaaf mirkaneessuu fi gabaabsoo qabu, fi beeksisa erguuf fayyadamma."
+      },
+      "3": {
+        "title": "Nageenya Daataa",
+        "body": "Daataan kee TLS encryption kan daangaa fi nageenya qabachuun eegama. Supabase row-level security fayyadama. Daataan kee sadiifaa hin gurguratamu."
+      },
+      "4": {
+        "title": "Eegumsa fi Balleessituu Daataa",
+        "body": "Akkaawuntii fi daataa hunda Settings irraa yeroo hunda dhabbisaan balleessi. Balleessituu akkaawuntii hin deebi'u fi daataa hunda sirreeffama irraa haqa."
+      },
+      "5": {
+        "title": "Guddaa Umurii",
+        "body": "Qaliye fayyadamaa umuri 18 olif qofa. Umuri 18 gadii nama irraa daataa beekuu hin qabnu."
+      },
+      "6": {
+        "title": "Mirga Ke",
+        "body": "Daataa shakalaa kee ilaaluu, fooyya'essuu ykn balleessuu mirga qabda. Beeksisa filannoo fi hubannoo mul'annaa appii keessatti to'aduu danda'a."
+      },
+      "7": {
+        "title": "Kukii fi Hordofuu",
+        "body": "Sarvaroo keenya iccitii-to'annaa qabu fayyadama traffic qabaachuuf. Kukii marketingii hin fayyadammu, daataa hordofuu hin gurgurammu."
+      },
+      "8": {
+        "title": "Qunnamtii",
+        "body": "Gaaffii iccitii waliin qabatan support@qaliye.app nu qunnamuu."
+      }
+    }
+  },
+  "terms": {
+    "title": "Heera fi Haala",
+    "lastUpdated": "Dhumarratti kan fooyya'e: Caamsaa 2026",
+    "intro": "Heera fi Haala kun fayyadama Qaliye to'ata. Barreeffamni kun ogeeyya seeraatiin fooyya'aa ka'iinsa booda qophaa'u qaba.",
+    "sections": {
+      "1": {
+        "title": "Kan Hojjetuu",
+        "body": "Qaliye fayyadamuuf umuri 18 ol ta'uu qabda. Appii fayyadamaan guddaa kana mirkaneessuu qabda."
+      },
+      "2": {
+        "title": "Fayyadama Qabatamaa",
+        "body": "Qaliye kabajaa fi seera qabuun fayyadami. Fayyadamaa biroo hin aarmuu, hin qabuu, hin miidhu. Wanti ati qooddu hundi dhugaa fi kee qofa ta'uu qaba."
+      },
+      "3": {
+        "title": "Akkaawuntii",
+        "body": "Nageenya akkaawuntii kee eeguu dirqama kee. Akkaawuntii yeroo hunda balleessi. Namni tokko akkaawuntii tokko qofa qabaachuu danda'a."
+      },
+      "4": {
+        "title": "Qabiyyee fi Gabaabsoo",
+        "body": "Qaliye hawaasa nageenyaa qabuuf suuraa fi qabiyyee gabaabsa. Qabiyyee seera keenya cabu haquuf ykn akkaawuntii cufuuf mirga qabna."
+      },
+      "5": {
+        "title": "Premium Subscription",
+        "body": "Amaloota premium kaffaltii subscription qabu. Qabannaa fi gatiin appii keessatti ni mul'ata. Deebiin qabannaa marketii waliin qabatu."
+      },
+      "6": {
+        "title": "Iccitii",
+        "body": "Fayyadama Qaliye iccitii Paalii keenya waliin qabata. Daataa kee akkamitti qabannu hubachuuf dubbisi."
+      },
+      "7": {
+        "title": "Daangaa Dirqama",
+        "body": "Qaliye akka jiru hojjata. Wanti murtaa'e guutuuf hin kabajamne — wal-morkii fi walqunnamtaa. Fayyadamaa gidduutti hojjetamuuf dirqama hin qabnu."
+      },
+      "8": {
+        "title": "Jijjiirama Heera",
+        "body": "Heera kana yeroo tokko tokko jijjiiruu danda'a. Booda Qaliye itti fufuun heera fooyya'aa fudhachuu agarsiisa."
+      },
+      "9": {
+        "title": "Seera To'annoo",
+        "body": "Heera kun seera hojiirra oolmaa qabuun to'ata. Morkiin marketii guddaa sadarkaa qabuun akka qabatu."
+      },
+      "10": {
+        "title": "Qunnamtii",
+        "body": "Heera waliin qabatan support@qaliye.app nu qunnamuu."
+      }
+    }
+  },
+  "footer": {
+    "brandDescription": "Appiin fayyadamaa kan Oromoo fi Itoophiyaa ta'an qofaf. Aadaa, nageenyaafi kabajaa irraa kan ka'e walqunnamtaa maayiluu.",
+    "pages": "Fuulota",
+    "legal": "Seera",
+    "social": "Hawaasa",
+    "language": "Afaan",
+    "privacy": "Iccitii Paalii",
+    "terms": "Heera fi Haala",
+    "rights": "Mirgi hunda eegameera.",
+    "madeWith": "❤️ Afriikaa Qubeef kan hojjate",
+    "copyright": "© 2026 Qaliye. {madeWith}"
+  },
+  "languageNames": {
+    "en": "English",
+    "am": "አማርኛ",
+    "ti": "ትግርኛ",
+    "om": "Afaan Oromoo"
+  },
+  "common": {
+    "getStarted": "Jalqabi",
+    "learnMore": "Dabalata beeku",
+    "download": "Gadisiisi",
+    "benefit": "Fayyadama"
+  }
+}

@@ -1,0 +1,445 @@
+{
+  "site": {
+    "name": "Qaliye",
+    "tagline": "Where hearts connect",
+    "description": "Qaliye is the dating app for Ethiopian and Eritrean singles — meaningful connections rooted in culture, safety, and respect."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "features": "Features",
+    "help": "Help",
+    "contact": "Contact",
+    "menu": "Menu",
+    "close": "Close",
+    "skipToContent": "Skip to content",
+    "language": "Language"
+  },
+  "hero": {
+    "headline": "Where hearts connect",
+    "subheadline": "Qaliye is the dating app for Ethiopian and Eritrean singles. Find meaningful connections rooted in shared culture, values, and heritage.",
+    "downloadIOS": "Download on the App Store",
+    "downloadAndroid": "Get it on Google Play",
+    "phoneAlt": "Qaliye app preview on a phone"
+  },
+  "trustBar": {
+    "verifiedProfiles": "Verified profiles",
+    "privacyFirst": "Privacy first",
+    "fourLanguages": "4 languages",
+    "culturallyAligned": "Culturally aligned"
+  },
+  "features": {
+    "sectionTitle": "Everything you need to connect",
+    "sectionSubtitle": "Thoughtfully designed features that help you find meaningful connections safely.",
+    "learnMore": "Learn more",
+    "viewAllFeatures": "View all features",
+    "core": {
+      "discovery": {
+        "title": "Smart Discovery & Matching",
+        "description": "Card-based discovery with Like, Super Like, and Pass. Your feed is personalized based on your preferences. Mutual likes create matches.",
+        "benefit": "Find compatible people without endless scrolling."
+      },
+      "profiles": {
+        "title": "Detailed Profiles",
+        "description": "Photos, bio, interests, and attributes including gender, age, height, residency, ethnicity, nationality, religion, education, occupation, relationship intention, and more. Photos are moderated before appearing.",
+        "benefit": "Make informed decisions based on values and culture."
+      },
+      "preferences": {
+        "title": "Preferences & Filters",
+        "description": "Filter by interested-in, age range, max distance, preferred residency (Ethiopia, Eritrea, Diaspora), verified-only, and discovery mode (Standard, Global, Incognito).",
+        "benefit": "See only the profiles that matter to you."
+      },
+      "location": {
+        "title": "Location-Based Discovery",
+        "description": "GPS proximity with manual city search fallback. Regional filters: Nearby, Ethiopia, Eritrea, Diaspora, Anywhere.",
+        "benefit": "Find people near you or across the diaspora."
+      },
+      "chat": {
+        "title": "Real-Time Chat",
+        "description": "Text messaging, image sharing (up to 5 per message, 25 MB max), and voice messages with recording, preview, and playback.",
+        "benefit": "Communicate naturally and expressively."
+      },
+      "matches": {
+        "title": "Matches & Likes",
+        "description": "A dedicated matches screen keeps all your connections organized. A likes screen shows who liked you (premium feature).",
+        "benefit": "Never lose track of your connections."
+      }
+    },
+    "safety": {
+      "sectionTitle": "Safety & Privacy",
+      "verification": {
+        "title": "Profile Verification",
+        "description": "Earn a verified badge and filter for verified-only profiles.",
+        "benefit": "Confidence you're talking to a real person."
+      },
+      "photoModeration": {
+        "title": "Photo Moderation",
+        "description": "Automated and manual review process. Photo status is shown as pending, approved, or under review.",
+        "benefit": "A cleaner, safer community."
+      },
+      "blockReport": {
+        "title": "Block & Report",
+        "description": "Blocking hides all contact with a person. Reports go directly to our moderation team.",
+        "benefit": "Control your safety at every step."
+      },
+      "incognito": {
+        "title": "Incognito Mode (Premium)",
+        "description": "Browse without appearing in others' discovery feeds.",
+        "benefit": "Privacy and discretion when you want it."
+      },
+      "dataSecurity": {
+        "title": "Data Security",
+        "description": "TLS encryption, secure token storage, and Supabase row-level security protect your data.",
+        "benefit": "Industry-standard protection for your information."
+      },
+      "accountDeletion": {
+        "title": "Account Deletion",
+        "description": "Permanently delete your account from Settings. All your data is removed — no lock-in.",
+        "benefit": "Full control over your presence on Qaliye."
+      }
+    },
+    "premium": {
+      "sectionTitle": "Premium Features",
+      "sectionSubtitle": "Enhance your experience with premium features designed for deeper connections.",
+      "seeWhoLiked": {
+        "title": "See Who Liked You",
+        "description": "View the full list of profiles that liked you.",
+        "benefit": "Save time and connect directly."
+      },
+      "advancedFilters": {
+        "title": "Advanced Filters",
+        "description": "Extra filters for education, religion, and lifestyle.",
+        "benefit": "Fine-tune your discovery experience."
+      },
+      "unlimitedLikes": {
+        "title": "Unlimited Likes",
+        "description": "No daily cap on expressing interest.",
+        "benefit": "Never wait to express interest."
+      },
+      "superLikes": {
+        "title": "Super Likes",
+        "description": "Stand out with a special notification to the other person.",
+        "benefit": "Increase your match chances."
+      },
+      "boost": {
+        "title": "Boost",
+        "description": "Get 30 minutes of increased visibility in discovery.",
+        "benefit": "Be seen by more potential matches."
+      },
+      "rewind": {
+        "title": "Rewind",
+        "description": "Undo your last swipe.",
+        "benefit": "Never accidentally pass on someone."
+      },
+      "chatQuotas": {
+        "title": "Higher Chat Quotas",
+        "description": "Increased voice and image message quotas.",
+        "benefit": "Express yourself fully without limits."
+      }
+    },
+    "additional": {
+      "sectionTitle": "Additional Features",
+      "languages": {
+        "title": "4 Languages",
+        "description": "English, Amharic, Tigrinya, and Afaan Oromo.",
+        "benefit": "Use Qaliye in your preferred language."
+      },
+      "notifications": {
+        "title": "Push Notifications",
+        "description": "Real-time notifications with granular per-category control.",
+        "benefit": "Never miss a meaningful connection."
+      },
+      "inAppSupport": {
+        "title": "In-App Support",
+        "description": "Direct chat with our support staff — text and images.",
+        "benefit": "Get help without leaving the app."
+      },
+      "promotions": {
+        "title": "Promotions",
+        "description": "Free premium campaigns for women, holidays, and launch events.",
+        "benefit": "Try premium features for free."
+      },
+      "localPayments": {
+        "title": "Local Payments",
+        "description": "Android: Telebirr, bank transfer, Chapa, manual receipt. iOS: App Store.",
+        "benefit": "Pay your way — no credit card needed."
+      }
+    }
+  },
+  "howItWorks": {
+    "sectionTitle": "How Qaliye works",
+    "sectionSubtitle": "Four simple steps to start your journey.",
+    "steps": {
+      "1": {
+        "title": "Create your profile",
+        "description": "Add your photos, bio, and what matters to you. Photos are moderated for a safe community."
+      },
+      "2": {
+        "title": "Discover people",
+        "description": "Browse profiles tailored to your preferences. Like, Super Like, or Pass — it's your choice."
+      },
+      "3": {
+        "title": "Match & chat",
+        "description": "When you both like each other, it's a match. Start chatting with text, images, and voice."
+      },
+      "4": {
+        "title": "Connect meaningfully",
+        "description": "Build genuine connections rooted in shared culture, values, and heritage."
+      }
+    }
+  },
+  "screenshots": {
+    "sectionTitle": "See it in action",
+    "sectionSubtitle": "A glimpse of the Qaliye experience.",
+    "discovery": "Discovery — Swipe through profiles",
+    "match": "Match — It's a connection!",
+    "chat": "Chat — Text, images, and voice",
+    "profile": "Profile — Detailed and authentic",
+    "premium": "Premium — Enhanced features"
+  },
+  "stats": {
+    "sectionTitle": "Trusted by the community",
+    "sectionSubtitle": "A growing community of Ethiopian and Eritrean singles finding meaningful connections.",
+    "profiles": "Active profiles",
+    "languages": "Languages supported",
+    "countries": "Countries reached",
+    "safety": "Safety-first approach"
+  },
+  "testimonials": {
+    "sectionTitle": "Stories from the community",
+    "sectionSubtitle": "Real experiences from people who found meaningful connections through Qaliye.",
+    "items": {
+      "1": {
+        "quote": "Qaliye helped me find someone who shares my values and culture. It feels different from other apps.",
+        "name": "Selam",
+        "location": "Addis Ababa, Ethiopia"
+      },
+      "2": {
+        "quote": "As someone in the diaspora, I wanted to connect with someone who understands my heritage. Qaliye made that possible.",
+        "name": "Dawit",
+        "location": "Washington DC, USA"
+      },
+      "3": {
+        "quote": "The verified profiles and photo moderation gave me confidence. I felt safe using the app.",
+        "name": "Hanna",
+        "location": "Asmara, Eritrea"
+      }
+    }
+  },
+  "downloadCTA": {
+    "title": "Ready to find your connection?",
+    "subtitle": "Download Qaliye today and start your journey toward meaningful connections.",
+    "downloadIOS": "Download on the App Store",
+    "downloadAndroid": "Get it on Google Play",
+    "badge": "Download"
+  },
+  "about": {
+    "title": "About Qaliye",
+    "subtitle": "Building the bridge between culture and connection.",
+    "mission": {
+      "title": "Our Mission",
+      "body": "Qaliye exists to help Ethiopian and Eritrean singles find meaningful connections — whether at home or across the diaspora. We believe dating should be rooted in shared culture, values, and respect, not endless swiping. Our platform is designed to foster genuine relationships while honoring the traditions and heritage that make our community unique."
+    },
+    "audience": {
+      "title": "Who We Serve",
+      "body": "Qaliye is built for Ethiopian and Eritrean singles aged 18 and above, both within the Horn of Africa and across the global diaspora. Whether you're in Addis Ababa, Asmara, Washington DC, or London, Qaliye helps you find someone who understands your world."
+    },
+    "value": {
+      "title": "What Makes Us Different",
+      "body": "We're not just another dating app. Qaliye is built specifically for the Ethiopian and Eritrean community — with support for four languages, culturally relevant filters, local payment options, and a commitment to safety through verification and moderation. We prioritize meaningful connections over casual encounters."
+    },
+    "values": {
+      "title": "Our Values",
+      "items": {
+        "trust": {
+          "title": "Trust & Safety",
+          "description": "Verification, photo moderation, and robust reporting tools keep our community safe."
+        },
+        "culture": {
+          "title": "Cultural Alignment",
+          "description": "We celebrate Ethiopian and Eritrean heritage in every aspect of the app."
+        },
+        "privacy": {
+          "title": "Privacy First",
+          "description": "Your data is encrypted and never sold to third parties. You control your presence."
+        },
+        "respect": {
+          "title": "Respect",
+          "description": "We foster an inclusive, respectful community — never objectifying or pressuring."
+        }
+      }
+    }
+  },
+  "help": {
+    "title": "Help & Support",
+    "subtitle": "Find answers to common questions and get the support you need.",
+    "faqTitle": "Frequently Asked Questions",
+    "contactSupport": "Still need help? Contact our support team.",
+    "contactButton": "Contact Support",
+    "faq": {
+      "1": {
+        "question": "How do I create a Qaliye account?",
+        "answer": "Download the app from the App Store or Google Play, then follow the in-app setup to create your profile with photos, bio, and preferences."
+      },
+      "2": {
+        "question": "Is Qaliye free to use?",
+        "answer": "Yes, Qaliye is free to download and use with core features. Premium features like See Who Liked You, Boost, and unlimited likes are available as upgrades."
+      },
+      "3": {
+        "question": "How does profile verification work?",
+        "answer": "You can request verification within the app. Once approved, you'll receive a verified badge. You can also filter your discovery to show verified profiles only."
+      },
+      "4": {
+        "question": "How do I delete my account?",
+        "answer": "Go to Settings in the app and select Account Deletion. This permanently removes your account and all associated data. This action cannot be undone."
+      },
+      "5": {
+        "question": "Which languages does Qaliye support?",
+        "answer": "Qaliye supports English, Amharic, Tigrinya, and Afaan Oromo. You can switch languages anytime in the app settings."
+      },
+      "6": {
+        "question": "How does photo moderation work?",
+        "answer": "All photos go through automated and manual review before appearing on your profile. You'll see the status of each photo as pending, approved, or under review."
+      },
+      "7": {
+        "question": "What payment methods are available?",
+        "answer": "On Android, you can pay with Telebirr, bank transfer, Chapa, or manual receipt. On iOS, payments are processed through the App Store."
+      },
+      "8": {
+        "question": "Can I use Qaliye outside Ethiopia or Eritrea?",
+        "answer": "Yes! Qaliye is available worldwide. You can filter discovery by Nearby, Ethiopia, Eritrea, Diaspora, or Anywhere to find connections wherever you are."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Have a question or feedback? We'd love to hear from you.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "What's this about?",
+      "message": "Message",
+      "messagePlaceholder": "Tell us more...",
+      "submit": "Send message",
+      "sending": "Sending...",
+      "success": "Thank you! Your message has been sent.",
+      "error": "Something went wrong. Please try again or email us directly."
+    },
+    "emailLabel": "Email us",
+    "socialLabel": "Follow us",
+    "inAppSupport": "Need help with the app? Use in-app support chat for faster assistance."
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: July 2026",
+    "intro": "This Privacy Policy describes how Qaliye collects, uses, and protects your personal information. This document should be reviewed by legal counsel before publication.",
+    "sections": {
+      "1": {
+        "title": "Information We Collect",
+        "body": "We collect information you provide directly, including your name, email, photos, bio, preferences, and profile attributes. We also collect usage data such as app interactions and device information."
+      },
+      "2": {
+        "title": "How We Use Your Information",
+        "body": "We use your information to provide and improve our services, facilitate matching and communication, ensure safety through verification and moderation, and send you notifications and updates."
+      },
+      "3": {
+        "title": "Data Security",
+        "body": "Your data is protected with TLS encryption in transit and secure storage at rest. We use Supabase row-level security to ensure data isolation. Your data is never sold to third parties."
+      },
+      "4": {
+        "title": "Data Retention & Deletion",
+        "body": "You can permanently delete your account and all associated data at any time from Settings. Account deletion is irreversible and removes all your information from our systems."
+      },
+      "5": {
+        "title": "Age Requirement",
+        "body": "Qaliye is strictly for users aged 18 and above. We do not knowingly collect information from anyone under 18."
+      },
+      "6": {
+        "title": "Your Rights",
+        "body": "You have the right to access, correct, or delete your personal data. You can also control notification preferences and discovery visibility within the app."
+      },
+      "7": {
+        "title": "Cookies & Tracking",
+        "body": "Our website uses privacy-friendly analytics to understand traffic patterns. We do not use advertising cookies or sell tracking data."
+      },
+      "8": {
+        "title": "Contact",
+        "body": "For privacy-related questions, contact us at support@qaliye.app."
+      }
+    }
+  },
+  "terms": {
+    "title": "Terms & Conditions",
+    "lastUpdated": "Last updated: July 2026",
+    "intro": "These Terms & Conditions govern your use of Qaliye. This document should be reviewed by legal counsel before publication.",
+    "sections": {
+      "1": {
+        "title": "Eligibility",
+        "body": "You must be at least 18 years old to use Qaliye. By using the app, you confirm that you meet this age requirement."
+      },
+      "2": {
+        "title": "Acceptable Use",
+        "body": "You agree to use Qaliye respectfully and lawfully. You must not harass, impersonate, or harm other users. All content you share must be authentic and belong to you."
+      },
+      "3": {
+        "title": "Accounts",
+        "body": "You are responsible for maintaining the security of your account. You can delete your account at any time. Each person may maintain only one account."
+      },
+      "4": {
+        "title": "Content & Moderation",
+        "body": "Qaliye moderates photos and content to maintain a safe community. We reserve the right to remove content or suspend accounts that violate our guidelines."
+      },
+      "5": {
+        "title": "Premium Subscriptions",
+        "body": "Premium features are available through paid subscriptions. Subscription terms and pricing are displayed within the app. Refunds are subject to the applicable store's refund policy."
+      },
+      "6": {
+        "title": "Privacy",
+        "body": "Your use of Qaliye is also governed by our Privacy Policy. Please review it to understand how we handle your data."
+      },
+      "7": {
+        "title": "Limitation of Liability",
+        "body": "Qaliye is provided on an as-is basis. We do not guarantee specific outcomes, including matches or relationships. We are not liable for interactions between users."
+      },
+      "8": {
+        "title": "Changes to Terms",
+        "body": "We may update these terms from time to time. Continued use of Qaliye after changes constitutes acceptance of the updated terms."
+      },
+      "9": {
+        "title": "Governing Law",
+        "body": "These terms are governed by applicable laws. Disputes shall be resolved in accordance with the jurisdiction of the primary market."
+      },
+      "10": {
+        "title": "Contact",
+        "body": "For questions about these terms, contact us at support@qaliye.app."
+      }
+    }
+  },
+  "footer": {
+    "brandDescription": "The dating app for Ethiopian and Eritrean singles. Meaningful connections rooted in culture, safety, and respect.",
+    "pages": "Pages",
+    "legal": "Legal",
+    "social": "Social",
+    "language": "Language",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions",
+    "rights": "All rights reserved.",
+    "madeWith": "Made with ❤️ for the Horn of Africa",
+    "copyright": "© 2026 Qaliye. {madeWith}"
+  },
+  "languageNames": {
+    "en": "English",
+    "am": "አማርኛ",
+    "ti": "ትግርኛ",
+    "om": "Afaan Oromoo"
+  },
+  "common": {
+    "getStarted": "Get started",
+    "learnMore": "Learn more",
+    "download": "Download",
+    "benefit": "Benefit"
+  }
+}

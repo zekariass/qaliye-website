@@ -1,0 +1,186 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-primary: #8a2cff;
+  --color-primary-dark: #5b18d6;
+  --color-primary-light: #b777ff;
+  --color-secondary: #ff4fa3;
+  --color-background: #fff6fb;
+  --color-background-soft: #f7eeff;
+  --color-background-lavender: #efe7ff;
+  --color-surface: #ffffff;
+  --color-text-primary: #111827;
+  --color-text-secondary: #6b7280;
+  --color-text-muted: #9ca3af;
+  --color-border: #e9ddf8;
+  --color-success: #22c55e;
+  --color-danger: #ef4444;
+  --color-warning: #f59e0b;
+  --color-verified: #2f80ed;
+
+  /* Admin console design tokens */
+  --color-admin-sidebar: #111318;
+  --color-admin-sidebar-hover: #1e2128;
+  --color-admin-sidebar-active: #2a2d37;
+  --color-admin-page: #F7F7FA;
+  --color-admin-surface: #FFFFFF;
+  --color-admin-brand: #7C3AED;
+  --color-admin-brand-dark: #6D28D9;
+  --color-admin-brand-darker: #5B21B6;
+  --color-admin-brand-50: #F7F2FF;
+  --color-admin-brand-100: #EDE2FF;
+  --color-admin-success: #16815D;
+  --color-admin-success-bg: #ECFDF5;
+  --color-admin-warning: #B7791F;
+  --color-admin-warning-bg: #FFFBEB;
+  --color-admin-danger: #C63B4E;
+  --color-admin-danger-bg: #FFF1F2;
+  --color-admin-info: #2563EB;
+  --color-admin-info-bg: #EFF6FF;
+  --color-admin-orange: #EA580C;
+  --color-admin-orange-bg: #FFF7ED;
+  --color-admin-text: #17171B;
+  --color-admin-text-secondary: #666672;
+  --color-admin-border: #E5E5EA;
+  --color-admin-muted: #9CA3AF;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #a020f0, #6d35ff);
+  --gradient-romantic: linear-gradient(135deg, #ff4fa3, #8a2cff);
+  --gradient-splash: linear-gradient(180deg, #fff6fb, #f7eeff, #efe7ff);
+
+  /* Typography */
+  --font-sans: var(--font-noto-sans), var(--font-noto-ethiopic), system-ui, -apple-system, sans-serif;
+
+  /* Radius */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(138, 44, 255, 0.08);
+  --shadow-md: 0 4px 12px rgba(138, 44, 255, 0.12);
+  --shadow-lg: 0 8px 24px rgba(138, 44, 255, 0.15);
+  --shadow-xl: 0 16px 48px rgba(138, 44, 255, 0.18);
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Skip to content link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  z-index: 100;
+  padding: 12px 24px;
+  background: var(--color-primary);
+  color: white;
+  border-radius: 0 0 var(--radius-md) 0;
+  font-weight: 600;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Focus visible */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: var(--gradient-romantic);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Splash background */
+.bg-splash {
+  background: var(--gradient-splash);
+}
+
+/* Primary gradient */
+.bg-primary-gradient {
+  background: var(--gradient-primary);
+}
+
+/* Romantic gradient */
+.bg-romantic-gradient {
+  background: var(--gradient-romantic);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Ge'ez script minimum size */
+:lang(am),
+:lang(ti) {
+  font-size: 16px;
+}
+
+/* Download button glow pulse */
+@keyframes download-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(138, 44, 255, 0.3), 0 4px 12px rgba(138, 44, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(138, 44, 255, 0.5), 0 8px 24px rgba(138, 44, 255, 0.3);
+  }
+}
+
+.download-glow {
+  animation: download-glow 2.5s ease-in-out infinite;
+}
+
+/* Download badge bounce */
+@keyframes badge-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.badge-bounce {
+  animation: badge-bounce 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .download-glow,
+  .badge-bounce {
+    animation: none !important;
+  }
+}
