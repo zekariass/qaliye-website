@@ -140,6 +140,35 @@ function AccountDeletionContent() {
             </ul>
           </div>
 
+          {/* In-app data management */}
+          <div className="rounded-lg bg-surface border border-border p-6 shadow-sm">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10">
+                <Trash2 className="w-5 h-5 text-primary" aria-hidden="true" />
+              </div>
+              <h2 className="text-lg font-semibold text-text-primary">
+                {t("dataManagementTitle")}
+              </h2>
+            </div>
+            <p className="text-text-secondary leading-relaxed mb-3">
+              {t("dataManagementBody")}
+            </p>
+            <ul className="space-y-2">
+              <li className="flex items-start gap-3">
+                <Trash2 className="w-4 h-4 text-primary mt-1 shrink-0" aria-hidden="true" />
+                <span className="text-text-secondary leading-relaxed">
+                  {t("dataManagement.photos")}
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Trash2 className="w-4 h-4 text-primary mt-1 shrink-0" aria-hidden="true" />
+                <span className="text-text-secondary leading-relaxed">
+                  {t("dataManagement.messages")}
+                </span>
+              </li>
+            </ul>
+          </div>
+
           {/* Note */}
           <div className="rounded-lg bg-background-soft border border-border p-6">
             <p className="text-sm text-text-secondary leading-relaxed">

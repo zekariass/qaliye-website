@@ -370,7 +370,13 @@
       "step3": "Your messages and chat history with other users will be deleted.",
       "step4": "Some data may be retained where required by law for legal, tax, or safety purposes."
     },
-    "note": "Account deletion is permanent and cannot be undone. If you change your mind, you will need to create a new account."
+    "note": "Account deletion is permanent and cannot be undone. If you change your mind, you will need to create a new account.",
+    "dataManagementTitle": "Managing Your Data In-App",
+    "dataManagementBody": "You do not need to delete your entire account to remove specific content. The Qaliye app allows you to delete individual items at any time:",
+    "dataManagement": {
+      "photos": "Delete photos directly from your Profile screen.",
+      "messages": "Delete individual chat messages from within the Chat screen."
+    }
   },
   "footer": {
     "brandDescription": "The dating app for Ethiopian and Eritrean singles. Meaningful connections rooted in culture, safety, and respect.",

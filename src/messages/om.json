@@ -370,7 +370,13 @@
       "step3": "Ergaa fi seenaa haasaa kan biroo fayyadamaa waliin qabatu ni haqama.",
       "step4": "Daataan tokko tokko yoo seerri eegu qabate, kaayyoo seeraa, belaadaa ykn nageenyaaf ni eegama."
     },
-    "note": "Haqinsa akkaawuntii haayyamaa dha fi deebi'uu hin danda'u. Yoo jechaa gorfte, akkaawuntii haaraa uumuu qabda."
+    "note": "Haqinsa akkaawuntii haayyamaa dha fi deebi'uu hin danda'u. Yoo jechaa gorfte, akkaawuntii haaraa uumuu qabda.",
+    "dataManagementTitle": "Daataa Ke Appii Keessatti Bulchuu",
+    "dataManagementBody": "Qabiyyee addaa haquuf akkaawuntii kee guutuus haquu hin barbaachisu. Appiin Qaliye wantoota dhuunfaa yeroo hunda haquuf si dandeessisa:",
+    "dataManagement": {
+      "photos": "Suuraawwan kallattiin fuula Profaayilii irraa haqi.",
+      "messages": "Ergaa dhuunfaa haasaa fuula Haasaa keessaa haqi."
+    }
   },
   "footer": {
     "brandDescription": "Appiin fayyadamaa kan Oromoo fi Itoophiyaa ta'an qofaf. Aadaa, nageenyaafi kabajaa irraa kan ka'e walqunnamtaa maayiluu.",
