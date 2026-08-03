@@ -20,6 +20,9 @@ export function Footer() {
   const legalLinks = [
     { href: "/privacy", label: tFooter("privacy") },
     { href: "/terms", label: tFooter("terms") },
+    { href: "/community-guidelines", label: tFooter("communityGuidelines") },
+    { href: "/safety-tips", label: tFooter("safetyTips") },
+    { href: "/account-deletion", label: tFooter("accountDeletion") },
   ] as const;
 
   const socialLinks = [

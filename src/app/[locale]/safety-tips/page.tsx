@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import type { Metadata } from "next";
 import { PageHeader, ProseSection } from "@/components/ui/Primitives";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
-import { TermsOfUseContent } from "@/components/legal/TermsOfUseContent";
+import { SafetyTipsContent } from "@/components/legal/SafetyTipsContent";
 
 export async function generateMetadata({
   params,
@@ -12,23 +12,23 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "terms" });
+  const t = await getTranslations({ locale, namespace: "safetyTips" });
   return {
     title: t("title"),
     description: t("intro"),
     alternates: {
-      canonical: `/${locale}/terms`,
+      canonical: `/${locale}/safety-tips`,
       languages: {
-        en: "/en/terms",
-        am: "/am/terms",
-        ti: "/ti/terms",
-        om: "/om/terms",
+        en: "/en/safety-tips",
+        am: "/am/safety-tips",
+        ti: "/ti/safety-tips",
+        om: "/om/safety-tips",
       },
     },
   };
 }
 
-export default async function TermsPage({
+export default async function SafetyTipsPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
@@ -41,22 +41,22 @@ export default async function TermsPage({
       <BreadcrumbJsonLd
         items={[
           { name: "Qaliye", url: `/${locale}` },
-          { name: "Terms of Use", url: `/${locale}/terms` },
+          { name: "Dating Safety Tips", url: `/${locale}/safety-tips` },
         ]}
       />
-      <TermsContent />
+      <SafetyTipsContentSection />
     </>
   );
 }
 
-function TermsContent() {
-  const t = useTranslations("terms");
+function SafetyTipsContentSection() {
+  const t = useTranslations("safetyTips");
 
   return (
     <>
       <PageHeader title={t("title")} subtitle={t("lastUpdated")} />
       <ProseSection>
-        <TermsOfUseContent />
+        <SafetyTipsContent />
       </ProseSection>
     </>
   );

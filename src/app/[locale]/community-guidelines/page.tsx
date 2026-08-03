@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import type { Metadata } from "next";
 import { PageHeader, ProseSection } from "@/components/ui/Primitives";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
-import { TermsOfUseContent } from "@/components/legal/TermsOfUseContent";
+import { CommunityGuidelinesContent } from "@/components/legal/CommunityGuidelinesContent";
 
 export async function generateMetadata({
   params,
@@ -12,23 +12,23 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "terms" });
+  const t = await getTranslations({ locale, namespace: "communityGuidelines" });
   return {
     title: t("title"),
     description: t("intro"),
     alternates: {
-      canonical: `/${locale}/terms`,
+      canonical: `/${locale}/community-guidelines`,
       languages: {
-        en: "/en/terms",
-        am: "/am/terms",
-        ti: "/ti/terms",
-        om: "/om/terms",
+        en: "/en/community-guidelines",
+        am: "/am/community-guidelines",
+        ti: "/ti/community-guidelines",
+        om: "/om/community-guidelines",
       },
     },
   };
 }
 
-export default async function TermsPage({
+export default async function CommunityGuidelinesPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
@@ -41,22 +41,22 @@ export default async function TermsPage({
       <BreadcrumbJsonLd
         items={[
           { name: "Qaliye", url: `/${locale}` },
-          { name: "Terms of Use", url: `/${locale}/terms` },
+          { name: "Community Guidelines", url: `/${locale}/community-guidelines` },
         ]}
       />
-      <TermsContent />
+      <CommunityGuidelinesContentSection />
     </>
   );
 }
 
-function TermsContent() {
-  const t = useTranslations("terms");
+function CommunityGuidelinesContentSection() {
+  const t = useTranslations("communityGuidelines");
 
   return (
     <>
       <PageHeader title={t("title")} subtitle={t("lastUpdated")} />
       <ProseSection>
-        <TermsOfUseContent />
+        <CommunityGuidelinesContent />
       </ProseSection>
     </>
   );

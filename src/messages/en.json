@@ -334,89 +334,43 @@
   },
   "privacy": {
     "title": "Privacy Policy",
-    "lastUpdated": "Last updated: July 2026",
-    "intro": "This Privacy Policy describes how Qaliye collects, uses, and protects your personal information. This document should be reviewed by legal counsel before publication.",
-    "sections": {
-      "1": {
-        "title": "Information We Collect",
-        "body": "We collect information you provide directly, including your name, email, photos, bio, preferences, and profile attributes. We also collect usage data such as app interactions and device information."
-      },
-      "2": {
-        "title": "How We Use Your Information",
-        "body": "We use your information to provide and improve our services, facilitate matching and communication, ensure safety through verification and moderation, and send you notifications and updates."
-      },
-      "3": {
-        "title": "Data Security",
-        "body": "Your data is protected with TLS encryption in transit and secure storage at rest. We use Supabase row-level security to ensure data isolation. Your data is never sold to third parties."
-      },
-      "4": {
-        "title": "Data Retention & Deletion",
-        "body": "You can permanently delete your account and all associated data at any time from Settings. Account deletion is irreversible and removes all your information from our systems."
-      },
-      "5": {
-        "title": "Age Requirement",
-        "body": "Qaliye is strictly for users aged 18 and above. We do not knowingly collect information from anyone under 18."
-      },
-      "6": {
-        "title": "Your Rights",
-        "body": "You have the right to access, correct, or delete your personal data. You can also control notification preferences and discovery visibility within the app."
-      },
-      "7": {
-        "title": "Cookies & Tracking",
-        "body": "Our website uses privacy-friendly analytics to understand traffic patterns. We do not use advertising cookies or sell tracking data."
-      },
-      "8": {
-        "title": "Contact",
-        "body": "For privacy-related questions, contact us at support@qaliye.app."
-      }
-    }
+    "lastUpdated": "Last updated: [INSERT LAST-UPDATED DATE]",
+    "intro": "This Privacy Policy explains how Qaliye collects, uses, stores, shares, and protects personal information when you use the Qaliye mobile application, website, and related services."
   },
   "terms": {
-    "title": "Terms & Conditions",
-    "lastUpdated": "Last updated: July 2026",
-    "intro": "These Terms & Conditions govern your use of Qaliye. This document should be reviewed by legal counsel before publication.",
-    "sections": {
-      "1": {
-        "title": "Eligibility",
-        "body": "You must be at least 18 years old to use Qaliye. By using the app, you confirm that you meet this age requirement."
-      },
-      "2": {
-        "title": "Acceptable Use",
-        "body": "You agree to use Qaliye respectfully and lawfully. You must not harass, impersonate, or harm other users. All content you share must be authentic and belong to you."
-      },
-      "3": {
-        "title": "Accounts",
-        "body": "You are responsible for maintaining the security of your account. You can delete your account at any time. Each person may maintain only one account."
-      },
-      "4": {
-        "title": "Content & Moderation",
-        "body": "Qaliye moderates photos and content to maintain a safe community. We reserve the right to remove content or suspend accounts that violate our guidelines."
-      },
-      "5": {
-        "title": "Premium Subscriptions",
-        "body": "Premium features are available through paid subscriptions. Subscription terms and pricing are displayed within the app. Refunds are subject to the applicable store's refund policy."
-      },
-      "6": {
-        "title": "Privacy",
-        "body": "Your use of Qaliye is also governed by our Privacy Policy. Please review it to understand how we handle your data."
-      },
-      "7": {
-        "title": "Limitation of Liability",
-        "body": "Qaliye is provided on an as-is basis. We do not guarantee specific outcomes, including matches or relationships. We are not liable for interactions between users."
-      },
-      "8": {
-        "title": "Changes to Terms",
-        "body": "We may update these terms from time to time. Continued use of Qaliye after changes constitutes acceptance of the updated terms."
-      },
-      "9": {
-        "title": "Governing Law",
-        "body": "These terms are governed by applicable laws. Disputes shall be resolved in accordance with the jurisdiction of the primary market."
-      },
-      "10": {
-        "title": "Contact",
-        "body": "For questions about these terms, contact us at support@qaliye.app."
-      }
-    }
+    "title": "Terms of Use",
+    "lastUpdated": "Last updated: 27 July 2026",
+    "intro": "These Terms of Use govern your access to and use of the Qaliye mobile application, website, and related services."
+  },
+  "communityGuidelines": {
+    "title": "Community Guidelines",
+    "lastUpdated": "Last updated: [INSERT LAST-UPDATED DATE]",
+    "intro": "These Community Guidelines explain the rules and standards that all Qaliye users must follow to keep the community safe, respectful, and welcoming."
+  },
+  "safetyTips": {
+    "title": "Dating Safety Tips",
+    "lastUpdated": "Last updated: [INSERT LAST-UPDATED DATE]",
+    "intro": "These safety tips provide general guidance to help you stay safe while using Qaliye and meeting people in person."
+  },
+  "accountDeletion": {
+    "title": "Account Deletion",
+    "subtitle": "Learn how to permanently delete your Qaliye account and associated data.",
+    "introTitle": "Your Right to Delete Your Account",
+    "introBody": "You have the right to delete your Qaliye account at any time. When you delete your account, your profile, photos, messages, matches, and associated personal data will be permanently removed from our systems.",
+    "inAppTitle": "Delete From the App",
+    "inAppDescription": "You can delete your account directly within the Qaliye app — no need to contact support.",
+    "inAppSteps": "Profile  >>  Settings  >>  Delete Account",
+    "emailTitle": "Request Deletion by Email",
+    "emailDescription": "To request the deletion of your account and associated data, please email support@qaliye.com with the subject line 'Account Deletion Request' from the email address registered to your account.",
+    "emailButton": "Email Support",
+    "processTitle": "What Happens Next",
+    "process": {
+      "step1": "Your request will be reviewed and processed within 30 days.",
+      "step2": "Your profile, photographs, bio, preferences, and matches will be permanently removed.",
+      "step3": "Your messages and chat history with other users will be deleted.",
+      "step4": "Some data may be retained where required by law for legal, tax, or safety purposes."
+    },
+    "note": "Account deletion is permanent and cannot be undone. If you change your mind, you will need to create a new account."
   },
   "footer": {
     "brandDescription": "The dating app for Ethiopian and Eritrean singles. Meaningful connections rooted in culture, safety, and respect.",
@@ -425,7 +379,10 @@
     "social": "Social",
     "language": "Language",
     "privacy": "Privacy Policy",
-    "terms": "Terms & Conditions",
+    "terms": "Terms of Use",
+    "communityGuidelines": "Community Guidelines",
+    "safetyTips": "Safety Tips",
+    "accountDeletion": "Account Deletion",
     "rights": "All rights reserved.",
     "madeWith": "Made with ❤️ for the Horn of Africa",
     "copyright": "© 2026 Qaliye. {madeWith}"

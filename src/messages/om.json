@@ -334,89 +334,43 @@
   },
   "privacy": {
     "title": "Iccitii Paalii",
-    "lastUpdated": "Dhumarratti kan fooyya'e: Caamsaa 2026",
-    "intro": "Iccitii Paalii kun Qaliye akkamitti daataa shakala, fayyadama fi eegu dha. Barreeffamni kun ogeeyya seeraatiin fooyya'aa ka'iinsa booda qophaa'u qaba.",
-    "sections": {
-      "1": {
-        "title": "Daataa Nu Shakallannu",
-        "body": "Daataa ati kallattiin kennitu ni shakallanna — maqaa, imeeyilii, suura, seelfii, filannoo fi amaloota profaayilii. Akkasumas daataa fayyadama appii fi ogeeyyaa mee shakallanna."
-      },
-      "2": {
-        "title": "Akkamitti Daataa Ke Fayyadamma",
-        "body": "Daataa kee tajaasila fi guddisuuf, wal-morkii fi haasawaa gargaaruuf, nageenyaaf mirkaneessuu fi gabaabsoo qabu, fi beeksisa erguuf fayyadamma."
-      },
-      "3": {
-        "title": "Nageenya Daataa",
-        "body": "Daataan kee TLS encryption kan daangaa fi nageenya qabachuun eegama. Supabase row-level security fayyadama. Daataan kee sadiifaa hin gurguratamu."
-      },
-      "4": {
-        "title": "Eegumsa fi Balleessituu Daataa",
-        "body": "Akkaawuntii fi daataa hunda Settings irraa yeroo hunda dhabbisaan balleessi. Balleessituu akkaawuntii hin deebi'u fi daataa hunda sirreeffama irraa haqa."
-      },
-      "5": {
-        "title": "Guddaa Umurii",
-        "body": "Qaliye fayyadamaa umuri 18 olif qofa. Umuri 18 gadii nama irraa daataa beekuu hin qabnu."
-      },
-      "6": {
-        "title": "Mirga Ke",
-        "body": "Daataa shakalaa kee ilaaluu, fooyya'essuu ykn balleessuu mirga qabda. Beeksisa filannoo fi hubannoo mul'annaa appii keessatti to'aduu danda'a."
-      },
-      "7": {
-        "title": "Kukii fi Hordofuu",
-        "body": "Sarvaroo keenya iccitii-to'annaa qabu fayyadama traffic qabaachuuf. Kukii marketingii hin fayyadammu, daataa hordofuu hin gurgurammu."
-      },
-      "8": {
-        "title": "Qunnamtii",
-        "body": "Gaaffii iccitii waliin qabatan support@qaliye.app nu qunnamuu."
-      }
-    }
+    "lastUpdated": "Dhumarratti kan fooyya'e: [INSERT LAST-UPDATED DATE]",
+    "intro": "Iccitii Paalii kun appii Qaliye, websaayitii fi tajaasila waliin qabatan fayyadama kee irratti akkamitti daataa shakallannu, fayyadamma, kaaffannu, qoodnu fi eegnu dha."
   },
   "terms": {
-    "title": "Heera fi Haala",
-    "lastUpdated": "Dhumarratti kan fooyya'e: Caamsaa 2026",
-    "intro": "Heera fi Haala kun fayyadama Qaliye to'ata. Barreeffamni kun ogeeyya seeraatiin fooyya'aa ka'iinsa booda qophaa'u qaba.",
-    "sections": {
-      "1": {
-        "title": "Kan Hojjetuu",
-        "body": "Qaliye fayyadamuuf umuri 18 ol ta'uu qabda. Appii fayyadamaan guddaa kana mirkaneessuu qabda."
-      },
-      "2": {
-        "title": "Fayyadama Qabatamaa",
-        "body": "Qaliye kabajaa fi seera qabuun fayyadami. Fayyadamaa biroo hin aarmuu, hin qabuu, hin miidhu. Wanti ati qooddu hundi dhugaa fi kee qofa ta'uu qaba."
-      },
-      "3": {
-        "title": "Akkaawuntii",
-        "body": "Nageenya akkaawuntii kee eeguu dirqama kee. Akkaawuntii yeroo hunda balleessi. Namni tokko akkaawuntii tokko qofa qabaachuu danda'a."
-      },
-      "4": {
-        "title": "Qabiyyee fi Gabaabsoo",
-        "body": "Qaliye hawaasa nageenyaa qabuuf suuraa fi qabiyyee gabaabsa. Qabiyyee seera keenya cabu haquuf ykn akkaawuntii cufuuf mirga qabna."
-      },
-      "5": {
-        "title": "Premium Subscription",
-        "body": "Amaloota premium kaffaltii subscription qabu. Qabannaa fi gatiin appii keessatti ni mul'ata. Deebiin qabannaa marketii waliin qabatu."
-      },
-      "6": {
-        "title": "Iccitii",
-        "body": "Fayyadama Qaliye iccitii Paalii keenya waliin qabata. Daataa kee akkamitti qabannu hubachuuf dubbisi."
-      },
-      "7": {
-        "title": "Daangaa Dirqama",
-        "body": "Qaliye akka jiru hojjata. Wanti murtaa'e guutuuf hin kabajamne — wal-morkii fi walqunnamtaa. Fayyadamaa gidduutti hojjetamuuf dirqama hin qabnu."
-      },
-      "8": {
-        "title": "Jijjiirama Heera",
-        "body": "Heera kana yeroo tokko tokko jijjiiruu danda'a. Booda Qaliye itti fufuun heera fooyya'aa fudhachuu agarsiisa."
-      },
-      "9": {
-        "title": "Seera To'annoo",
-        "body": "Heera kun seera hojiirra oolmaa qabuun to'ata. Morkiin marketii guddaa sadarkaa qabuun akka qabatu."
-      },
-      "10": {
-        "title": "Qunnamtii",
-        "body": "Heera waliin qabatan support@qaliye.app nu qunnamuu."
-      }
-    }
+    "title": "Heera Fayyadamaa",
+    "lastUpdated": "Dhumarratti kan fooyya'e: 27 Caamsaa 2026",
+    "intro": "Heera Fayyadamaa kun qabiyyee appii qabiyyee Qaliye, websaayitii fi tajaasila waliin qabatan fayyadama kee to'ata."
+  },
+  "communityGuidelines": {
+    "title": "Qajeelfa Hawaummaa",
+    "lastUpdated": "Dhumarratti kan fooyya'e: [INSERT LAST-UPDATED DATE]",
+    "intro": "Qajeelfa Hawaummaa kun hawaummichaa nageenya, kabajaa fi gammoojjummaa eeguuf fayyadamtoonni Qaliye hundi akka hordofan dirqama qabu seera fi sadarkaa ibsa."
+  },
+  "safetyTips": {
+    "title": "Qajeelfa Nageenya Walqunnamtii",
+    "lastUpdated": "Dhumarratti kan fooyya'e: [INSERT LAST-UPDATED DATE]",
+    "intro": "Qajeelfa nageenyaa kun Qaliye fayyadamaa fi namoota dhiphoo qabachu keessatti nageenya kee eeguuf gargaaru qajeelfa waliigalaa kenna."
+  },
+  "accountDeletion": {
+    "title": "Haqinsa Akkaawuntii",
+    "subtitle": "Akkaawuntii Qaliye fi daataa waliin qabatan akkamitti dhabbisuun akka qabatamu baradhu.",
+    "introTitle": "Mirga Akkaawuntii Ke Haqisu",
+    "introBody": "Akkaawuntii Qaliye kee yeroo hunda haqisuuf mirga qabda. Akkaawuntii kee haqitu, profaayilii kee, suuraawwan, ergaa, walqunnamtii fi daataa dhuunfaa waliin qabatan haayyamaa irraa haqama.",
+    "inAppTitle": "Appii Keessaa Haqi",
+    "inAppDescription": "Akkaawuntii kee kallattiin appii Qaliye keessatti haquu dandeessa — gargaarsa gaafachuu hin barbaachisu.",
+    "inAppSteps": "Profaayilii  >>  Qindaa'ina  >>  Akkaawuntii Haqi",
+    "emailTitle": "Haqinsa Imeeyiliin Gaafadhu",
+    "emailDescription": "Akkaawuntii kee fi daataa waliin qabatan haquuuf gaafadhuuf, maaloo support@qaliye.com tiin akkaawuntii keetti galmeeffame imeeyilii irraa mata duree 'Gaafadha Haqinsa Akkaawuntii' jedhuun imeeyilii ergi.",
+    "emailButton": "Imeeyilii Gaafadhu",
+    "processTitle": "Akkamitti Itti Aana",
+    "process": {
+      "step1": "Gaaffiin kee qoratamuu fi guyyoota 30 keessatti hojiirra oola.",
+      "step2": "Profaayilii kee, suuraawwan, qabiyyee, filannoo fi walqunnamtiin haayyamaa haqama.",
+      "step3": "Ergaa fi seenaa haasaa kan biroo fayyadamaa waliin qabatu ni haqama.",
+      "step4": "Daataan tokko tokko yoo seerri eegu qabate, kaayyoo seeraa, belaadaa ykn nageenyaaf ni eegama."
+    },
+    "note": "Haqinsa akkaawuntii haayyamaa dha fi deebi'uu hin danda'u. Yoo jechaa gorfte, akkaawuntii haaraa uumuu qabda."
   },
   "footer": {
     "brandDescription": "Appiin fayyadamaa kan Oromoo fi Itoophiyaa ta'an qofaf. Aadaa, nageenyaafi kabajaa irraa kan ka'e walqunnamtaa maayiluu.",
@@ -425,7 +379,10 @@
     "social": "Hawaasa",
     "language": "Afaan",
     "privacy": "Iccitii Paalii",
-    "terms": "Heera fi Haala",
+    "terms": "Heera Fayyadamaa",
+    "communityGuidelines": "Qajeelfa Hawaummaa",
+    "safetyTips": "Qajeelfa Nageenya",
+    "accountDeletion": "Haqinsa Akkaawuntii",
     "rights": "Mirgi hunda eegameera.",
     "madeWith": "❤️ Afriikaa Qubeef kan hojjate",
     "copyright": "© 2026 Qaliye. {madeWith}"

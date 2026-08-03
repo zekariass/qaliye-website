@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import type { Metadata } from "next";
 import { PageHeader, ProseSection } from "@/components/ui/Primitives";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
+import { PrivacyPolicyContent } from "@/components/legal/PrivacyPolicyContent";
 
 export async function generateMetadata({
   params,
@@ -50,23 +51,12 @@ export default async function PrivacyPage({
 
 function PrivacyContent() {
   const t = useTranslations("privacy");
-  const sectionKeys = [1, 2, 3, 4, 5, 6, 7, 8];
 
   return (
     <>
       <PageHeader title={t("title")} subtitle={t("lastUpdated")} />
       <ProseSection>
-        <p className="text-text-secondary leading-relaxed mb-8">{t("intro")}</p>
-        {sectionKeys.map((key) => (
-          <section key={key} className="space-y-3 mb-8">
-            <h2 className="text-xl font-bold text-text-primary">
-              {key}. {t(`sections.${key}.title`)}
-            </h2>
-            <p className="text-text-secondary leading-relaxed">
-              {t(`sections.${key}.body`)}
-            </p>
-          </section>
-        ))}
+        <PrivacyPolicyContent />
       </ProseSection>
     </>
   );
