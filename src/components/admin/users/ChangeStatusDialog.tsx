@@ -19,12 +19,14 @@ interface ChangeStatusDialogProps {
 const STATUS_LABELS: Record<string, string> = {
   ACTIVE: "Activate",
   SUSPENDED: "Suspend",
+  DEACTIVATED: "Deactivate",
   BANNED: "Ban",
 };
 
 const STATUS_CONFIRMATIONS: Record<string, string> = {
   ACTIVE: "This will restore the user's access to the platform.",
   SUSPENDED: "The user will lose access temporarily and can be reinstated.",
+  DEACTIVATED: "The user will be deactivated and lose access to the platform.",
   BANNED: "The user will be permanently banned from the platform.",
 };
 

@@ -53,20 +53,16 @@ function EditModal({ item, onSubmit, onCancel, isLoading }: { item: FeatureActio
         </div>
         <div className="space-y-3">
           <div>
-            <label className="block text-xs font-medium text-[#17171B] mb-1.5">Code</label>
-            <input value={code} onChange={(e) => setCode(e.target.value.toUpperCase())} className={`${INPUT} font-mono`} />
+            <label className="block text-xs font-medium text-[#17171B] mb-1.5">Code (immutable)</label>
+            <input value={code} disabled className={`${INPUT} font-mono bg-[#F7F7FA] text-[#9CA3AF]`} />
           </div>
           <div>
             <label className="block text-xs font-medium text-[#17171B] mb-1.5">Name *</label>
             <input value={name} onChange={(e) => setName(e.target.value)} className={INPUT} />
           </div>
           <div>
-            <label className="block text-xs font-medium text-[#17171B] mb-1.5">Type</label>
-            <select value={type} onChange={(e) => setType(e.target.value)} className={SELECT}>
-              <option value="ACTION">ACTION</option>
-              <option value="VIEW">VIEW</option>
-              <option value="BOOST">BOOST</option>
-            </select>
+            <label className="block text-xs font-medium text-[#17171B] mb-1.5">Type (immutable)</label>
+            <input value={type} disabled className={`${INPUT} bg-[#F7F7FA] text-[#9CA3AF]`} />
           </div>
         </div>
         <div className="mt-5 flex justify-end gap-2">

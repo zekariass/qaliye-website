@@ -164,6 +164,7 @@ export default function UsersPage() {
           <option value="">All statuses</option>
           <option value="ACTIVE">Active</option>
           <option value="SUSPENDED">Suspended</option>
+          <option value="DEACTIVATED">Deactivated</option>
           <option value="BANNED">Banned</option>
           <option value="PENDING_VERIFICATION">Pending Verification</option>
         </select>
@@ -177,6 +178,7 @@ export default function UsersPage() {
           <option value="USER">User</option>
           <option value="ADMIN">Admin</option>
           <option value="MODERATOR">Moderator</option>
+          <option value="TEST">Test</option>
         </select>
       </div>
 

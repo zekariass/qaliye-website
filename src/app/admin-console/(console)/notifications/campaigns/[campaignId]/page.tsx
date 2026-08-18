@@ -59,7 +59,7 @@ export default function CampaignDetailPage({ params }: { params: Promise<{ campa
   if (isError || !campaign) return <ErrorState onRetry={refetch} />;
 
   const canStart = campaign.status === "DRAFT";
-  const canCancel = campaign.status === "RUNNING" || campaign.status === "SCHEDULED";
+  const canCancel = campaign.status === "SENDING" || campaign.status === "RUNNING" || campaign.status === "SCHEDULED";
 
   return (
     <div className="max-w-2xl">

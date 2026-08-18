@@ -81,7 +81,7 @@ export default function NotificationCampaignsPage() {
         {c.status === "DRAFT" && (
           <button type="button" onClick={() => setActionTarget({ id: c.id, name: c.name ?? c.title, action: "start" })} className="text-xs text-[#16815D] hover:underline">Start</button>
         )}
-        {(c.status === "RUNNING" || c.status === "SCHEDULED") && (
+        {(c.status === "SENDING" || c.status === "RUNNING" || c.status === "SCHEDULED") && (
           <button type="button" onClick={() => setActionTarget({ id: c.id, name: c.name ?? c.title, action: "cancel" })} className="text-xs text-[#C63B4E] hover:underline">Cancel</button>
         )}
       </div>
@@ -104,6 +104,7 @@ export default function NotificationCampaignsPage() {
           <option value="">All statuses</option>
           <option value="DRAFT">Draft</option>
           <option value="SCHEDULED">Scheduled</option>
+          <option value="SENDING">Sending</option>
           <option value="RUNNING">Running</option>
           <option value="COMPLETED">Completed</option>
           <option value="CANCELLED">Cancelled</option>

@@ -3,8 +3,10 @@ export const ADMIN_API_PREFIX = "/api/internal-admin";
 export const BACKEND_ADMIN_PREFIX = "/api/v1/admin";
 
 export const AdminRole = {
+  USER: "USER",
   ADMIN: "ADMIN",
   MODERATOR: "MODERATOR",
+  TEST: "TEST",
 } as const;
 export type AdminRole = (typeof AdminRole)[keyof typeof AdminRole];
 
@@ -51,6 +53,7 @@ export type CampaignStatus = (typeof CampaignStatus)[keyof typeof CampaignStatus
 export const NotificationCampaignStatus = {
   DRAFT: "DRAFT",
   SCHEDULED: "SCHEDULED",
+  SENDING: "SENDING",
   RUNNING: "RUNNING",
   COMPLETED: "COMPLETED",
   CANCELLED: "CANCELLED",

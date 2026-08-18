@@ -153,12 +153,8 @@ function EditModal({ item, onSubmit, onCancel, isLoading }: { item: PlanLimitCos
           </div>
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label className="block text-xs font-medium text-[#17171B] mb-1.5">Period Type</label>
-              <select value={periodType} onChange={(e) => setPeriodType(e.target.value)} className={SELECT}>
-                <option value="DAY">DAY</option>
-                <option value="WEEK">WEEK</option>
-                <option value="MONTH">MONTH</option>
-              </select>
+              <label className="block text-xs font-medium text-[#17171B] mb-1.5">Period Type (immutable)</label>
+              <input value={periodType} disabled className={`${INPUT} bg-[#F7F7FA] text-[#9CA3AF]`} />
             </div>
             <div>
               <label className="block text-xs font-medium text-[#17171B] mb-1.5">Apply Credit After Limit</label>

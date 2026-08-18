@@ -171,15 +171,12 @@ function EditModal({ item, onSubmit, onCancel, isLoading }: { item: PaymentMetho
               <input value={countryCode} onChange={(e) => setCountryCode(e.target.value.toUpperCase().slice(0, 2))} className={`${INPUT} font-mono`} maxLength={2} />
             </div>
             <div>
-              <label className="block text-xs font-medium text-[#17171B] mb-1.5">Platform</label>
-              <select value={platform} onChange={(e) => setPlatform(e.target.value)} className={SELECT}>
-                <option value="MOBILE">MOBILE</option>
-                <option value="WEB">WEB</option>
-              </select>
+              <label className="block text-xs font-medium text-[#17171B] mb-1.5">Platform (immutable)</label>
+              <input value={platform} disabled className={`${INPUT} bg-[#F7F7FA] text-[#9CA3AF]`} />
             </div>
             <div>
-              <label className="block text-xs font-medium text-[#17171B] mb-1.5">Method Code</label>
-              <input value={methodCode} onChange={(e) => setMethodCode(e.target.value)} className={`${INPUT} font-mono`} />
+              <label className="block text-xs font-medium text-[#17171B] mb-1.5">Method Code (immutable)</label>
+              <input value={methodCode} disabled className={`${INPUT} font-mono bg-[#F7F7FA] text-[#9CA3AF]`} />
             </div>
           </div>
           <div>
@@ -187,12 +184,8 @@ function EditModal({ item, onSubmit, onCancel, isLoading }: { item: PaymentMetho
             <input value={displayName} onChange={(e) => setDisplayName(e.target.value)} className={INPUT} />
           </div>
           <div>
-            <label className="block text-xs font-medium text-[#17171B] mb-1.5">Payment Channel</label>
-            <select value={paymentChannel} onChange={(e) => setPaymentChannel(e.target.value)} className={SELECT}>
-              <option value="MOBILE_MONEY">MOBILE_MONEY</option>
-              <option value="ONLINE">ONLINE</option>
-              <option value="MANUAL_TRANSFER">MANUAL_TRANSFER</option>
-            </select>
+            <label className="block text-xs font-medium text-[#17171B] mb-1.5">Payment Channel (immutable)</label>
+            <input value={paymentChannel} disabled className={`${INPUT} bg-[#F7F7FA] text-[#9CA3AF]`} />
           </div>
           <div className="grid grid-cols-2 gap-3">
             <div>

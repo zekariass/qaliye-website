@@ -68,19 +68,16 @@ function EditModal({ item, onSubmit, onCancel, isLoading }: { item: ConsumablePr
         </div>
         <div className="space-y-3">
           <div>
-            <label className="block text-xs font-medium text-[#17171B] mb-1.5">Product Code</label>
-            <input value={productCode} onChange={(e) => setProductCode(e.target.value)} className={`${INPUT} font-mono`} />
+            <label className="block text-xs font-medium text-[#17171B] mb-1.5">Product Code (immutable)</label>
+            <input value={productCode} disabled className={`${INPUT} font-mono bg-[#F7F7FA] text-[#9CA3AF]`} />
           </div>
           <div>
             <label className="block text-xs font-medium text-[#17171B] mb-1.5">Name *</label>
             <input value={name} onChange={(e) => setName(e.target.value)} className={INPUT} />
           </div>
           <div>
-            <label className="block text-xs font-medium text-[#17171B] mb-1.5">Entitlement Type</label>
-            <select value={entitlementType} onChange={(e) => setEntitlementType(e.target.value)} className={SELECT}>
-              <option value="CREDIT_PURCHASE">CREDIT_PURCHASE</option>
-              <option value="BOOST">BOOST</option>
-            </select>
+            <label className="block text-xs font-medium text-[#17171B] mb-1.5">Entitlement Type (immutable)</label>
+            <input value={entitlementType} disabled className={`${INPUT} bg-[#F7F7FA] text-[#9CA3AF]`} />
           </div>
           <div className="grid grid-cols-2 gap-3">
             <div>

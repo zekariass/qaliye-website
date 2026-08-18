@@ -18,6 +18,7 @@ const STATUS_STYLES: Record<string, string> = {
   RESOLVED_BANNED: "bg-[#FFF1F2] text-[#C63B4E] border-[#FECDD3]",
   DEACTIVATED: "bg-gray-100 text-gray-500 border-gray-200",
   RUNNING: "bg-[#EFF6FF] text-[#2563EB] border-[#BFDBFE]",
+  SENDING: "bg-[#EFF6FF] text-[#2563EB] border-[#BFDBFE]",
   SCHEDULED: "bg-[#EFF6FF] text-[#2563EB] border-[#BFDBFE]",
   RECEIPT_SUBMITTED: "bg-[#EFF6FF] text-[#2563EB] border-[#BFDBFE]",
   PENDING: "bg-[#FFFBEB] text-[#B7791F] border-[#FDE68A]",

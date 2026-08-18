@@ -137,6 +137,17 @@ export default function UserDetailPage({
               </button>
             )}
 
+            {user.status !== "DEACTIVATED" && (
+              <button
+                type="button"
+                onClick={() => setStatusDialog({ open: true, newStatus: "DEACTIVATED" })}
+                className="flex items-center gap-1.5 px-3 py-2 text-sm text-[#666672] border border-[#E5E5EA] bg-white hover:bg-[#F7F7FA] rounded-xl transition-colors"
+              >
+                <ShieldAlert className="h-4 w-4" />
+                Deactivate
+              </button>
+            )}
+
             <button
               type="button"
               onClick={() => setDeleteDialog(true)}
@@ -166,13 +177,16 @@ export default function UserDetailPage({
             <DetailRow label="Role" value={
               <div className="flex items-center gap-2">
                 <span>{user.role}</span>
-                <button
-                  type="button"
-                  onClick={() => setRoleDialog({ open: true, newRole: user.role === "ADMIN" ? "USER" : "ADMIN" })}
-                  className="text-xs text-[#7C3AED] hover:underline"
+                <select
+                  value={user.role}
+                  onChange={(e) => setRoleDialog({ open: true, newRole: e.target.value })}
+                  className="text-xs px-2 py-1 border border-[#E5E5EA] rounded-lg bg-white text-[#666672] focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/30 cursor-pointer"
                 >
-                  Change
-                </button>
+                  <option value="USER">USER</option>
+                  <option value="MODERATOR">MODERATOR</option>
+                  <option value="ADMIN">ADMIN</option>
+                  <option value="TEST">TEST</option>
+                </select>
               </div>
             } />
             <DetailRow label="Gender" value={user.gender ?? "—"} />
