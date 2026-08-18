@@ -18,7 +18,7 @@ export async function GET(request: NextRequest) {
     const params: Record<string, string> = {};
     searchParams.forEach((v, k) => { params[k] = v; });
     const raw = await adminGet("/payment-config/subscription-products", { requiredRole: "ADMIN", params });
-    return NextResponse.json(extractItems(raw).map(adaptSubscriptionProduct));
+    return NextResponse.json({ items: extractItems(raw).map(adaptSubscriptionProduct) });
   } catch (error) {
     if (error instanceof AdminAuthError) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     if (error instanceof AdminForbiddenError) return NextResponse.json({ error: "Forbidden" }, { status: 403 });
