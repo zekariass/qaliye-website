@@ -9,7 +9,7 @@ import { PageHeader } from "@/components/admin/shared/PageHeader";
 import { ConfirmDialog } from "@/components/admin/shared/ConfirmDialog";
 import { ErrorState, EmptyState } from "@/components/admin/tables/EmptyState";
 import type { PlanLimitCost } from "@/lib/admin/adapters";
-import { Plus, Pencil, Trash2, Settings, X } from "lucide-react";
+import { Plus, Pencil, Trash2, Settings, X, Eye } from "lucide-react";
 import Link from "next/link";
 
 const INPUT = "w-full px-3 py-2 text-sm border border-[#E5E5EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/30 focus:border-[#7C3AED]";
@@ -284,6 +284,7 @@ export default function PlanLimitCostsPage() {
                   </td>
                   <td className="px-4 py-3">
                     <div className="flex gap-1.5 justify-end">
+                      <Link href={`${adminConsolePath}/payment-config/plan-limit-costs/${item.id}`} className="p-1.5 text-[#666672] hover:text-[#7C3AED] hover:bg-[#EDE2FF] rounded-lg" title="View details"><Eye className="h-3.5 w-3.5" /></Link>
                       <button type="button" onClick={() => setEditing(item)} className="p-1.5 text-[#666672] hover:text-[#7C3AED] hover:bg-[#EDE2FF] rounded-lg" title="Edit"><Pencil className="h-3.5 w-3.5" /></button>
                       <button type="button" onClick={() => setDeleting(item)} className="p-1.5 text-[#666672] hover:text-[#C63B4E] hover:bg-[#FFF1F2] rounded-lg" title="Delete"><Trash2 className="h-3.5 w-3.5" /></button>
                     </div>
