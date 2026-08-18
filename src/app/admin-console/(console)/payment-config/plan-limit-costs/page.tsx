@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { usePathname } from "next/navigation";
 import { toast } from "sonner";
 import { adminKeys } from "@/lib/admin/query-keys";
 import { PageHeader } from "@/components/admin/shared/PageHeader";
@@ -9,6 +10,7 @@ import { ConfirmDialog } from "@/components/admin/shared/ConfirmDialog";
 import { ErrorState, EmptyState } from "@/components/admin/tables/EmptyState";
 import type { PlanLimitCost } from "@/lib/admin/adapters";
 import { Plus, Pencil, Trash2, Settings, X } from "lucide-react";
+import Link from "next/link";
 
 const INPUT = "w-full px-3 py-2 text-sm border border-[#E5E5EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/30 focus:border-[#7C3AED]";
 const SELECT = `${INPUT} bg-white`;
@@ -181,6 +183,8 @@ function EditModal({ item, onSubmit, onCancel, isLoading }: { item: PlanLimitCos
 }
 
 export default function PlanLimitCostsPage() {
+  const pathname = usePathname();
+  const adminConsolePath = pathname.replace(/\/payment-config\/.*$/, "");
   const queryClient = useQueryClient();
   const [showCreate, setShowCreate] = useState(false);
   const [editing, setEditing] = useState<PlanLimitCost | null>(null);
@@ -263,7 +267,11 @@ export default function PlanLimitCostsPage() {
             <tbody className="divide-y divide-[#E5E5EA]">
               {items.map((item) => (
                 <tr key={item.id} className="hover:bg-[#F7F7FA]">
-                  <td className="px-4 py-3 font-mono text-xs text-[#666672]" title={item.subscriptionPlanId}>{truncateId(item.subscriptionPlanId)}</td>
+                  <td className="px-4 py-3 font-mono text-xs text-[#666672]" title={item.subscriptionPlanId}>
+                    <Link href={`${adminConsolePath}/payment-config/plan-limit-costs/${item.id}`} className="hover:text-[#7C3AED] hover:underline">
+                      {truncateId(item.subscriptionPlanId)}
+                    </Link>
+                  </td>
                   <td className="px-4 py-3 font-mono text-xs text-[#666672]" title={item.featureActionId}>{truncateId(item.featureActionId)}</td>
                   <td className="px-4 py-3 tabular-nums text-[#17171B]">{item.limitValue}</td>
                   <td className="px-4 py-3 text-[#666672]">{item.periodType}</td>
