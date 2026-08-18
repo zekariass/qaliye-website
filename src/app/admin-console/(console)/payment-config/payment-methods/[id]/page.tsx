@@ -51,6 +51,9 @@ interface FormValues {
   paymentInstructions?: string;
   isActive: boolean;
   displayOrder: number;
+  metadata?: string;
+  verificationParams?: string;
+  logoUrl?: string;
 }
 
 function EditModal({ item, onSubmit, onCancel, isLoading }: { item: PaymentMethod; onSubmit: (v: FormValues) => void; onCancel: () => void; isLoading: boolean }) {
@@ -63,6 +66,9 @@ function EditModal({ item, onSubmit, onCancel, isLoading }: { item: PaymentMetho
   const [paymentInstructions, setPaymentInstructions] = useState(item.paymentInstructions ?? "");
   const [isActive, setIsActive] = useState(item.isActive);
   const [displayOrder, setDisplayOrder] = useState(String(item.displayOrder));
+  const [metadata, setMetadata] = useState(item.metadata ?? "");
+  const [verificationParams, setVerificationParams] = useState(item.verificationParams ?? "");
+  const [logoUrl, setLogoUrl] = useState(item.logoUrl ?? "");
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
@@ -116,6 +122,20 @@ function EditModal({ item, onSubmit, onCancel, isLoading }: { item: PaymentMetho
             <label className="block text-xs font-medium text-[#17171B] mb-1.5">Payment Instructions</label>
             <textarea value={paymentInstructions} onChange={(e) => setPaymentInstructions(e.target.value)} rows={3} className={INPUT} />
           </div>
+          <div className="grid grid-cols-3 gap-3">
+            <div>
+              <label className="block text-xs font-medium text-[#17171B] mb-1.5">Metadata (JSON)</label>
+              <textarea value={metadata} onChange={(e) => setMetadata(e.target.value)} rows={2} className={INPUT} placeholder='e.g. {}' />
+            </div>
+            <div>
+              <label className="block text-xs font-medium text-[#17171B] mb-1.5">Verification Params</label>
+              <textarea value={verificationParams} onChange={(e) => setVerificationParams(e.target.value)} rows={2} className={INPUT} placeholder="Optional JSON" />
+            </div>
+            <div>
+              <label className="block text-xs font-medium text-[#17171B] mb-1.5">Logo URL</label>
+              <input value={logoUrl} onChange={(e) => setLogoUrl(e.target.value)} className={INPUT} placeholder="https://..." />
+            </div>
+          </div>
           <div>
             <label className="block text-xs font-medium text-[#17171B] mb-1.5">Active</label>
             <Toggle value={isActive} onChange={setIsActive} />
@@ -125,7 +145,7 @@ function EditModal({ item, onSubmit, onCancel, isLoading }: { item: PaymentMetho
           <button type="button" onClick={onCancel} className="px-4 py-2 text-sm text-[#666672] bg-[#F7F7FA] hover:bg-[#E5E5EA] rounded-lg">Cancel</button>
           <button
             type="button"
-            onClick={() => onSubmit({ countryCode: countryCode.trim().toUpperCase(), platform, methodCode: methodCode.trim(), displayName: displayName.trim(), paymentChannel, paymentMethod: paymentMethod.trim(), paymentInstructions: paymentInstructions.trim() || undefined, isActive, displayOrder: Number(displayOrder) })}
+            onClick={() => onSubmit({ countryCode: countryCode.trim().toUpperCase(), platform, methodCode: methodCode.trim(), displayName: displayName.trim(), paymentChannel, paymentMethod: paymentMethod.trim(), paymentInstructions: paymentInstructions.trim() || undefined, isActive, displayOrder: Number(displayOrder), metadata: metadata.trim() || undefined, verificationParams: verificationParams.trim() || undefined, logoUrl: logoUrl.trim() || undefined })}
             disabled={!displayName.trim() || isLoading}
             className="px-4 py-2 text-sm font-medium text-white bg-[#7C3AED] hover:bg-[#6D28D9] rounded-lg disabled:opacity-50"
           >

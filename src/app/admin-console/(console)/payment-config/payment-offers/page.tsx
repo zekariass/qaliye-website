@@ -42,6 +42,9 @@ interface FormValues {
   platform: string;
   currency: string;
   priceMinorUnits: number;
+  externalProductId?: string;
+  revenuecatOfferingId?: string;
+  revenuecatPackageId?: string;
   autoRenew: boolean;
   isActive: boolean;
 }
@@ -53,6 +56,9 @@ function CreateForm({ onSubmit, onCancel, isLoading }: { onSubmit: (v: FormValue
   const [platform, setPlatform] = useState("MOBILE");
   const [currency, setCurrency] = useState("ETB");
   const [priceMinorUnits, setPriceMinorUnits] = useState("0");
+  const [externalProductId, setExternalProductId] = useState("");
+  const [revenuecatOfferingId, setRevenuecatOfferingId] = useState("");
+  const [revenuecatPackageId, setRevenuecatPackageId] = useState("");
   const [autoRenew, setAutoRenew] = useState(false);
   const [isActive, setIsActive] = useState(true);
 
@@ -102,6 +108,20 @@ function CreateForm({ onSubmit, onCancel, isLoading }: { onSubmit: (v: FormValue
           <Toggle value={isActive} onChange={setIsActive} labelTrue="Active" labelFalse="Inactive" />
         </div>
       </div>
+      <div className="grid grid-cols-3 gap-3">
+        <div>
+          <label className="block text-xs font-medium text-[#17171B] mb-1">External Product ID</label>
+          <input value={externalProductId} onChange={(e) => setExternalProductId(e.target.value)} className={`${INPUT} font-mono`} placeholder="Optional" />
+        </div>
+        <div>
+          <label className="block text-xs font-medium text-[#17171B] mb-1">RevenueCat Offering ID</label>
+          <input value={revenuecatOfferingId} onChange={(e) => setRevenuecatOfferingId(e.target.value)} className={`${INPUT} font-mono`} placeholder="Optional" />
+        </div>
+        <div>
+          <label className="block text-xs font-medium text-[#17171B] mb-1">RevenueCat Package ID</label>
+          <input value={revenuecatPackageId} onChange={(e) => setRevenuecatPackageId(e.target.value)} className={`${INPUT} font-mono`} placeholder="Optional" />
+        </div>
+      </div>
       <div className="flex justify-end gap-2">
         <button type="button" onClick={onCancel} className="px-3 py-1.5 text-sm text-[#666672] bg-[#F7F7FA] rounded-lg hover:bg-[#E5E5EA]">Cancel</button>
         <button
@@ -113,6 +133,9 @@ function CreateForm({ onSubmit, onCancel, isLoading }: { onSubmit: (v: FormValue
             platform,
             currency: currency.trim().toUpperCase(),
             priceMinorUnits: Number(priceMinorUnits),
+            externalProductId: externalProductId.trim() || undefined,
+            revenuecatOfferingId: revenuecatOfferingId.trim() || undefined,
+            revenuecatPackageId: revenuecatPackageId.trim() || undefined,
             autoRenew,
             isActive,
           })}
@@ -133,6 +156,9 @@ function EditModal({ item, onSubmit, onCancel, isLoading }: { item: PaymentOffer
   const [platform, setPlatform] = useState(item.platform);
   const [currency, setCurrency] = useState(item.currency);
   const [priceMinorUnits, setPriceMinorUnits] = useState(String(item.priceMinorUnits));
+  const [externalProductId, setExternalProductId] = useState(item.externalProductId ?? "");
+  const [revenuecatOfferingId, setRevenuecatOfferingId] = useState(item.revenuecatOfferingId ?? "");
+  const [revenuecatPackageId, setRevenuecatPackageId] = useState(item.revenuecatPackageId ?? "");
   const [autoRenew, setAutoRenew] = useState(item.autoRenew);
   const [isActive, setIsActive] = useState(item.isActive);
 
@@ -176,6 +202,20 @@ function EditModal({ item, onSubmit, onCancel, isLoading }: { item: PaymentOffer
             <label className="block text-xs font-medium text-[#17171B] mb-1.5">Price (minor units)</label>
             <input value={priceMinorUnits} onChange={(e) => setPriceMinorUnits(e.target.value)} type="number" min="0" className={INPUT} />
           </div>
+          <div className="grid grid-cols-3 gap-3">
+            <div>
+              <label className="block text-xs font-medium text-[#17171B] mb-1.5">External Product ID</label>
+              <input value={externalProductId} onChange={(e) => setExternalProductId(e.target.value)} className={`${INPUT} font-mono`} placeholder="Optional" />
+            </div>
+            <div>
+              <label className="block text-xs font-medium text-[#17171B] mb-1.5">RevenueCat Offering ID</label>
+              <input value={revenuecatOfferingId} onChange={(e) => setRevenuecatOfferingId(e.target.value)} className={`${INPUT} font-mono`} placeholder="Optional" />
+            </div>
+            <div>
+              <label className="block text-xs font-medium text-[#17171B] mb-1.5">RevenueCat Package ID</label>
+              <input value={revenuecatPackageId} onChange={(e) => setRevenuecatPackageId(e.target.value)} className={`${INPUT} font-mono`} placeholder="Optional" />
+            </div>
+          </div>
           <div className="grid grid-cols-2 gap-3">
             <div>
               <label className="block text-xs font-medium text-[#17171B] mb-1.5">Auto-Renew</label>
@@ -191,7 +231,7 @@ function EditModal({ item, onSubmit, onCancel, isLoading }: { item: PaymentOffer
           <button type="button" onClick={onCancel} className="px-4 py-2 text-sm text-[#666672] bg-[#F7F7FA] hover:bg-[#E5E5EA] rounded-lg">Cancel</button>
           <button
             type="button"
-            onClick={() => onSubmit({ subscriptionProductId: subscriptionProductId.trim() || undefined, consumableProductId: consumableProductId.trim() || undefined, countryCode: countryCode.trim().toUpperCase(), platform, currency: currency.trim().toUpperCase(), priceMinorUnits: Number(priceMinorUnits), autoRenew, isActive })}
+            onClick={() => onSubmit({ subscriptionProductId: subscriptionProductId.trim() || undefined, consumableProductId: consumableProductId.trim() || undefined, countryCode: countryCode.trim().toUpperCase(), platform, currency: currency.trim().toUpperCase(), priceMinorUnits: Number(priceMinorUnits), externalProductId: externalProductId.trim() || undefined, revenuecatOfferingId: revenuecatOfferingId.trim() || undefined, revenuecatPackageId: revenuecatPackageId.trim() || undefined, autoRenew, isActive })}
             disabled={!countryCode.trim() || isLoading}
             className="px-4 py-2 text-sm font-medium text-white bg-[#7C3AED] hover:bg-[#6D28D9] rounded-lg disabled:opacity-50"
           >

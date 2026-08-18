@@ -506,24 +506,28 @@ export function adaptCatalogItem(raw: Record<string, unknown>): CatalogItem {
 
 export interface SubscriptionProduct {
   id: string;
+  planId?: string;
   productCode: string;
   planCode: string;
   planName: string;
   billingIntervalUnit: string;
   billingIntervalCount: number;
   autoRenewSupported: boolean;
+  includedCredits: number;
   isActive: boolean;
 }
 
 export function adaptSubscriptionProduct(raw: Record<string, unknown>): SubscriptionProduct {
   return {
     id: String(raw.id ?? ""),
+    planId: raw.planId ? String(raw.planId) : raw.plan_id ? String(raw.plan_id) : undefined,
     productCode: String(raw.productCode ?? raw.product_code ?? ""),
     planCode: String(raw.planCode ?? raw.plan_code ?? ""),
     planName: String(raw.planName ?? raw.plan_name ?? ""),
     billingIntervalUnit: String(raw.billingIntervalUnit ?? raw.billing_interval_unit ?? ""),
     billingIntervalCount: typeof raw.billingIntervalCount === "number" ? raw.billingIntervalCount : typeof raw.billing_interval_count === "number" ? raw.billing_interval_count : 0,
     autoRenewSupported: typeof raw.autoRenewSupported === "boolean" ? raw.autoRenewSupported : typeof raw.auto_renew_supported === "boolean" ? raw.auto_renew_supported : false,
+    includedCredits: typeof raw.includedCredits === "number" ? raw.includedCredits : typeof raw.included_credits === "number" ? raw.included_credits : 0,
     isActive: typeof raw.isActive === "boolean" ? raw.isActive : typeof raw.is_active === "boolean" ? raw.is_active : false,
   };
 }

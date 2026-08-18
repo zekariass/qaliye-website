@@ -41,7 +41,6 @@ interface CreateValues {
 }
 
 interface EditValues {
-  planId: string;
   productCode: string;
   billingIntervalUnit: string;
   billingIntervalCount: number;
@@ -123,7 +122,7 @@ function EditModal({ item, onSubmit, onCancel, isLoading }: { item: Subscription
   const [billingIntervalUnit, setBillingIntervalUnit] = useState(item.billingIntervalUnit);
   const [billingIntervalCount, setBillingIntervalCount] = useState(String(item.billingIntervalCount));
   const [autoRenewSupported, setAutoRenewSupported] = useState(item.autoRenewSupported);
-  const [includedCredits, setIncludedCredits] = useState("0");
+  const [includedCredits, setIncludedCredits] = useState(String(item.includedCredits));
   const [isActive, setIsActive] = useState(item.isActive);
 
   return (
@@ -177,7 +176,7 @@ function EditModal({ item, onSubmit, onCancel, isLoading }: { item: Subscription
           <button type="button" onClick={onCancel} className="px-4 py-2 text-sm text-[#666672] bg-[#F7F7FA] hover:bg-[#E5E5EA] rounded-lg">Cancel</button>
           <button
             type="button"
-            onClick={() => onSubmit({ planId: item.id, productCode: productCode.trim(), billingIntervalUnit, billingIntervalCount: Number(billingIntervalCount), autoRenewSupported, includedCredits: Number(includedCredits), isActive })}
+            onClick={() => onSubmit({ productCode: productCode.trim(), billingIntervalUnit, billingIntervalCount: Number(billingIntervalCount), autoRenewSupported, includedCredits: Number(includedCredits), isActive })}
             disabled={!productCode.trim() || isLoading}
             className="px-4 py-2 text-sm font-medium text-white bg-[#7C3AED] hover:bg-[#6D28D9] rounded-lg disabled:opacity-50"
           >
@@ -265,6 +264,7 @@ export default function SubscriptionProductsPage() {
                 <th className="px-4 py-3 text-left text-xs font-semibold text-[#666672] uppercase tracking-wider">Plan Code</th>
                 <th className="px-4 py-3 text-left text-xs font-semibold text-[#666672] uppercase tracking-wider">Plan Name</th>
                 <th className="px-4 py-3 text-left text-xs font-semibold text-[#666672] uppercase tracking-wider">Interval</th>
+                <th className="px-4 py-3 text-left text-xs font-semibold text-[#666672] uppercase tracking-wider">Credits</th>
                 <th className="px-4 py-3 text-left text-xs font-semibold text-[#666672] uppercase tracking-wider">Auto-Renew</th>
                 <th className="px-4 py-3 text-left text-xs font-semibold text-[#666672] uppercase tracking-wider">Status</th>
                 <th className="px-4 py-3 w-20" />
@@ -281,6 +281,7 @@ export default function SubscriptionProductsPage() {
                   <td className="px-4 py-3 font-mono text-xs text-[#666672]">{item.planCode}</td>
                   <td className="px-4 py-3 text-[#666672]">{item.planName}</td>
                   <td className="px-4 py-3 text-[#666672] tabular-nums">{item.billingIntervalCount} {item.billingIntervalUnit}</td>
+                  <td className="px-4 py-3 tabular-nums text-[#666672]">{item.includedCredits}</td>
                   <td className="px-4 py-3">
                     {item.autoRenewSupported
                       ? <span className={ACTIVE_BADGE}>Yes</span>

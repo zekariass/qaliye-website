@@ -44,7 +44,6 @@ function DetailRow({ label, value }: { label: string; value: React.ReactNode }) 
 }
 
 interface EditValues {
-  planId: string;
   productCode: string;
   billingIntervalUnit: string;
   billingIntervalCount: number;
@@ -58,7 +57,7 @@ function EditModal({ item, onSubmit, onCancel, isLoading }: { item: Subscription
   const [billingIntervalUnit, setBillingIntervalUnit] = useState(item.billingIntervalUnit);
   const [billingIntervalCount, setBillingIntervalCount] = useState(String(item.billingIntervalCount));
   const [autoRenewSupported, setAutoRenewSupported] = useState(item.autoRenewSupported);
-  const [includedCredits, setIncludedCredits] = useState("0");
+  const [includedCredits, setIncludedCredits] = useState(String(item.includedCredits));
   const [isActive, setIsActive] = useState(item.isActive);
 
   return (
@@ -112,7 +111,7 @@ function EditModal({ item, onSubmit, onCancel, isLoading }: { item: Subscription
           <button type="button" onClick={onCancel} className="px-4 py-2 text-sm text-[#666672] bg-[#F7F7FA] hover:bg-[#E5E5EA] rounded-lg">Cancel</button>
           <button
             type="button"
-            onClick={() => onSubmit({ planId: item.id, productCode: productCode.trim(), billingIntervalUnit, billingIntervalCount: Number(billingIntervalCount), autoRenewSupported, includedCredits: Number(includedCredits), isActive })}
+            onClick={() => onSubmit({ productCode: productCode.trim(), billingIntervalUnit, billingIntervalCount: Number(billingIntervalCount), autoRenewSupported, includedCredits: Number(includedCredits), isActive })}
             disabled={!productCode.trim() || isLoading}
             className="px-4 py-2 text-sm font-medium text-white bg-[#7C3AED] hover:bg-[#6D28D9] rounded-lg disabled:opacity-50"
           >
@@ -207,8 +206,10 @@ export default function SubscriptionProductDetailPage({ params }: { params: Prom
         <DetailRow label="Product Code" value={<span className="font-mono">{item.productCode}</span>} />
         <DetailRow label="Plan Code" value={<span className="font-mono">{item.planCode}</span>} />
         <DetailRow label="Plan Name" value={item.planName} />
+        {item.planId && <DetailRow label="Plan ID" value={<CopyIdButton id={item.planId} />} />}
         <DetailRow label="Billing Interval Unit" value={item.billingIntervalUnit} />
         <DetailRow label="Billing Interval Count" value={<span className="tabular-nums">{item.billingIntervalCount}</span>} />
+        <DetailRow label="Included Credits" value={<span className="tabular-nums">{item.includedCredits}</span>} />
         <DetailRow label="Auto-Renew Supported" value={
           item.autoRenewSupported
             ? <span className={YES_BADGE}>Yes</span>
