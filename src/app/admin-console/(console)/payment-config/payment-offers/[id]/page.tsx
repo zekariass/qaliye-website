@@ -99,6 +99,7 @@ function EditModal({ item, onSubmit, onCancel, isLoading }: { item: PaymentOffer
               <select value={platform} onChange={(e) => setPlatform(e.target.value)} className={SELECT}>
                 <option value="MOBILE">MOBILE</option>
                 <option value="WEB">WEB</option>
+                <option value="ALL">ALL</option>
               </select>
             </div>
             <div>
