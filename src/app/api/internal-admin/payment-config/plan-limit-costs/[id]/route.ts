@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { adminGet, adminPut, adminDelete } from "@/lib/admin/api-client";
 import { AdminAuthError, AdminForbiddenError, AdminApiError, getErrorMessage } from "@/lib/admin/errors";
+import { adaptPlanLimitCost } from "@/lib/admin/adapters";
 
 export async function GET(
   _request: NextRequest,
@@ -8,8 +9,8 @@ export async function GET(
 ) {
   try {
     const { id } = await params;
-    const data = await adminGet(`/payment-config/plan-limit-costs/${id}`, { requiredRole: "ADMIN" });
-    return NextResponse.json(data);
+    const data = await adminGet<Record<string, unknown>>(`/payment-config/plan-limit-costs/${id}`, { requiredRole: "ADMIN" });
+    return NextResponse.json(adaptPlanLimitCost(data));
   } catch (error) {
     if (error instanceof AdminAuthError) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     if (error instanceof AdminForbiddenError) return NextResponse.json({ error: "Forbidden" }, { status: 403 });
@@ -25,8 +26,8 @@ export async function PUT(
   try {
     const { id } = await params;
     const body = await request.json();
-    const data = await adminPut(`/payment-config/plan-limit-costs/${id}`, body, { requiredRole: "ADMIN" });
-    return NextResponse.json(data);
+    const data = await adminPut<Record<string, unknown>>(`/payment-config/plan-limit-costs/${id}`, body, { requiredRole: "ADMIN" });
+    return NextResponse.json(adaptPlanLimitCost(data));
   } catch (error) {
     if (error instanceof AdminAuthError) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     if (error instanceof AdminForbiddenError) return NextResponse.json({ error: "Forbidden" }, { status: 403 });

@@ -3,6 +3,24 @@ import { AdminAuthError, AdminForbiddenError, parseBackendError } from "./errors
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { cache } from "react";
 
+// Convert camelCase object keys to snake_case recursively, for backend requests
+function camelToSnakeKey(key: string): string {
+  return key.replace(/([A-Z])/g, "_$1").toLowerCase();
+}
+
+function toSnakeCase(value: unknown): unknown {
+  if (Array.isArray(value)) return value.map(toSnakeCase);
+  if (value !== null && typeof value === "object") {
+    return Object.fromEntries(
+      Object.entries(value as Record<string, unknown>).map(([k, v]) => [
+        camelToSnakeKey(k),
+        toSnakeCase(v),
+      ])
+    );
+  }
+  return value;
+}
+
 const BACKEND_URL = process.env.QALIYE_API_URL ?? "";
 
 export const getUserRole = cache(async (): Promise<string> => {
@@ -116,7 +134,7 @@ export async function adminPost<T>(
 ): Promise<T> {
   const response = await adminFetch(path, {
     method: "POST",
-    body: body !== undefined ? JSON.stringify(body) : undefined,
+    body: body !== undefined ? JSON.stringify(toSnakeCase(body)) : undefined,
     ...options,
   });
   if (!response.ok) throw await parseBackendError(response);
@@ -130,7 +148,7 @@ export async function adminPatch<T>(
 ): Promise<T> {
   const response = await adminFetch(path, {
     method: "PATCH",
-    body: body !== undefined ? JSON.stringify(body) : undefined,
+    body: body !== undefined ? JSON.stringify(toSnakeCase(body)) : undefined,
     ...options,
   });
   if (!response.ok) throw await parseBackendError(response);
@@ -144,7 +162,7 @@ export async function adminPut<T>(
 ): Promise<T> {
   const response = await adminFetch(path, {
     method: "PUT",
-    body: body !== undefined ? JSON.stringify(body) : undefined,
+    body: body !== undefined ? JSON.stringify(toSnakeCase(body)) : undefined,
     ...options,
   });
   if (!response.ok) throw await parseBackendError(response);

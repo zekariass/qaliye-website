@@ -1,14 +1,24 @@
 import { NextRequest, NextResponse } from "next/server";
 import { adminGet, adminPost } from "@/lib/admin/api-client";
 import { AdminAuthError, AdminForbiddenError, AdminApiError, getErrorMessage } from "@/lib/admin/errors";
+import { adaptPlanLimitCost } from "@/lib/admin/adapters";
+
+function extractItems(raw: unknown): Record<string, unknown>[] {
+  if (Array.isArray(raw)) return raw as Record<string, unknown>[];
+  const r = raw as Record<string, unknown>;
+  if (Array.isArray(r.items)) return r.items as Record<string, unknown>[];
+  if (Array.isArray(r.data)) return r.data as Record<string, unknown>[];
+  if (Array.isArray(r.content)) return r.content as Record<string, unknown>[];
+  return [];
+}
 
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
     const params: Record<string, string> = {};
     searchParams.forEach((v, k) => { params[k] = v; });
-    const data = await adminGet("/payment-config/plan-limit-costs", { requiredRole: "ADMIN", params });
-    return NextResponse.json(data);
+    const raw = await adminGet("/payment-config/plan-limit-costs", { requiredRole: "ADMIN", params });
+    return NextResponse.json(extractItems(raw).map(adaptPlanLimitCost));
   } catch (error) {
     if (error instanceof AdminAuthError) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     if (error instanceof AdminForbiddenError) return NextResponse.json({ error: "Forbidden" }, { status: 403 });
@@ -20,8 +30,8 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const data = await adminPost("/payment-config/plan-limit-costs", body, { requiredRole: "ADMIN" });
-    return NextResponse.json(data, { status: 201 });
+    const data = await adminPost<Record<string, unknown>>("/payment-config/plan-limit-costs", body, { requiredRole: "ADMIN" });
+    return NextResponse.json(adaptPlanLimitCost(data), { status: 201 });
   } catch (error) {
     if (error instanceof AdminAuthError) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     if (error instanceof AdminForbiddenError) return NextResponse.json({ error: "Forbidden" }, { status: 403 });
