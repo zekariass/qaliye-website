@@ -11,6 +11,13 @@ export const adminKeys = {
     manualReview: () => ["admin", "moderation", "manual-review"] as const,
     reviewQueue: (params: Record<string, unknown>) =>
       ["admin", "moderation", "queue", params] as const,
+    reports: (params: Record<string, unknown>) =>
+      ["admin", "moderation", "reports", params] as const,
+  },
+
+  identityReviews: {
+    list: (params: Record<string, unknown>) =>
+      ["admin", "identity-reviews", "list", params] as const,
   },
 
   billing: {
@@ -49,5 +56,16 @@ export const adminKeys = {
   auditLog: {
     list: (params: Record<string, unknown>) =>
       ["admin", "audit-log", "list", params] as const,
+  },
+
+  paymentConfig: {
+    subscriptionPlans: () => ["admin", "payment-config", "subscription-plans"] as const,
+    subscriptionProducts: () => ["admin", "payment-config", "subscription-products"] as const,
+    consumableProducts: () => ["admin", "payment-config", "consumable-products"] as const,
+    paymentOffers: () => ["admin", "payment-config", "payment-offers"] as const,
+    paymentMethods: () => ["admin", "payment-config", "payment-methods"] as const,
+    planLimitCosts: () => ["admin", "payment-config", "plan-limit-costs"] as const,
+    featureActions: () => ["admin", "payment-config", "feature-actions"] as const,
+    countrySettings: () => ["admin", "payment-config", "country-settings"] as const,
   },
 } as const;

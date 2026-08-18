@@ -17,12 +17,16 @@ import {
   ChevronLeft,
   ChevronRight,
   ShieldCheck,
+  Flag,
+  BadgeCheck,
+  Settings2,
 } from "lucide-react";
 import { useAdminShellStore } from "@/stores/admin-shell-store";
 
 interface NavItem {
   label: string;
   href: string;
+  activePrefix?: string;
   icon: React.ReactNode;
   adminOnly?: boolean;
 }
@@ -58,6 +62,18 @@ const NAV_GROUPS: NavGroup[] = [
         label: "Photo Review",
         href: `${ADMIN_BASE}/photo-review`,
         icon: <Camera className="h-4 w-4" />,
+      },
+      {
+        label: "User Reports",
+        href: `${ADMIN_BASE}/reports`,
+        icon: <Flag className="h-4 w-4" />,
+        adminOnly: false,
+      },
+      {
+        label: "Identity Reviews",
+        href: `${ADMIN_BASE}/identity-reviews`,
+        icon: <BadgeCheck className="h-4 w-4" />,
+        adminOnly: true,
       },
       {
         label: "Payment Orders",
@@ -118,6 +134,19 @@ const NAV_GROUPS: NavGroup[] = [
     ],
   },
   {
+    label: "Configuration",
+    adminOnly: true,
+    items: [
+      {
+        label: "Payment Config",
+        href: `${ADMIN_BASE}/payment-config/subscription-plans`,
+        activePrefix: `${ADMIN_BASE}/payment-config`,
+        icon: <Settings2 className="h-4 w-4" />,
+        adminOnly: true,
+      },
+    ],
+  },
+  {
     label: "Governance",
     items: [
       {
@@ -143,9 +172,11 @@ export function AdminSidebar({ role, adminConsolePath }: AdminSidebarProps) {
 
   const isAdmin = role === "ADMIN";
 
-  function isActive(href: string) {
+  function isActive(item: NavItem) {
+    const href = item.href;
+    const prefix = item.activePrefix ?? href;
     if (href === ADMIN_BASE) return pathname === ADMIN_BASE || pathname === ADMIN_BASE + "/";
-    return pathname.startsWith(href);
+    return pathname.startsWith(prefix);
   }
 
   return (
@@ -186,7 +217,7 @@ export function AdminSidebar({ role, adminConsolePath }: AdminSidebarProps) {
                 </p>
               )}
               {visibleItems.map((item) => {
-                const active = isActive(item.href);
+                const active = isActive(item);
                 return (
                   <Link
                     key={item.href}

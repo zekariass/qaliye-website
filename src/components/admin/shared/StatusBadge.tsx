@@ -13,6 +13,10 @@ const STATUS_STYLES: Record<string, string> = {
   APPROVED: "bg-[#ECFDF5] text-[#16815D] border-[#A7F3D0]",
   VERIFIED: "bg-[#ECFDF5] text-[#16815D] border-[#A7F3D0]",
   COMPLETED: "bg-[#ECFDF5] text-[#16815D] border-[#A7F3D0]",
+  FULFILLED: "bg-[#ECFDF5] text-[#16815D] border-[#A7F3D0]",
+  RESOLVED_NO_ACTION: "bg-[#ECFDF5] text-[#16815D] border-[#A7F3D0]",
+  RESOLVED_BANNED: "bg-[#FFF1F2] text-[#C63B4E] border-[#FECDD3]",
+  DEACTIVATED: "bg-gray-100 text-gray-500 border-gray-200",
   RUNNING: "bg-[#EFF6FF] text-[#2563EB] border-[#BFDBFE]",
   SCHEDULED: "bg-[#EFF6FF] text-[#2563EB] border-[#BFDBFE]",
   RECEIPT_SUBMITTED: "bg-[#EFF6FF] text-[#2563EB] border-[#BFDBFE]",
@@ -38,6 +42,8 @@ const STATUS_STYLES: Record<string, string> = {
 
 const STATUS_LABELS: Record<string, string> = {
   PENDING_VERIFICATION: "Pending Verification",
+  RESOLVED_NO_ACTION: "No Action",
+  RESOLVED_BANNED: "Banned",
 };
 
 interface StatusBadgeProps {

@@ -527,3 +527,231 @@ export function adaptSubscriptionProduct(raw: Record<string, unknown>): Subscrip
     isActive: typeof raw.isActive === "boolean" ? raw.isActive : typeof raw.is_active === "boolean" ? raw.is_active : false,
   };
 }
+
+// ── Identity Reviews ──────────────────────────────────────────────────────────
+
+export interface IdentityReview {
+  id: string;
+  userId: string;
+  displayName?: string;
+  gender?: string;
+  selfiePath: string;
+  profilePhotoPath?: string;
+  createdAt: string;
+}
+
+export function adaptIdentityReview(raw: Record<string, unknown>): IdentityReview {
+  return {
+    id: String(raw.id ?? ""),
+    userId: String(raw.userId ?? raw.user_id ?? ""),
+    displayName: raw.displayName ? String(raw.displayName) : raw.display_name ? String(raw.display_name) : undefined,
+    gender: raw.gender ? String(raw.gender) : undefined,
+    selfiePath: String(raw.selfiePath ?? raw.selfie_path ?? ""),
+    profilePhotoPath: raw.profilePhotoPath ? String(raw.profilePhotoPath) : raw.profile_photo_path ? String(raw.profile_photo_path) : undefined,
+    createdAt: String(raw.createdAt ?? raw.created_at ?? ""),
+  };
+}
+
+// ── Report Queue ──────────────────────────────────────────────────────────────
+
+export interface ReportItem {
+  id: string;
+  reporterUserId: string;
+  reportedUserId: string;
+  reportType: string;
+  description?: string;
+  relatedMessageId?: string;
+  status: string;
+  createdAt: string;
+  reportedDisplayName?: string;
+}
+
+export function adaptReportItem(raw: Record<string, unknown>): ReportItem {
+  return {
+    id: String(raw.id ?? ""),
+    reporterUserId: String(raw.reporterUserId ?? raw.reporter_user_id ?? ""),
+    reportedUserId: String(raw.reportedUserId ?? raw.reported_user_id ?? ""),
+    reportType: String(raw.reportType ?? raw.report_type ?? ""),
+    description: raw.description ? String(raw.description) : undefined,
+    relatedMessageId: raw.relatedMessageId ? String(raw.relatedMessageId) : raw.related_message_id ? String(raw.related_message_id) : undefined,
+    status: String(raw.status ?? "PENDING"),
+    createdAt: String(raw.createdAt ?? raw.created_at ?? ""),
+    reportedDisplayName: raw.reportedDisplayName ? String(raw.reportedDisplayName) : raw.reported_display_name ? String(raw.reported_display_name) : undefined,
+  };
+}
+
+// ── Payment Config Types ──────────────────────────────────────────────────────
+
+export interface SubscriptionPlan {
+  id: string;
+  name: string;
+  planCode: string;
+  countryCode: string;
+  planKind: string;
+  priceMinorUnits: number;
+  currency: string;
+  billingInterval: string;
+  features?: string;
+  isActive: boolean;
+}
+
+export function adaptSubscriptionPlan(raw: Record<string, unknown>): SubscriptionPlan {
+  return {
+    id: String(raw.id ?? ""),
+    name: String(raw.name ?? ""),
+    planCode: String(raw.planCode ?? raw.plan_code ?? ""),
+    countryCode: String(raw.countryCode ?? raw.country_code ?? ""),
+    planKind: String(raw.planKind ?? raw.plan_kind ?? "PAID"),
+    priceMinorUnits: typeof raw.priceMinorUnits === "number" ? raw.priceMinorUnits : typeof raw.price_minor_units === "number" ? raw.price_minor_units : 0,
+    currency: String(raw.currency ?? "ETB"),
+    billingInterval: String(raw.billingInterval ?? raw.billing_interval ?? ""),
+    features: raw.features ? String(raw.features) : undefined,
+    isActive: typeof raw.isActive === "boolean" ? raw.isActive : typeof raw.is_active === "boolean" ? raw.is_active : true,
+  };
+}
+
+export interface ConsumableProduct {
+  id: string;
+  productCode: string;
+  name: string;
+  entitlementType: string;
+  quantityGranted: number;
+  expiresAfterDays?: number;
+  isActive: boolean;
+}
+
+export function adaptConsumableProduct(raw: Record<string, unknown>): ConsumableProduct {
+  return {
+    id: String(raw.id ?? ""),
+    productCode: String(raw.productCode ?? raw.product_code ?? ""),
+    name: String(raw.name ?? ""),
+    entitlementType: String(raw.entitlementType ?? raw.entitlement_type ?? ""),
+    quantityGranted: typeof raw.quantityGranted === "number" ? raw.quantityGranted : typeof raw.quantity_granted === "number" ? raw.quantity_granted : 0,
+    expiresAfterDays: typeof raw.expiresAfterDays === "number" ? raw.expiresAfterDays : typeof raw.expires_after_days === "number" ? raw.expires_after_days : undefined,
+    isActive: typeof raw.isActive === "boolean" ? raw.isActive : typeof raw.is_active === "boolean" ? raw.is_active : true,
+  };
+}
+
+export interface PaymentOffer {
+  id: string;
+  subscriptionProductId?: string;
+  consumableProductId?: string;
+  countryCode: string;
+  platform: string;
+  currency: string;
+  priceMinorUnits: number;
+  externalProductId?: string;
+  revenuecatOfferingId?: string;
+  revenuecatPackageId?: string;
+  autoRenew: boolean;
+  isActive: boolean;
+}
+
+export function adaptPaymentOffer(raw: Record<string, unknown>): PaymentOffer {
+  return {
+    id: String(raw.id ?? ""),
+    subscriptionProductId: raw.subscriptionProductId ? String(raw.subscriptionProductId) : raw.subscription_product_id ? String(raw.subscription_product_id) : undefined,
+    consumableProductId: raw.consumableProductId ? String(raw.consumableProductId) : raw.consumable_product_id ? String(raw.consumable_product_id) : undefined,
+    countryCode: String(raw.countryCode ?? raw.country_code ?? ""),
+    platform: String(raw.platform ?? ""),
+    currency: String(raw.currency ?? "ETB"),
+    priceMinorUnits: typeof raw.priceMinorUnits === "number" ? raw.priceMinorUnits : typeof raw.price_minor_units === "number" ? raw.price_minor_units : 0,
+    externalProductId: raw.externalProductId ? String(raw.externalProductId) : raw.external_product_id ? String(raw.external_product_id) : undefined,
+    revenuecatOfferingId: raw.revenuecatOfferingId ? String(raw.revenuecatOfferingId) : raw.revenuecat_offering_id ? String(raw.revenuecat_offering_id) : undefined,
+    revenuecatPackageId: raw.revenuecatPackageId ? String(raw.revenuecatPackageId) : raw.revenuecat_package_id ? String(raw.revenuecat_package_id) : undefined,
+    autoRenew: typeof raw.autoRenew === "boolean" ? raw.autoRenew : typeof raw.auto_renew === "boolean" ? raw.auto_renew : false,
+    isActive: typeof raw.isActive === "boolean" ? raw.isActive : typeof raw.is_active === "boolean" ? raw.is_active : true,
+  };
+}
+
+export interface PaymentMethod {
+  id: string;
+  countryCode: string;
+  platform: string;
+  methodCode: string;
+  displayName: string;
+  paymentChannel: string;
+  paymentMethod: string;
+  paymentInstructions?: string;
+  isActive: boolean;
+  displayOrder: number;
+  metadata?: string;
+  verificationParams?: string;
+  logoUrl?: string;
+}
+
+export function adaptPaymentMethod(raw: Record<string, unknown>): PaymentMethod {
+  return {
+    id: String(raw.id ?? ""),
+    countryCode: String(raw.countryCode ?? raw.country_code ?? ""),
+    platform: String(raw.platform ?? ""),
+    methodCode: String(raw.methodCode ?? raw.method_code ?? ""),
+    displayName: String(raw.displayName ?? raw.display_name ?? ""),
+    paymentChannel: String(raw.paymentChannel ?? raw.payment_channel ?? ""),
+    paymentMethod: String(raw.paymentMethod ?? raw.payment_method ?? ""),
+    paymentInstructions: raw.paymentInstructions ? String(raw.paymentInstructions) : raw.payment_instructions ? String(raw.payment_instructions) : undefined,
+    isActive: typeof raw.isActive === "boolean" ? raw.isActive : typeof raw.is_active === "boolean" ? raw.is_active : true,
+    displayOrder: typeof raw.displayOrder === "number" ? raw.displayOrder : typeof raw.display_order === "number" ? raw.display_order : 0,
+    metadata: raw.metadata ? String(raw.metadata) : undefined,
+    verificationParams: raw.verificationParams ? String(raw.verificationParams) : raw.verification_params ? String(raw.verification_params) : undefined,
+    logoUrl: raw.logoUrl ? String(raw.logoUrl) : raw.logo_url ? String(raw.logo_url) : undefined,
+  };
+}
+
+export interface PlanLimitCost {
+  id: string;
+  subscriptionPlanId: string;
+  featureActionId: string;
+  memberCreditCost: number;
+  actualCreditCost: number;
+  limitValue: number;
+  periodType: string;
+  applyCreditAfterLimit: boolean;
+}
+
+export function adaptPlanLimitCost(raw: Record<string, unknown>): PlanLimitCost {
+  return {
+    id: String(raw.id ?? ""),
+    subscriptionPlanId: String(raw.subscriptionPlanId ?? raw.subscription_plan_id ?? ""),
+    featureActionId: String(raw.featureActionId ?? raw.feature_action_id ?? ""),
+    memberCreditCost: typeof raw.memberCreditCost === "number" ? raw.memberCreditCost : typeof raw.member_credit_cost === "number" ? raw.member_credit_cost : 0,
+    actualCreditCost: typeof raw.actualCreditCost === "number" ? raw.actualCreditCost : typeof raw.actual_credit_cost === "number" ? raw.actual_credit_cost : 0,
+    limitValue: typeof raw.limitValue === "number" ? raw.limitValue : typeof raw.limit_value === "number" ? raw.limit_value : 0,
+    periodType: String(raw.periodType ?? raw.period_type ?? "DAY"),
+    applyCreditAfterLimit: typeof raw.applyCreditAfterLimit === "boolean" ? raw.applyCreditAfterLimit : typeof raw.apply_credit_after_limit === "boolean" ? raw.apply_credit_after_limit : false,
+  };
+}
+
+export interface FeatureAction {
+  id: string;
+  code: string;
+  name: string;
+  type: string;
+}
+
+export function adaptFeatureAction(raw: Record<string, unknown>): FeatureAction {
+  return {
+    id: String(raw.id ?? ""),
+    code: String(raw.code ?? ""),
+    name: String(raw.name ?? ""),
+    type: String(raw.type ?? "ACTION"),
+  };
+}
+
+export interface CountrySetting {
+  id: string;
+  countryCode: string;
+  subscriptionEnabled: boolean;
+  creditsEnabled: boolean;
+  identityVerificationRequired: boolean;
+}
+
+export function adaptCountrySetting(raw: Record<string, unknown>): CountrySetting {
+  return {
+    id: String(raw.id ?? ""),
+    countryCode: String(raw.countryCode ?? raw.country_code ?? ""),
+    subscriptionEnabled: typeof raw.subscriptionEnabled === "boolean" ? raw.subscriptionEnabled : typeof raw.subscription_enabled === "boolean" ? raw.subscription_enabled : false,
+    creditsEnabled: typeof raw.creditsEnabled === "boolean" ? raw.creditsEnabled : typeof raw.credits_enabled === "boolean" ? raw.credits_enabled : false,
+    identityVerificationRequired: typeof raw.identityVerificationRequired === "boolean" ? raw.identityVerificationRequired : typeof raw.identity_verification_required === "boolean" ? raw.identity_verification_required : false,
+  };
+}
