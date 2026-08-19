@@ -8,7 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { PageHeader } from "@/components/admin/shared/PageHeader";
 import { adminKeys } from "@/lib/admin/query-keys";
-import type { SubscriptionProduct } from "@/lib/admin/adapters";
+import type { SubscriptionProduct, ConsumableProduct } from "@/lib/admin/adapters";
 import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
 
@@ -17,12 +17,14 @@ const schema = z.object({
   campaignKey: z.string().min(1, "Campaign key is required").max(50).regex(/^[a-z0-9_-]+$/, "Use lowercase letters, numbers, - and _ only"),
   description: z.string().optional(),
   triggerType: z.enum(["PURCHASE", "AUTO_ON_SIGNUP"]),
-  eligibilityType: z.enum(["NEW_USER", "ALL_USERS"]),
+  eligibilityType: z.enum(["NEW_USER", "ALL_USERS", "ANY_ELIGIBLE_USER"]),
   benefitType: z.enum(["DISCOUNT", "FREE_PREMIUM"]),
   discountType: z.enum(["PERCENTAGE", "FIXED"]).optional(),
   discountValue: z.number().positive().optional(),
   discountCurrency: z.string().optional(),
-  subscriptionProductId: z.string().min(1, "Subscription product is required"),
+  productType: z.enum(["SUBSCRIPTION", "CONSUMABLE"]),
+  subscriptionProductId: z.string().optional(),
+  consumableProductId: z.string().optional(),
   countryCode: z.string().min(1, "Country code is required"),
   durationDays: z.number().int().positive().optional(),
   newUserWindowDays: z.number().int().positive().optional(),
@@ -32,6 +34,25 @@ const schema = z.object({
   startsAt: z.string().min(1, "Start time is required"),
   endsAt: z.string().optional(),
   targetGender: z.enum(["MALE", "FEMALE"]).optional(),
+}).superRefine((data, ctx) => {
+  if (data.productType === "SUBSCRIPTION") {
+    if (!data.subscriptionProductId) {
+      ctx.addIssue({ code: z.ZodIssueCode.custom, path: ["subscriptionProductId"], message: "Subscription product is required" });
+    }
+    if (data.consumableProductId) {
+      ctx.addIssue({ code: z.ZodIssueCode.custom, path: ["consumableProductId"], message: "Do not set consumable product for subscription campaigns" });
+    }
+  } else {
+    if (!data.consumableProductId) {
+      ctx.addIssue({ code: z.ZodIssueCode.custom, path: ["consumableProductId"], message: "Consumable product is required" });
+    }
+    if (data.subscriptionProductId) {
+      ctx.addIssue({ code: z.ZodIssueCode.custom, path: ["subscriptionProductId"], message: "Do not set subscription product for consumable campaigns" });
+    }
+    if (data.benefitType === "FREE_PREMIUM") {
+      ctx.addIssue({ code: z.ZodIssueCode.custom, path: ["benefitType"], message: "FREE_PREMIUM is only allowed for subscription campaigns" });
+    }
+  }
 });
 
 type FormValues = z.infer<typeof schema>;
@@ -53,14 +74,15 @@ export default function NewPromotionPage() {
   const pathname = usePathname();
   const adminConsolePath = pathname.replace(/\/promotions\/new$/, "");
 
-  const { register, handleSubmit, watch, formState: { errors } } = useForm<FormValues>({
+  const { register, handleSubmit, watch, setValue, formState: { errors } } = useForm<FormValues>({
     resolver: zodResolver(schema),
-    defaultValues: { triggerType: "PURCHASE", eligibilityType: "ALL_USERS", benefitType: "DISCOUNT", discountCurrency: "ETB" },
+    defaultValues: { triggerType: "PURCHASE", eligibilityType: "ALL_USERS", benefitType: "DISCOUNT", discountCurrency: "ETB", productType: "SUBSCRIPTION" },
   });
 
   const benefitType = watch("benefitType");
+  const productType = watch("productType");
 
-  const { data: productsData } = useQuery<{ products: SubscriptionProduct[] }>({
+  const { data: subProductsData } = useQuery<{ products: SubscriptionProduct[] }>({
     queryKey: adminKeys.billing.subscriptionProducts(),
     queryFn: async () => {
       const res = await fetch("/api/internal-admin/billing/subscription-products");
@@ -70,11 +92,37 @@ export default function NewPromotionPage() {
     staleTime: 60_000,
   });
 
-  const products = productsData?.products ?? [];
+  const { data: consumableProductsData } = useQuery<{ items: ConsumableProduct[] }>({
+    queryKey: adminKeys.paymentConfig.consumableProducts(),
+    queryFn: async () => {
+      const res = await fetch("/api/internal-admin/payment-config/consumable-products");
+      if (!res.ok) throw new Error(`${res.status}`);
+      return res.json();
+    },
+    staleTime: 60_000,
+  });
+
+  const subProducts = subProductsData?.products ?? [];
+  const consumableProducts = consumableProductsData?.items ?? [];
 
   const mutation = useMutation({
     mutationFn: async (values: FormValues) => {
       const payload: Record<string, unknown> = { ...values };
+      delete payload.productType;
+      if (values.productType === "SUBSCRIPTION") {
+        payload.subscriptionProductId = values.subscriptionProductId;
+        payload.consumableProductId = null;
+      } else {
+        payload.consumableProductId = values.consumableProductId;
+        payload.subscriptionProductId = null;
+      }
+      delete payload.subscriptionProductId;
+      delete payload.consumableProductId;
+      if (values.productType === "SUBSCRIPTION") {
+        payload.subscriptionProductId = values.subscriptionProductId;
+      } else {
+        payload.consumableProductId = values.consumableProductId;
+      }
       if (values.startsAt) payload.startsAt = new Date(values.startsAt).toISOString();
       if (values.endsAt) payload.endsAt = new Date(values.endsAt).toISOString();
       Object.keys(payload).forEach((k) => {
@@ -126,6 +174,7 @@ export default function NewPromotionPage() {
           <Field label="Eligibility" error={errors.eligibilityType?.message} required>
             <select {...register("eligibilityType")} className={INPUT}>
               <option value="ALL_USERS">All users</option>
+              <option value="ANY_ELIGIBLE_USER">Any eligible user</option>
               <option value="NEW_USER">New users only</option>
             </select>
           </Field>
@@ -133,7 +182,12 @@ export default function NewPromotionPage() {
 
         <div className="grid grid-cols-2 gap-4">
           <Field label="Benefit Type" error={errors.benefitType?.message} required>
-            <select {...register("benefitType")} className={INPUT}>
+            <select {...register("benefitType")} className={INPUT} onChange={(e) => {
+              setValue("benefitType", e.target.value as "DISCOUNT" | "FREE_PREMIUM");
+              if (e.target.value === "FREE_PREMIUM" && productType === "CONSUMABLE") {
+                setValue("productType", "SUBSCRIPTION");
+              }
+            }}>
               <option value="DISCOUNT">Discount</option>
               <option value="FREE_PREMIUM">Free Premium</option>
             </select>
@@ -164,15 +218,44 @@ export default function NewPromotionPage() {
           </div>
         )}
 
-        <Field label="Subscription Product" error={errors.subscriptionProductId?.message} required>
-          <select {...register("subscriptionProductId")} className={INPUT}>
-            <option value="">Select a product…</option>
-            {products.map((p) => (
-              <option key={p.id} value={p.id}>{p.planName} — {p.productCode} ({p.billingIntervalCount} {p.billingIntervalUnit.toLowerCase()}{p.billingIntervalCount > 1 ? "s" : ""})</option>
-            ))}
+        <Field label="Product Type" error={errors.productType?.message} required>
+          <select {...register("productType")} className={INPUT} onChange={(e) => {
+            const v = e.target.value as "SUBSCRIPTION" | "CONSUMABLE";
+            setValue("productType", v);
+            if (v === "CONSUMABLE") {
+              setValue("subscriptionProductId", undefined);
+              if (benefitType === "FREE_PREMIUM") setValue("benefitType", "DISCOUNT");
+            } else {
+              setValue("consumableProductId", undefined);
+            }
+          }}>
+            <option value="SUBSCRIPTION">Subscription Product</option>
+            <option value="CONSUMABLE">Consumable Product</option>
           </select>
-          <p className="mt-1 text-xs text-[#9CA3AF]">Linked subscription product for this campaign.</p>
+          <p className="mt-1 text-xs text-[#9CA3AF]">A campaign targets exactly one product type. FREE_PREMIUM is only allowed for subscription campaigns.</p>
         </Field>
+
+        {productType === "SUBSCRIPTION" ? (
+          <Field label="Subscription Product" error={errors.subscriptionProductId?.message} required>
+            <select {...register("subscriptionProductId")} className={INPUT}>
+              <option value="">Select a product…</option>
+              {subProducts.map((p) => (
+                <option key={p.id} value={p.id}>{p.planName} — {p.productCode} ({p.billingIntervalCount} {p.billingIntervalUnit.toLowerCase()}{p.billingIntervalCount > 1 ? "s" : ""})</option>
+              ))}
+            </select>
+            <p className="mt-1 text-xs text-[#9CA3AF]">Linked subscription product for this campaign.</p>
+          </Field>
+        ) : (
+          <Field label="Consumable Product" error={errors.consumableProductId?.message} required>
+            <select {...register("consumableProductId")} className={INPUT}>
+              <option value="">Select a product…</option>
+              {consumableProducts.map((p) => (
+                <option key={p.id} value={p.id}>{p.name} — {p.productCode} ({p.quantityGranted} credits)</option>
+              ))}
+            </select>
+            <p className="mt-1 text-xs text-[#9CA3AF]">Linked consumable product for this discount campaign.</p>
+          </Field>
+        )}
 
         <div className="grid grid-cols-2 gap-4">
           <Field label="Duration (days)" error={errors.durationDays?.message}>

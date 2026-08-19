@@ -93,6 +93,7 @@ export interface PromotionalCampaign {
   discountValue?: number;
   discountCurrency?: string;
   subscriptionProductId?: string;
+  consumableProductId?: string;
   countryCode?: string;
   durationDays?: number;
   newUserWindowDays?: number;
@@ -427,6 +428,7 @@ export function adaptPromotionalCampaign(raw: Record<string, unknown>): Promotio
     discountValue: typeof raw.discountValue === "number" ? raw.discountValue : typeof raw.discount_value === "number" ? raw.discount_value : undefined,
     discountCurrency: raw.discountCurrency ? String(raw.discountCurrency) : raw.discount_currency ? String(raw.discount_currency) : undefined,
     subscriptionProductId: raw.subscriptionProductId ? String(raw.subscriptionProductId) : raw.subscription_product_id ? String(raw.subscription_product_id) : undefined,
+    consumableProductId: raw.consumableProductId ? String(raw.consumableProductId) : raw.consumable_product_id ? String(raw.consumable_product_id) : undefined,
     countryCode: raw.countryCode ? String(raw.countryCode) : raw.country_code ? String(raw.country_code) : undefined,
     durationDays: typeof raw.durationDays === "number" ? raw.durationDays : typeof raw.duration_days === "number" ? raw.duration_days : undefined,
     newUserWindowDays: typeof raw.newUserWindowDays === "number" ? raw.newUserWindowDays : typeof raw.new_user_window_days === "number" ? raw.new_user_window_days : undefined,

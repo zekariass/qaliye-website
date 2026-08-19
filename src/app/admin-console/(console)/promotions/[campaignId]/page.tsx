@@ -156,10 +156,13 @@ export default function PromotionDetailPage({ params }: { params: Promise<{ camp
         <Row label="Trigger Type" value={campaign.triggerType} />
         <Row label="Eligibility" value={campaign.eligibilityType} />
         <Row label="Benefit Type" value={campaign.benefitType} />
+        {campaign.subscriptionProductId && <Row label="Target Product Type" value={<span className="text-[#7C3AED] font-medium">Subscription</span>} />}
+        {campaign.consumableProductId && <Row label="Target Product Type" value={<span className="text-[#7C3AED] font-medium">Consumable</span>} />}
         {campaign.discountType && <Row label="Discount Type" value={campaign.discountType} />}
         {campaign.discountValue !== undefined && <Row label="Discount Value" value={campaign.discountValue} />}
         {campaign.discountCurrency && <Row label="Currency" value={campaign.discountCurrency} />}
         {campaign.subscriptionProductId && <Row label="Subscription Product" value={<span className="font-mono text-xs">{campaign.subscriptionProductId}</span>} />}
+        {campaign.consumableProductId && <Row label="Consumable Product" value={<span className="font-mono text-xs">{campaign.consumableProductId}</span>} />}
         {campaign.countryCode && <Row label="Country" value={campaign.countryCode} />}
         {campaign.durationDays !== undefined && <Row label="Duration (days)" value={campaign.durationDays} />}
         {campaign.newUserWindowDays !== undefined && <Row label="New User Window" value={`${campaign.newUserWindowDays} days`} />}

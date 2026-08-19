@@ -79,6 +79,11 @@ export default function PromotionsPage() {
     )},
     { key: "status", header: "Status", cell: (c) => <StatusBadge status={c.status} /> },
     { key: "benefit", header: "Benefit", cell: (c) => <span className="text-sm text-[#666672]">{c.benefitType}</span> },
+    { key: "productType", header: "Product", cell: (c) => (
+      <span className="text-xs font-medium text-[#7C3AED]">
+        {c.consumableProductId ? "Consumable" : c.subscriptionProductId ? "Subscription" : "—"}
+      </span>
+    )},
     { key: "redemptions", header: "Redemptions", cell: (c) => (
       <span className="text-sm tabular-nums">
         {c.currentRedemptions?.toLocaleString() ?? "—"}
