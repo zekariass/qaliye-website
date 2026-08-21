@@ -20,6 +20,7 @@ import {
   Flag,
   BadgeCheck,
   Settings2,
+  HeartHandshake,
 } from "lucide-react";
 import { useAdminShellStore } from "@/stores/admin-shell-store";
 
@@ -84,6 +85,12 @@ const NAV_GROUPS: NavGroup[] = [
         label: "Manual Transactions",
         href: `${ADMIN_BASE}/billing/transactions`,
         icon: <ArrowLeftRight className="h-4 w-4" />,
+      },
+      {
+        label: "Match Reconciliation",
+        href: `${ADMIN_BASE}/matches`,
+        icon: <HeartHandshake className="h-4 w-4" />,
+        adminOnly: true,
       },
     ],
   },
