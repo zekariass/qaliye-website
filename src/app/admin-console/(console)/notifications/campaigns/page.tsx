@@ -9,10 +9,11 @@ import { AdminDataTable, type Column } from "@/components/admin/tables/AdminData
 import { StatusBadge } from "@/components/admin/shared/StatusBadge";
 import { PageHeader } from "@/components/admin/shared/PageHeader";
 import { ConfirmDialog } from "@/components/admin/shared/ConfirmDialog";
+import { InternalApiError, parseInternalApiError } from "@/lib/admin/errors";
 import type { NotificationCampaign } from "@/lib/admin/adapters";
 import { Plus } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const PAGE_SIZE = 20;
 
@@ -26,7 +27,7 @@ export default function NotificationCampaignsPage() {
   const page = Number(searchParams.get("page") ?? "1");
   const status = searchParams.get("status") ?? "";
 
-  const [actionTarget, setActionTarget] = useState<{ id: string; name: string; action: "start" | "cancel" } | null>(null);
+  const [actionTarget, setActionTarget] = useState<{ id: string; title: string; action: "start" | "cancel" } | null>(null);
 
   function updateParams(updates: Record<string, string>) {
     const params = new URLSearchParams(searchParams.toString());
@@ -34,58 +35,70 @@ export default function NotificationCampaignsPage() {
     params.set("page", "1"); router.push(`${pathname}?${params.toString()}`);
   }
 
-  const { data, isLoading, isError, refetch } = useQuery({
+  const { data, isLoading, isError, error, refetch } = useQuery({
     queryKey: adminKeys.notificationCampaigns.list({ page, status }),
     queryFn: async () => {
       const qs = new URLSearchParams();
       qs.set("page", String(page - 1)); qs.set("size", String(PAGE_SIZE));
       if (status) qs.set("status", status);
       const res = await fetch(`/api/internal-admin/notification-campaigns?${qs}`);
-      if (!res.ok) throw new Error(`${res.status}`);
+      if (!res.ok) throw await parseInternalApiError(res);
       return res.json();
     },
     staleTime: 15_000,
   });
 
+  const signInPath = `${adminConsolePath}/sign-in`;
+
+  // Redirect to sign-in on 401 from the query
+  useEffect(() => {
+    if (error instanceof InternalApiError && error.status === 401) {
+      router.push(signInPath);
+    }
+  }, [error, router, signInPath]);
+
   const actionMutation = useMutation({
     mutationFn: async () => {
       if (!actionTarget) return;
       const res = await fetch(`/api/internal-admin/notification-campaigns/${actionTarget.id}/${actionTarget.action}`, { method: "POST" });
-      if (!res.ok) { const e = await res.json().catch(() => ({})); throw new Error(e.error ?? "Action failed"); }
+      if (!res.ok) throw await parseInternalApiError(res);
     },
     onSuccess: () => {
       toast.success(`Campaign ${actionTarget?.action === "start" ? "started" : "cancelled"}`);
       queryClient.invalidateQueries({ queryKey: adminKeys.notificationCampaigns.list({}) });
       setActionTarget(null);
     },
-    onError: (e: Error) => toast.error(e.message),
+    onError: (err: Error) => {
+      if (err instanceof InternalApiError) {
+        if (err.status === 401) { router.push(signInPath); return; }
+        if (err.code === "FORBIDDEN") { toast.error("You do not have permission to perform this action."); return; }
+      }
+      toast.error(err.message);
+    },
   });
 
-  const campaigns: NotificationCampaign[] = Array.isArray(data?.content)
-    ? data.content
-    : Array.isArray(data?.campaigns)
-      ? data.campaigns
-      : [];
+  const campaigns: NotificationCampaign[] = Array.isArray(data?.content) ? data.content : [];
 
   const columns: Column<NotificationCampaign>[] = [
-    { key: "name", header: "Name", cell: (c) => (
-      <Link href={`${adminConsolePath}/notifications/campaigns/${c.id}`} className="font-medium text-[#17171B] hover:text-[#7C3AED]">{c.name}</Link>
+    { key: "title", header: "Title", cell: (c) => (
+      <div>
+        <Link href={`${adminConsolePath}/notifications/campaigns/${c.id}`} className="font-medium text-[#17171B] hover:text-[#7C3AED]">{c.title}</Link>
+        {c.campaignKey && <p className="text-xs text-[#666672] mt-0.5 font-mono">{c.campaignKey}</p>}
+      </div>
     )},
     { key: "status", header: "Status", cell: (c) => <StatusBadge status={c.status} /> },
-    { key: "audience", header: "Audience", cell: (c) => <span className="text-sm text-[#666672]">{c.targetAudience ?? "All"}</span> },
-    { key: "sent", header: "Sent", cell: (c) => <span className="text-sm tabular-nums">{c.sentCount?.toLocaleString() ?? "—"}</span> },
     { key: "scheduled", header: "Scheduled", cell: (c) => <span className="text-sm text-[#666672]">{c.scheduledAt ? formatDateTime(c.scheduledAt) : "—"}</span> },
     { key: "created", header: "Created", cell: (c) => <span className="text-sm text-[#666672]">{formatRelative(c.createdAt)}</span> },
     { key: "actions", header: "", cell: (c) => (
       <div className="flex gap-2">
-        {c.status === "DRAFT" && (
-          <button type="button" onClick={() => setActionTarget({ id: c.id, name: c.name ?? c.title, action: "start" })} className="text-xs text-[#16815D] hover:underline">Start</button>
+        {(c.status === "DRAFT" || c.status === "SCHEDULED") && (
+          <button type="button" onClick={() => setActionTarget({ id: c.id, title: c.title, action: "start" })} className="text-xs text-[#16815D] hover:underline">Start</button>
         )}
-        {(c.status === "SENDING" || c.status === "RUNNING" || c.status === "SCHEDULED") && (
-          <button type="button" onClick={() => setActionTarget({ id: c.id, name: c.name ?? c.title, action: "cancel" })} className="text-xs text-[#C63B4E] hover:underline">Cancel</button>
+        {(c.status === "DRAFT" || c.status === "SCHEDULED" || c.status === "SENDING") && (
+          <button type="button" onClick={() => setActionTarget({ id: c.id, title: c.title, action: "cancel" })} className="text-xs text-[#C63B4E] hover:underline">Cancel</button>
         )}
       </div>
-    ), className: "w-24" },
+    ), className: "w-28" },
   ];
 
   return (
@@ -105,7 +118,6 @@ export default function NotificationCampaignsPage() {
           <option value="DRAFT">Draft</option>
           <option value="SCHEDULED">Scheduled</option>
           <option value="SENDING">Sending</option>
-          <option value="RUNNING">Running</option>
           <option value="COMPLETED">Completed</option>
           <option value="CANCELLED">Cancelled</option>
         </select>
@@ -119,7 +131,7 @@ export default function NotificationCampaignsPage() {
           onClose={() => setActionTarget(null)}
           onConfirm={() => actionMutation.mutate()}
           title={actionTarget.action === "start" ? "Start campaign" : "Cancel campaign"}
-          description={`${actionTarget.action === "start" ? "Start" : "Cancel"} the campaign "${actionTarget.name}"?${actionTarget.action === "cancel" ? " This cannot be undone." : ""}`}
+          description={`${actionTarget.action === "start" ? "Start" : "Cancel"} the campaign "${actionTarget.title}"?${actionTarget.action === "cancel" ? " This cannot be undone." : ""}`}
           confirmLabel={actionTarget.action === "start" ? "Start" : "Cancel campaign"}
           variant={actionTarget.action === "cancel" ? "danger" : "default"}
           isLoading={actionMutation.isPending}

@@ -54,7 +54,6 @@ export const NotificationCampaignStatus = {
   DRAFT: "DRAFT",
   SCHEDULED: "SCHEDULED",
   SENDING: "SENDING",
-  RUNNING: "RUNNING",
   COMPLETED: "COMPLETED",
   CANCELLED: "CANCELLED",
 } as const;

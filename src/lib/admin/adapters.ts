@@ -454,7 +454,7 @@ export function adaptNotificationCampaign(raw: Record<string, unknown>): Notific
     title: String(raw.title ?? ""),
     body: String(raw.body ?? ""),
     status: String(raw.status ?? "DRAFT") as NotificationCampaignStatus,
-    targetAudience: raw.targetAudience ? String(raw.targetAudience) : raw.target_audience ? String(raw.target_audience) : raw.audienceDefinition ? JSON.stringify(raw.audienceDefinition) : undefined,
+    targetAudience: raw.targetAudience ? String(raw.targetAudience) : raw.target_audience ? String(raw.target_audience) : undefined,
     navigationPayload: typeof raw.navigationPayload === "object" && raw.navigationPayload !== null ? raw.navigationPayload as Record<string, unknown> : undefined,
     audienceDefinition: typeof raw.audienceDefinition === "object" && raw.audienceDefinition !== null ? raw.audienceDefinition as Record<string, unknown> : undefined,
     scheduledAt: raw.scheduledAt ? String(raw.scheduledAt) : raw.scheduled_at ? String(raw.scheduled_at) : undefined,
