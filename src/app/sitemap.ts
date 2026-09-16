@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/constants";
 import { locales } from "@/i18n/routing";
 
-const pages = ["", "/about", "/features", "/help", "/contact", "/privacy", "/terms"];
+const pages = ["", "/about", "/features", "/help", "/contact", "/privacy", "/terms", "/child-safety"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];

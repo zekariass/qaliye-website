@@ -45,7 +45,7 @@ export function LanguageSwitcher({
       router.push(newPath);
     });
     if (typeof window !== "undefined") {
-      window.localStorage.setItem("qaliye-locale", newLocale);
+      window.localStorage.setItem("qaldating-locale", newLocale);
     }
     setIsOpen(false);
   }

@@ -1,4 +1,4 @@
-# Admin API Endpoints — Qaliye Backend
+# Admin API Endpoints — Qal Dating Backend
 
 > All endpoints are prefixed with `/api/v1/admin`.  
 > All endpoints require authentication via JWT Bearer token.  

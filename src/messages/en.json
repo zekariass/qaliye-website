@@ -1,8 +1,8 @@
 {
   "site": {
-    "name": "Qaliye",
+    "name": "Qal Dating",
     "tagline": "Where hearts connect",
-    "description": "Qaliye is the dating app for Ethiopian and Eritrean singles — meaningful connections rooted in culture, safety, and respect."
+    "description": "Qal Dating is the dating app for Ethiopian and Eritrean singles — meaningful connections rooted in culture, safety, and respect."
   },
   "nav": {
     "home": "Home",
@@ -17,10 +17,10 @@
   },
   "hero": {
     "headline": "Where hearts connect",
-    "subheadline": "Qaliye is the dating app for Ethiopian and Eritrean singles. Find meaningful connections rooted in shared culture, values, and heritage.",
+    "subheadline": "Qal Dating is the dating app for Ethiopian and Eritrean singles. Find meaningful connections rooted in shared culture, values, and heritage.",
     "downloadIOS": "Download on the App Store",
     "downloadAndroid": "Get it on Google Play",
-    "phoneAlt": "Qaliye app preview on a phone"
+    "phoneAlt": "Qal Dating app preview on a phone"
   },
   "trustBar": {
     "verifiedProfiles": "Verified profiles",
@@ -95,7 +95,7 @@
       "accountDeletion": {
         "title": "Account Deletion",
         "description": "Permanently delete your account from Settings. All your data is removed — no lock-in.",
-        "benefit": "Full control over your presence on Qaliye."
+        "benefit": "Full control over your presence on Qal Dating."
       }
     },
     "premium": {
@@ -142,7 +142,7 @@
       "languages": {
         "title": "4 Languages",
         "description": "English, Amharic, Tigrinya, and Afaan Oromo.",
-        "benefit": "Use Qaliye in your preferred language."
+        "benefit": "Use Qal Dating in your preferred language."
       },
       "notifications": {
         "title": "Push Notifications",
@@ -167,7 +167,7 @@
     }
   },
   "howItWorks": {
-    "sectionTitle": "How Qaliye works",
+    "sectionTitle": "How Qal Dating works",
     "sectionSubtitle": "Four simple steps to start your journey.",
     "steps": {
       "1": {
@@ -190,7 +190,7 @@
   },
   "screenshots": {
     "sectionTitle": "See it in action",
-    "sectionSubtitle": "A glimpse of the Qaliye experience.",
+    "sectionSubtitle": "A glimpse of the Qal Dating experience.",
     "discovery": "Discovery — Swipe through profiles",
     "match": "Match — It's a connection!",
     "chat": "Chat — Text, images, and voice",
@@ -207,15 +207,15 @@
   },
   "testimonials": {
     "sectionTitle": "Stories from the community",
-    "sectionSubtitle": "Real experiences from people who found meaningful connections through Qaliye.",
+    "sectionSubtitle": "Real experiences from people who found meaningful connections through Qal Dating.",
     "items": {
       "1": {
-        "quote": "Qaliye helped me find someone who shares my values and culture. It feels different from other apps.",
+        "quote": "Qal Dating helped me find someone who shares my values and culture. It feels different from other apps.",
         "name": "Selam",
         "location": "Addis Ababa, Ethiopia"
       },
       "2": {
-        "quote": "As someone in the diaspora, I wanted to connect with someone who understands my heritage. Qaliye made that possible.",
+        "quote": "As someone in the diaspora, I wanted to connect with someone who understands my heritage. Qal Dating made that possible.",
         "name": "Dawit",
         "location": "Washington DC, USA"
       },
@@ -228,25 +228,25 @@
   },
   "downloadCTA": {
     "title": "Ready to find your connection?",
-    "subtitle": "Download Qaliye today and start your journey toward meaningful connections.",
+    "subtitle": "Download Qal Dating today and start your journey toward meaningful connections.",
     "downloadIOS": "Download on the App Store",
     "downloadAndroid": "Get it on Google Play",
     "badge": "Download"
   },
   "about": {
-    "title": "About Qaliye",
+    "title": "About Qal Dating",
     "subtitle": "Building the bridge between culture and connection.",
     "mission": {
       "title": "Our Mission",
-      "body": "Qaliye exists to help Ethiopian and Eritrean singles find meaningful connections — whether at home or across the diaspora. We believe dating should be rooted in shared culture, values, and respect, not endless swiping. Our platform is designed to foster genuine relationships while honoring the traditions and heritage that make our community unique."
+      "body": "Qal Dating exists to help Ethiopian and Eritrean singles find meaningful connections — whether at home or across the diaspora. We believe dating should be rooted in shared culture, values, and respect, not endless swiping. Our platform is designed to foster genuine relationships while honoring the traditions and heritage that make our community unique."
     },
     "audience": {
       "title": "Who We Serve",
-      "body": "Qaliye is built for Ethiopian and Eritrean singles aged 18 and above, both within the Horn of Africa and across the global diaspora. Whether you're in Addis Ababa, Asmara, Washington DC, or London, Qaliye helps you find someone who understands your world."
+      "body": "Qal Dating is built for Ethiopian and Eritrean singles aged 18 and above, both within the Horn of Africa and across the global diaspora. Whether you're in Addis Ababa, Asmara, Washington DC, or London, Qal Dating helps you find someone who understands your world."
     },
     "value": {
       "title": "What Makes Us Different",
-      "body": "We're not just another dating app. Qaliye is built specifically for the Ethiopian and Eritrean community — with support for four languages, culturally relevant filters, local payment options, and a commitment to safety through verification and moderation. We prioritize meaningful connections over casual encounters."
+      "body": "We're not just another dating app. Qal Dating is built specifically for the Ethiopian and Eritrean community — with support for four languages, culturally relevant filters, local payment options, and a commitment to safety through verification and moderation. We prioritize meaningful connections over casual encounters."
     },
     "values": {
       "title": "Our Values",
@@ -278,12 +278,12 @@
     "contactButton": "Contact Support",
     "faq": {
       "1": {
-        "question": "How do I create a Qaliye account?",
+        "question": "How do I create a Qal Dating account?",
         "answer": "Download the app from the App Store or Google Play, then follow the in-app setup to create your profile with photos, bio, and preferences."
       },
       "2": {
-        "question": "Is Qaliye free to use?",
-        "answer": "Yes, Qaliye is free to download and use with core features. Premium features like See Who Liked You, Boost, and unlimited likes are available as upgrades."
+        "question": "Is Qal Dating free to use?",
+        "answer": "Yes, Qal Dating is free to download and use with core features. Premium features like See Who Liked You, Boost, and unlimited likes are available as upgrades."
       },
       "3": {
         "question": "How does profile verification work?",
@@ -294,8 +294,8 @@
         "answer": "Go to Settings in the app and select Account Deletion. This permanently removes your account and all associated data. This action cannot be undone."
       },
       "5": {
-        "question": "Which languages does Qaliye support?",
-        "answer": "Qaliye supports English, Amharic, Tigrinya, and Afaan Oromo. You can switch languages anytime in the app settings."
+        "question": "Which languages does Qal Dating support?",
+        "answer": "Qal Dating supports English, Amharic, Tigrinya, and Afaan Oromo. You can switch languages anytime in the app settings."
       },
       "6": {
         "question": "How does photo moderation work?",
@@ -306,8 +306,8 @@
         "answer": "On Android, you can pay with Telebirr, bank transfer, Chapa, or manual receipt. On iOS, payments are processed through the App Store."
       },
       "8": {
-        "question": "Can I use Qaliye outside Ethiopia or Eritrea?",
-        "answer": "Yes! Qaliye is available worldwide. You can filter discovery by Nearby, Ethiopia, Eritrea, Diaspora, or Anywhere to find connections wherever you are."
+        "question": "Can I use Qal Dating outside Ethiopia or Eritrea?",
+        "answer": "Yes! Qal Dating is available worldwide. You can filter discovery by Nearby, Ethiopia, Eritrea, Diaspora, or Anywhere to find connections wherever you are."
       }
     }
   },
@@ -335,33 +335,38 @@
   "privacy": {
     "title": "Privacy Policy",
     "lastUpdated": "Last updated: [INSERT LAST-UPDATED DATE]",
-    "intro": "This Privacy Policy explains how Qaliye collects, uses, stores, shares, and protects personal information when you use the Qaliye mobile application, website, and related services."
+    "intro": "This Privacy Policy explains how Qal Dating collects, uses, stores, shares, and protects personal information when you use the Qal Dating mobile application, website, and related services."
   },
   "terms": {
     "title": "Terms of Use",
     "lastUpdated": "Last updated: 27 July 2026",
-    "intro": "These Terms of Use govern your access to and use of the Qaliye mobile application, website, and related services."
+    "intro": "These Terms of Use govern your access to and use of the Qal Dating mobile application, website, and related services."
   },
   "communityGuidelines": {
     "title": "Community Guidelines",
     "lastUpdated": "Last updated: [INSERT LAST-UPDATED DATE]",
-    "intro": "These Community Guidelines explain the rules and standards that all Qaliye users must follow to keep the community safe, respectful, and welcoming."
+    "intro": "These Community Guidelines explain the rules and standards that all Qal Dating users must follow to keep the community safe, respectful, and welcoming."
   },
   "safetyTips": {
     "title": "Dating Safety Tips",
     "lastUpdated": "Last updated: [INSERT LAST-UPDATED DATE]",
-    "intro": "These safety tips provide general guidance to help you stay safe while using Qaliye and meeting people in person."
+    "intro": "These safety tips provide general guidance to help you stay safe while using Qal Dating and meeting people in person."
+  },
+  "childSafety": {
+    "title": "Child Safety Standards",
+    "lastUpdated": "Last updated: [INSERT LAST-UPDATED DATE]",
+    "intro": "These Child Safety Standards set out Qal Dating's published standards against child sexual abuse and exploitation (CSAE), how we address child sexual abuse material (CSAM), and how to contact our child safety point of contact."
   },
   "accountDeletion": {
     "title": "Account Deletion",
-    "subtitle": "Learn how to permanently delete your Qaliye account and associated data.",
+    "subtitle": "Learn how to permanently delete your Qal Dating account and associated data.",
     "introTitle": "Your Right to Delete Your Account",
-    "introBody": "You have the right to delete your Qaliye account at any time. When you delete your account, your profile, photos, messages, matches, and associated personal data will be permanently removed from our systems.",
+    "introBody": "You have the right to delete your Qal Dating account at any time. When you delete your account, your profile, photos, messages, matches, and associated personal data will be permanently removed from our systems.",
     "inAppTitle": "Delete From the App",
-    "inAppDescription": "You can delete your account directly within the Qaliye app — no need to contact support.",
+    "inAppDescription": "You can delete your account directly within the Qal Dating app — no need to contact support.",
     "inAppSteps": "Profile  >>  Settings  >>  Delete Account",
     "emailTitle": "Request Deletion by Email",
-    "emailDescription": "To request the deletion of your account and associated data, please email support@qaliye.com with the subject line 'Account Deletion Request' from the email address registered to your account.",
+    "emailDescription": "To request the deletion of your account and associated data, please email support@qaldating.com with the subject line 'Account Deletion Request' from the email address registered to your account.",
     "emailButton": "Email Support",
     "processTitle": "What Happens Next",
     "process": {
@@ -372,7 +377,7 @@
     },
     "note": "Account deletion is permanent and cannot be undone. If you change your mind, you will need to create a new account.",
     "dataManagementTitle": "Managing Your Data In-App",
-    "dataManagementBody": "You do not need to delete your entire account to remove specific content. The Qaliye app allows you to delete individual items at any time:",
+    "dataManagementBody": "You do not need to delete your entire account to remove specific content. The Qal Dating app allows you to delete individual items at any time:",
     "dataManagement": {
       "photos": "Delete photos directly from your Profile screen.",
       "messages": "Delete individual chat messages from within the Chat screen."
@@ -388,10 +393,11 @@
     "terms": "Terms of Use",
     "communityGuidelines": "Community Guidelines",
     "safetyTips": "Safety Tips",
+    "childSafety": "Child Safety",
     "accountDeletion": "Account Deletion",
     "rights": "All rights reserved.",
     "madeWith": "Made with ❤️ for the Horn of Africa",
-    "copyright": "© 2026 Qaliye. {madeWith}"
+    "copyright": "© 2026 Qal Dating. {madeWith}"
   },
   "languageNames": {
     "en": "English",

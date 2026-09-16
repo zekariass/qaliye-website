@@ -47,7 +47,7 @@ export default async function HomePage({
     <>
       <BreadcrumbJsonLd
         items={[
-          { name: "Qaliye", url: `/${locale}` },
+          { name: "Qal Dating", url: `/${locale}` },
         ]}
       />
       <Hero />

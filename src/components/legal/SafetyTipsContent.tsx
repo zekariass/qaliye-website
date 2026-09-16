@@ -14,7 +14,7 @@ export function SafetyTipsContent() {
       {/* Section 1 */}
       <Section number="1" title="Your Safety Comes First">
         <p>
-          Qaliye is designed to help adults in Ethiopian, Eritrean, and wider
+          Qal Dating is designed to help adults in Ethiopian, Eritrean, and wider
           Habesha communities form genuine and meaningful connections.
         </p>
         <p>
@@ -27,7 +27,7 @@ export function SafetyTipsContent() {
         <p>
           Most people use dating apps with good intentions, but meeting someone
           new always requires care. Take your time, protect your personal
-          information, respect your instincts, and use Qaliye&rsquo;s reporting
+          information, respect your instincts, and use Qal Dating&rsquo;s reporting
           and blocking tools whenever necessary.
         </p>
         <p>
@@ -42,7 +42,7 @@ export function SafetyTipsContent() {
         <p>Before meeting someone in person:</p>
         <List
           items={[
-            "spend time talking through Qaliye;",
+            "spend time talking through Qal Dating;",
             "ask reasonable questions about their life and intentions;",
             "look for consistency in what they tell you;",
             "consider having a voice or video call;",
@@ -54,7 +54,7 @@ export function SafetyTipsContent() {
         <List
           items={[
             "declares strong feelings immediately;",
-            "pressures you to leave Qaliye quickly;",
+            "pressures you to leave Qal Dating quickly;",
             "avoids reasonable questions;",
             "repeatedly refuses voice or video calls;",
             "gives inconsistent information;",
@@ -66,9 +66,9 @@ export function SafetyTipsContent() {
       </Section>
 
       {/* Section 3 */}
-      <Section number="3" title="Keep Early Conversations on Qaliye">
+      <Section number="3" title="Keep Early Conversations on Qal Dating">
         <p>
-          Keeping early communication within Qaliye may make it easier to
+          Keeping early communication within Qal Dating may make it easier to
           report inappropriate behaviour and provide relevant information
           during a safety investigation.
         </p>
@@ -88,7 +88,7 @@ export function SafetyTipsContent() {
           so until you feel comfortable.
         </p>
         <p>
-          Once communication leaves Qaliye, our ability to review or respond to
+          Once communication leaves Qal Dating, our ability to review or respond to
           harmful behaviour may be limited.
         </p>
       </Section>
@@ -143,7 +143,7 @@ export function SafetyTipsContent() {
       <Section number="5" title="Never Send Money">
         <p>
           Never send money or provide financial information to someone you have
-          met through Qaliye, especially someone you have not met in person.
+          met through Qal Dating, especially someone you have not met in person.
         </p>
         <p>Be suspicious of requests involving:</p>
         <List
@@ -233,7 +233,7 @@ export function SafetyTipsContent() {
             "check that their appearance matches their photographs;",
             "ask normal questions about their profile;",
             "look for major inconsistencies; and",
-            "use Qaliye&rsquo;s verification information where available.",
+            "use Qal Dating&rsquo;s verification information where available.",
           ]}
         />
         <p>
@@ -256,7 +256,7 @@ export function SafetyTipsContent() {
             "record it;",
             "save it;",
             "copy it; or",
-            "share it outside Qaliye.",
+            "share it outside Qal Dating.",
           ]}
         />
         <p>Never send intimate content under pressure.</p>
@@ -280,7 +280,7 @@ export function SafetyTipsContent() {
           Threatening to share intimate content is abusive and may be unlawful.
         </p>
         <p>
-          Qaliye prohibits nudity, pornography, unsolicited sexual content, and
+          Qal Dating prohibits nudity, pornography, unsolicited sexual content, and
           non-consensual intimate content.
         </p>
       </Section>
@@ -361,7 +361,7 @@ export function SafetyTipsContent() {
         <List
           items={[
             "the person&rsquo;s name;",
-            "their Qaliye profile information;",
+            "their Qal Dating profile information;",
             "where you are meeting;",
             "the date and time;",
             "when you expect to return; and",
@@ -470,7 +470,7 @@ export function SafetyTipsContent() {
       {/* Section 15 */}
       <Section number="15" title="Cultural and Family Considerations">
         <p>
-          Qaliye respects the importance that culture, religion, tradition, and
+          Qal Dating respects the importance that culture, religion, tradition, and
           family may have in Habesha relationships.
         </p>
         <p>However, no cultural or family expectation justifies:</p>
@@ -542,7 +542,7 @@ export function SafetyTipsContent() {
 
       {/* Section 17 */}
       <Section number="17" title="Protect Children and Family Members">
-        <p>Qaliye is for adults aged 18 and over.</p>
+        <p>Qal Dating is for adults aged 18 and over.</p>
         <p>Do not:</p>
         <List
           items={[
@@ -588,7 +588,7 @@ export function SafetyTipsContent() {
           Never remove or interfere with contraception or protection without
           the other person&rsquo;s knowledge and consent.
         </p>
-        <p>Qaliye does not provide medical advice.</p>
+        <p>Qal Dating does not provide medical advice.</p>
       </Section>
 
       {/* Section 19 */}
@@ -598,7 +598,7 @@ export function SafetyTipsContent() {
           items={[
             "stop communicating;",
             "save relevant evidence;",
-            "use Qaliye&rsquo;s Block feature;",
+            "use Qal Dating&rsquo;s Block feature;",
             "submit an in-app report;",
             "tell a trusted person;",
             "review your privacy and location settings; and",
@@ -621,14 +621,14 @@ export function SafetyTipsContent() {
       </Section>
 
       {/* Section 20 */}
-      <Section number="20" title="Blocking and Reporting on Qaliye">
+      <Section number="20" title="Blocking and Reporting on Qal Dating">
         <p>
           Use <strong>Block</strong> when you do not want another person to
           contact or interact with you.
         </p>
         <p>
           Use <strong>Report</strong> when you believe someone has violated
-          Qaliye&rsquo;s Community Guidelines.
+          Qal Dating&rsquo;s Community Guidelines.
         </p>
         <p>You can report concerns such as:</p>
         <List
@@ -655,14 +655,14 @@ export function SafetyTipsContent() {
         </p>
         <p>You do not need to inform someone before blocking or reporting them.</p>
         <p>
-          Qaliye may review relevant account information, profile content, and
+          Qal Dating may review relevant account information, profile content, and
           messages where reasonably necessary to investigate a report.
         </p>
       </Section>
 
       {/* Section 21 */}
       <Section number="21" title="If You Are in Immediate Danger">
-        <p>Qaliye is not an emergency service.</p>
+        <p>Qal Dating is not an emergency service.</p>
         <p>If you or another person is in immediate danger:</p>
         <List
           items={[
@@ -678,13 +678,13 @@ export function SafetyTipsContent() {
           <strong>112</strong> in an emergency.
         </p>
         <p>
-          Do not wait for Qaliye support to respond before contacting emergency
+          Do not wait for Qal Dating support to respond before contacting emergency
           services.
         </p>
       </Section>
 
       {/* Section 22 */}
-      <Section number="22" title="Contact Qaliye">
+      <Section number="22" title="Contact Qal Dating">
         <p>
           For non-emergency safety concerns, reports, or questions, use the
           reporting tools inside the application or contact:
@@ -692,11 +692,11 @@ export function SafetyTipsContent() {
         <div className="space-y-1">
           <p>
             <strong>Email:</strong>{" "}
-            <a href="mailto:support@qaliye.com" className="text-primary hover:underline">support@qaliye.com</a>
+            <a href="mailto:support@qaldating.com" className="text-primary hover:underline">support@qaldating.com</a>
           </p>
           <p>
             <strong>Website:</strong>{" "}
-            <a href="http://www.qaliye.com" className="text-primary hover:underline">www.qaliye.com</a>
+            <a href="http://www.qaldating.com" className="text-primary hover:underline">www.qaldating.com</a>
           </p>
         </div>
         <p>

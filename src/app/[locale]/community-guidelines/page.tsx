@@ -40,7 +40,7 @@ export default async function CommunityGuidelinesPage({
     <>
       <BreadcrumbJsonLd
         items={[
-          { name: "Qaliye", url: `/${locale}` },
+          { name: "Qal Dating", url: `/${locale}` },
           { name: "Community Guidelines", url: `/${locale}/community-guidelines` },
         ]}
       />

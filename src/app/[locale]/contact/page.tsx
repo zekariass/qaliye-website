@@ -42,7 +42,7 @@ export default async function ContactPage({
     <>
       <BreadcrumbJsonLd
         items={[
-          { name: "Qaliye", url: `/${locale}` },
+          { name: "Qal Dating", url: `/${locale}` },
           { name: "Contact", url: `/${locale}/contact` },
         ]}
       />

@@ -12,9 +12,9 @@ export function CommunityGuidelinesContent() {
       </div>
 
       {/* Section 1 */}
-      <Section number="1" title="Welcome to Qaliye">
+      <Section number="1" title="Welcome to Qal Dating">
         <p>
-          Qaliye is a dating and relationship platform designed primarily for
+          Qal Dating is a dating and relationship platform designed primarily for
           Habesha communities, including Ethiopian and Eritrean people and
           members of the global diaspora.
         </p>
@@ -23,7 +23,7 @@ export function CommunityGuidelinesContent() {
           connections while respecting the cultures, traditions, values,
           languages, and diversity of our communities.
         </p>
-        <p>Everyone using Qaliye must follow these Community Guidelines.</p>
+        <p>Everyone using Qal Dating must follow these Community Guidelines.</p>
         <p>These Guidelines apply to:</p>
         <List
           items={[
@@ -32,14 +32,14 @@ export function CommunityGuidelinesContent() {
             "Likes, Super Likes, and matches;",
             "text messages;",
             "image messages;",
-            "interactions with Qaliye support;",
+            "interactions with Qal Dating support;",
             "reports and appeals;",
-            "behaviour during meetings arranged through Qaliye; and",
+            "behaviour during meetings arranged through Qal Dating; and",
             "any other activity connected with the Services.",
           ]}
         />
         <p>
-          These Guidelines form part of the Qaliye{" "}
+          These Guidelines form part of the Qal Dating{" "}
           <a href="/terms" className="text-primary hover:underline">Terms of Use</a>{" "}
           and should be read alongside our{" "}
           <a href="/privacy" className="text-primary hover:underline">Privacy Policy</a>.
@@ -52,7 +52,7 @@ export function CommunityGuidelinesContent() {
 
       {/* Section 2 */}
       <Section number="2" title="Adults Only">
-        <p>Qaliye is strictly for people aged 18 and over.</p>
+        <p>Qal Dating is strictly for people aged 18 and over.</p>
         <p>You must not:</p>
         <List
           items={[
@@ -61,7 +61,7 @@ export function CommunityGuidelinesContent() {
             "create or operate an account for a person under 18;",
             "allow a person under 18 to use your account;",
             "pretend to be an adult;",
-            "use Qaliye to contact or pursue a person you know or suspect is under 18; or",
+            "use Qal Dating to contact or pursue a person you know or suspect is under 18; or",
             "upload content that sexually depicts, exploits, endangers, or targets a child.",
           ]}
         />
@@ -76,16 +76,16 @@ export function CommunityGuidelinesContent() {
           authorities.
         </p>
         <p>
-          If you believe someone using Qaliye is under 18, report the account
+          If you believe someone using Qal Dating is under 18, report the account
           immediately through the in-app reporting feature or contact{" "}
-          <a href="mailto:support@qaliye.com" className="text-primary hover:underline">support@qaliye.com</a>.
+          <a href="mailto:support@qaldating.com" className="text-primary hover:underline">support@qaldating.com</a>.
         </p>
       </Section>
 
       {/* Section 3 */}
       <Section number="3" title="Treat Everyone With Respect">
         <p>
-          Qaliye is a community of real people. Treat others with dignity,
+          Qal Dating is a community of real people. Treat others with dignity,
           patience, and respect.
         </p>
         <p>You must not:</p>
@@ -115,7 +115,7 @@ export function CommunityGuidelinesContent() {
       {/* Section 4 */}
       <Section number="4" title="Respect Habesha Cultures and Traditions">
         <p>
-          Qaliye celebrates Ethiopian and Eritrean cultures and the wider
+          Qal Dating celebrates Ethiopian and Eritrean cultures and the wider
           Habesha community.
         </p>
         <p>Users may have different:</p>
@@ -155,7 +155,7 @@ export function CommunityGuidelinesContent() {
       {/* Section 5 */}
       <Section number="5" title="No Hate Speech or Discrimination">
         <p>
-          Qaliye does not permit hatred, abuse, exclusion, or dehumanisation
+          Qal Dating does not permit hatred, abuse, exclusion, or dehumanisation
           based on a person&rsquo;s actual or perceived:
         </p>
         <List
@@ -188,14 +188,14 @@ export function CommunityGuidelinesContent() {
         />
         <p>
           You may express lawful personal dating preferences through
-          Qaliye&rsquo;s available preference controls. You must not use those
+          Qal Dating&rsquo;s available preference controls. You must not use those
           preferences as a reason to insult, shame, or harass other people.
         </p>
       </Section>
 
       {/* Section 6 */}
       <Section number="6" title="Be Genuine">
-        <p>Qaliye is for authentic adult dating and relationship-building.</p>
+        <p>Qal Dating is for authentic adult dating and relationship-building.</p>
         <p>You must:</p>
         <List
           items={[
@@ -211,7 +211,7 @@ export function CommunityGuidelinesContent() {
           items={[
             "impersonate another person;",
             "use another person&rsquo;s photographs without permission;",
-            "pretend to be a celebrity, public figure, business, or Qaliye employee;",
+            "pretend to be a celebrity, public figure, business, or Qal Dating employee;",
             "create a fictional or deceptive identity;",
             "misrepresent your age, gender, relationship status, intentions, location, profession, or identity;",
             "use heavily altered, stolen, AI-generated, or misleading photographs to deceive users;",
@@ -280,7 +280,7 @@ export function CommunityGuidelinesContent() {
       {/* Section 8 */}
       <Section number="8" title="No Nudity, Pornography, or Explicit Sexual Content">
         <p>
-          Qaliye is a dating platform, not an adult-content or pornography
+          Qal Dating is a dating platform, not an adult-content or pornography
           platform.
         </p>
         <p>You must not upload, send, request, promote, or distribute:</p>
@@ -310,7 +310,7 @@ export function CommunityGuidelinesContent() {
           ]}
         />
         <p>
-          Qaliye uses automated photo-moderation technology, including Amazon
+          Qal Dating uses automated photo-moderation technology, including Amazon
           Rekognition, to check photographs for suspected nudity and sexual
           content.
         </p>
@@ -351,7 +351,7 @@ export function CommunityGuidelinesContent() {
 
       {/* Section 10 */}
       <Section number="10" title="No Sexual Services, Exploitation, or Compensated Dating">
-        <p>Qaliye must not be used to advertise, request, provide, arrange, or promote:</p>
+        <p>Qal Dating must not be used to advertise, request, provide, arrange, or promote:</p>
         <List
           items={[
             "prostitution;",
@@ -386,12 +386,12 @@ export function CommunityGuidelinesContent() {
             "appear unexpectedly at someone&rsquo;s home, workplace, school, or regular location;",
             "use location information to monitor someone;",
             "make credible threats of self-harm to manipulate another user; or",
-            "use Qaliye to facilitate domestic abuse or coercive control.",
+            "use Qal Dating to facilitate domestic abuse or coercive control.",
           ]}
         />
         <p>
           Immediate threats should be reported to local emergency services.
-          Qaliye&rsquo;s reporting system is not an emergency service.
+          Qal Dating&rsquo;s reporting system is not an emergency service.
         </p>
       </Section>
 
@@ -425,7 +425,7 @@ export function CommunityGuidelinesContent() {
 
       {/* Section 13 */}
       <Section number="13" title="No Scams or Financial Exploitation">
-        <p>Never use Qaliye to deceive or financially exploit another person.</p>
+        <p>Never use Qal Dating to deceive or financially exploit another person.</p>
         <p>You must not:</p>
         <List
           items={[
@@ -443,14 +443,14 @@ export function CommunityGuidelinesContent() {
             "manipulate a user into providing financial support.",
           ]}
         />
-        <p>Do not send money to someone you have met only through Qaliye.</p>
+        <p>Do not send money to someone you have met only through Qal Dating.</p>
         <p>Report suspected scams immediately.</p>
       </Section>
 
       {/* Section 14 */}
       <Section number="14" title="No Spam, Advertising, or Unauthorised Commercial Use">
-        <p>Qaliye is intended for personal dating and relationships.</p>
-        <p>Without written permission from Qaliye, you must not:</p>
+        <p>Qal Dating is intended for personal dating and relationships.</p>
+        <p>Without written permission from Qal Dating, you must not:</p>
         <List
           items={[
             "advertise products or services;",
@@ -462,7 +462,7 @@ export function CommunityGuidelinesContent() {
             "solicit donations;",
             "buy or sell accounts;",
             "sell access to users or profile information; or",
-            "use Qaliye primarily to gain followers or traffic on another platform.",
+            "use Qal Dating primarily to gain followers or traffic on another platform.",
           ]}
         />
         <p>
@@ -498,10 +498,10 @@ export function CommunityGuidelinesContent() {
         <List
           items={[
             "threaten to expose someone;",
-            "encourage harassment outside Qaliye;",
+            "encourage harassment outside Qal Dating;",
             "secretly record calls or meetings where prohibited;",
             "post screenshots to shame or identify another user;",
-            "share information received through Qaliye for commercial purposes; or",
+            "share information received through Qal Dating for commercial purposes; or",
             "attempt to discover information that another user has chosen not to share.",
           ]}
         />
@@ -521,14 +521,14 @@ export function CommunityGuidelinesContent() {
             "use another person&rsquo;s photographs without permission;",
             "upload copyrighted images, audio, text, or artwork unlawfully;",
             "copy another user&rsquo;s profile;",
-            "misuse Qaliye&rsquo;s name, logo, designs, or software;",
+            "misuse Qal Dating&rsquo;s name, logo, designs, or software;",
             "falsely claim ownership of another person&rsquo;s work; or",
             "distribute content in violation of copyright, trademark, privacy, or publicity rights.",
           ]}
         />
         <p>
           Rights holders may contact{" "}
-          <a href="mailto:support@qaliye.com" className="text-primary hover:underline">support@qaliye.com</a>{" "}
+          <a href="mailto:support@qaldating.com" className="text-primary hover:underline">support@qaldating.com</a>{" "}
           to report suspected infringement.
         </p>
       </Section>
@@ -537,7 +537,7 @@ export function CommunityGuidelinesContent() {
       <Section number="17" title="Do Not Misuse the Platform">
         <p>
           You must not interfere with the operation, safety, or integrity of
-          Qaliye.
+          Qal Dating.
         </p>
         <p>Prohibited activity includes:</p>
         <List
@@ -560,7 +560,7 @@ export function CommunityGuidelinesContent() {
         />
         <p>
           Report suspected security vulnerabilities privately to{" "}
-          <a href="mailto:support@qaliye.com" className="text-primary hover:underline">support@qaliye.com</a>.
+          <a href="mailto:support@qaldating.com" className="text-primary hover:underline">support@qaldating.com</a>.
           Do not publicly disclose a vulnerability in a way that puts users at
           risk.
         </p>
@@ -569,8 +569,8 @@ export function CommunityGuidelinesContent() {
       {/* Section 18 */}
       <Section number="18" title="Offline Behaviour Matters">
         <p>
-          These Guidelines may apply to behaviour outside Qaliye when it
-          involves someone you met through Qaliye or creates a serious risk to
+          These Guidelines may apply to behaviour outside Qal Dating when it
+          involves someone you met through Qal Dating or creates a serious risk to
           the community.
         </p>
         <p>We may take action based on credible information concerning:</p>
@@ -589,7 +589,7 @@ export function CommunityGuidelinesContent() {
           ]}
         />
         <p>
-          Qaliye does not investigate every personal disagreement or decide
+          Qal Dating does not investigate every personal disagreement or decide
           ordinary relationship disputes.
         </p>
         <p>
@@ -601,11 +601,11 @@ export function CommunityGuidelinesContent() {
 
       {/* Section 19 */}
       <Section number="19" title="Dating Safety">
-        <p>When meeting someone from Qaliye:</p>
+        <p>When meeting someone from Qal Dating:</p>
         <List
           items={[
             "take time to get to know them;",
-            "keep early communication within Qaliye where practical;",
+            "keep early communication within Qal Dating where practical;",
             "do not send money or financial information;",
             "avoid sharing your home or workplace address too early;",
             "meet for the first time in a populated public place;",
@@ -623,7 +623,7 @@ export function CommunityGuidelinesContent() {
           someone is safe.
         </p>
         <p>
-          Trust your judgement and use Qaliye&rsquo;s block and report tools
+          Trust your judgement and use Qal Dating&rsquo;s block and report tools
           when necessary.
         </p>
       </Section>
@@ -659,7 +659,7 @@ export function CommunityGuidelinesContent() {
         </p>
         <p>For additional support, contact:</p>
         <p>
-          <a href="mailto:support@qaliye.com" className="text-primary hover:underline">support@qaliye.com</a>
+          <a href="mailto:support@qaldating.com" className="text-primary hover:underline">support@qaldating.com</a>
         </p>
         <p>
           For an immediate danger or suspected crime, contact your local
@@ -667,10 +667,10 @@ export function CommunityGuidelinesContent() {
           an in-app report during an emergency.
         </p>
         <p>
-          Qaliye takes seriously its obligations under the UK Online Safety Act
+          Qal Dating takes seriously its obligations under the UK Online Safety Act
           2023 to address illegal content and protect users. You can report
           illegal content through the in-app reporting feature or by contacting{" "}
-          <a href="mailto:support@qaliye.com" className="text-primary hover:underline">support@qaliye.com</a>.
+          <a href="mailto:support@qaldating.com" className="text-primary hover:underline">support@qaldating.com</a>.
           Further information about our safety policies is available in our
           Transparency Report, where published.
         </p>
@@ -690,7 +690,7 @@ export function CommunityGuidelinesContent() {
             "matching with you;",
             "sending messages;",
             "viewing your activity; or",
-            "otherwise interacting with you through Qaliye.",
+            "otherwise interacting with you through Qal Dating.",
           ]}
         />
         <p>You do not need to warn someone before blocking them.</p>
@@ -700,14 +700,14 @@ export function CommunityGuidelinesContent() {
         </p>
         <p>
           Blocking and reporting are separate actions. Blocking stops or limits
-          contact, while reporting alerts Qaliye to a possible violation.
+          contact, while reporting alerts Qal Dating to a possible violation.
         </p>
         <p>Where appropriate, consider both blocking and reporting the user.</p>
       </Section>
 
       {/* Section 22 */}
-      <Section number="22" title="How Qaliye Moderates Content">
-        <p>Qaliye uses moderation methods that may include:</p>
+      <Section number="22" title="How Qal Dating Moderates Content">
+        <p>Qal Dating uses moderation methods that may include:</p>
         <List
           items={[
             "automated photo moderation;",
@@ -724,7 +724,7 @@ export function CommunityGuidelinesContent() {
           may occasionally be flagged, and prohibited content may occasionally
           avoid detection.
         </p>
-        <p>Qaliye may review reported or relevant content when reasonably necessary to:</p>
+        <p>Qal Dating may review reported or relevant content when reasonably necessary to:</p>
         <List
           items={[
             "investigate a report;",
@@ -756,7 +756,7 @@ export function CommunityGuidelinesContent() {
             "applicable legal requirements.",
           ]}
         />
-        <p>Qaliye may:</p>
+        <p>Qal Dating may:</p>
         <List
           items={[
             "provide guidance or a warning;",
@@ -793,7 +793,7 @@ export function CommunityGuidelinesContent() {
           ]}
         />
         <p>
-          Qaliye may take no action where available evidence does not establish
+          Qal Dating may take no action where available evidence does not establish
           a violation.
         </p>
         <p>
@@ -817,7 +817,7 @@ export function CommunityGuidelinesContent() {
         />
         <p>Send your appeal to:</p>
         <p>
-          <a href="mailto:support@qaliye.com" className="text-primary hover:underline">support@qaliye.com</a>
+          <a href="mailto:support@qaldating.com" className="text-primary hover:underline">support@qaldating.com</a>
         </p>
         <p>Include:</p>
         <List
@@ -844,7 +844,7 @@ export function CommunityGuidelinesContent() {
         <p>We may update these Guidelines to reflect:</p>
         <List
           items={[
-            "changes to Qaliye;",
+            "changes to Qal Dating;",
             "new safety risks;",
             "user feedback;",
             "changes in law;",
@@ -861,7 +861,7 @@ export function CommunityGuidelinesContent() {
           website, email, or another appropriate method.
         </p>
         <p>
-          Continued use of Qaliye after updated Guidelines take effect means
+          Continued use of Qal Dating after updated Guidelines take effect means
           that you must follow the updated rules.
         </p>
       </Section>
@@ -873,16 +873,16 @@ export function CommunityGuidelinesContent() {
           Community Guidelines, contact:
         </p>
         <div className="space-y-1">
-          <p><strong>Qaliye</strong></p>
-          <p>Operated by <strong>[YOUR FULL LEGAL NAME], trading as Qaliye</strong></p>
+          <p><strong>Qal Dating</strong></p>
+          <p>Operated by <strong>[YOUR FULL LEGAL NAME], trading as Qal Dating</strong></p>
           <p><strong>Business address:</strong> [YOUR BUSINESS ADDRESS]</p>
           <p>
             <strong>Email:</strong>{" "}
-            <a href="mailto:support@qaliye.com" className="text-primary hover:underline">support@qaliye.com</a>
+            <a href="mailto:support@qaldating.com" className="text-primary hover:underline">support@qaldating.com</a>
           </p>
           <p>
             <strong>Website:</strong>{" "}
-            <a href="http://www.qaliye.com" className="text-primary hover:underline">www.qaliye.com</a>
+            <a href="http://www.qaldating.com" className="text-primary hover:underline">www.qaldating.com</a>
           </p>
         </div>
       </Section>

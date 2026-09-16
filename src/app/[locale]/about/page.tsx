@@ -41,7 +41,7 @@ export default async function AboutPage({
     <>
       <BreadcrumbJsonLd
         items={[
-          { name: "Qaliye", url: `/${locale}` },
+          { name: "Qal Dating", url: `/${locale}` },
           { name: "About", url: `/${locale}/about` },
         ]}
       />

@@ -22,6 +22,7 @@ export function Footer() {
     { href: "/terms", label: tFooter("terms") },
     { href: "/community-guidelines", label: tFooter("communityGuidelines") },
     { href: "/safety-tips", label: tFooter("safetyTips") },
+    { href: "/child-safety", label: tFooter("childSafety") },
     { href: "/account-deletion", label: tFooter("accountDeletion") },
   ] as const;
 

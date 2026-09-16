@@ -54,7 +54,7 @@ export default function DashboardPage() {
     if (statusCode === "403") {
       desc = "Your account does not have admin access. Contact an administrator.";
     } else if (statusCode === "500") {
-      desc = "The backend service is unavailable. Make sure the Qaliye API server is running.";
+      desc = "The backend service is unavailable. Make sure the Qal Dating API server is running.";
     }
     return (
       <div>
@@ -68,7 +68,7 @@ export default function DashboardPage() {
     <div>
       <PageHeader
         title="Dashboard"
-        description="Operational overview of the Qaliye platform"
+        description="Operational overview of the Qal Dating platform"
       />
 
       {isLoading ? (

@@ -8,7 +8,7 @@ import {
 
 /**
  * Convert a caught error from `adminFetch` / `adminGet` / `adminPost` / etc.
- * into a NextResponse that mirrors the Qaliye Admin API error envelope:
+ * into a NextResponse that mirrors the Qal Dating Admin API error envelope:
  *
  *   { error: { code: "CONFLICT", message: "...", details: {} } }
  *

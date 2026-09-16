@@ -41,7 +41,7 @@ export function getErrorMessage(error: unknown): string {
 /**
  * Parse a backend error response into an AdminApiError.
  *
- * Handles the Qaliye Admin API error envelope:
+ * Handles the Qal Dating Admin API error envelope:
  *   { error: { code: "CONFLICT", message: "...", details: {} } }
  *
  * Also supports flat fallbacks for older endpoints:

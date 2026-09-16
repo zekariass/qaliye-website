@@ -66,7 +66,7 @@ export default async function FeaturesPage({
     <>
       <BreadcrumbJsonLd
         items={[
-          { name: "Qaliye", url: `/${locale}` },
+          { name: "Qal Dating", url: `/${locale}` },
           { name: "Features", url: `/${locale}/features` },
         ]}
       />

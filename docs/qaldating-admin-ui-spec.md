@@ -1,9 +1,9 @@
-# Qaliye Admin Console — Next.js UI Implementation Specification
+# Qal Dating Admin Console — Next.js UI Implementation Specification
 
 **Source backend contract:** `docs/admin-backend-endpoints.md`  
 **Target:** Next.js App Router admin console  
 **Primary users:** `ADMIN` and `MODERATOR`  
-**Design goal:** A secure, efficient, desktop-first operations console for managing Qaliye users, moderation queues, payments, campaigns, catalog data, and audit history.
+**Design goal:** A secure, efficient, desktop-first operations console for managing Qal Dating users, moderation queues, payments, campaigns, catalog data, and audit history.
 
 ---
 
@@ -23,7 +23,7 @@
 
 ### 2.1 Public behaviour
 
-The public Qaliye UI must contain **no visible or hidden navigation link** to the admin console.
+The public Qal Dating UI must contain **no visible or hidden navigation link** to the admin console.
 
 Do not include the admin path in:
 
@@ -68,14 +68,14 @@ Public URL:
   /<ADMIN_CONSOLE_PATH>/users
 
 Internal Next.js route:
-  /__qaliye_console/users
+  /__qaldating_console/users
 ```
 
 Suggested route implementation:
 
 ```text
 app/
-  __qaliye_console/
+  __qaldating_console/
     layout.tsx
     page.tsx
     users/
@@ -87,7 +87,7 @@ app/
     audit-log/
 ```
 
-Configure a server-side rewrite from the private path to the internal path. Block direct requests to `/__qaliye_console/*`.
+Configure a server-side rewrite from the private path to the internal path. Block direct requests to `/__qaldating_console/*`.
 
 Important:
 
@@ -111,7 +111,7 @@ For admin paths:
 6. Return a neutral `404 Not Found` for:
    - Unauthenticated access, unless the request is for the secret admin sign-in route
    - Authenticated users with `USER` role
-   - Direct access to `/__qaliye_console/*`
+   - Direct access to `/__qaldating_console/*`
 7. Never reveal that an admin console exists in a `403` page shown to ordinary users.
 
 ### 2.5 Admin sign-in
@@ -124,9 +124,9 @@ Secret route:
 
 UI:
 
-- Qaliye logo
+- Qal Dating logo
 - Title: **Admin Console**
-- Standard authentication form or existing Qaliye authentication flow
+- Standard authentication form or existing Qal Dating authentication flow
 - No sign-up link
 - No social proof or consumer marketing content
 - Optional warning: “Authorised staff only”
@@ -274,7 +274,7 @@ The admin console should feel trustworthy and operational, not like the consumer
 
 Use:
 
-- Qaliye purple as the primary accent
+- Qal Dating purple as the primary accent
 - Neutral grey page backgrounds
 - White or near-white surfaces
 - Strong semantic colours for status
@@ -543,7 +543,7 @@ Do not request this endpoint for `MODERATOR`.
 
 ```text
 Users
-Search and manage Qaliye accounts.
+Search and manage Qal Dating accounts.
 ```
 
 #### Filter bar
@@ -1860,7 +1860,7 @@ Prefer a Next.js server-side Backend-for-Frontend layer.
 ```text
 Browser
   → Next.js route handler/server action
-  → Qaliye backend /api/v1/admin/*
+  → Qal Dating backend /api/v1/admin/*
 ```
 
 Benefits:
@@ -2050,7 +2050,7 @@ components/admin/
 ```text
 src/
   app/
-    __qaliye_console/
+    __qaldating_console/
       layout.tsx
       page.tsx
       loading.tsx

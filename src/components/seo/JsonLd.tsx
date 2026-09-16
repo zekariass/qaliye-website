@@ -4,16 +4,16 @@ export function OrganizationJsonLd() {
   const data = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Qaliye",
+    name: "Qal Dating",
     url: SITE_URL,
     logo: `${SITE_URL}/icon.png`,
     description:
       "Dating app for Ethiopian and Eritrean singles — meaningful connections rooted in culture, safety, and respect.",
     sameAs: [
-      "https://instagram.com/qaliye",
-      "https://t.me/qaliye",
-      "https://tiktok.com/@qaliye",
-      "https://x.com/qaliye",
+      "https://instagram.com/qaldating",
+      "https://t.me/qaldating",
+      "https://tiktok.com/@qaldating",
+      "https://x.com/qaldating",
     ],
   };
   return <JsonLd data={data} />;
@@ -23,7 +23,7 @@ export function SoftwareApplicationJsonLd() {
   const data = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "Qaliye",
+    name: "Qal Dating",
     applicationCategory: "LifestyleApplication",
     operatingSystem: "iOS, Android",
     url: SITE_URL,
@@ -36,7 +36,7 @@ export function SoftwareApplicationJsonLd() {
       },
     ],
     description:
-      "Qaliye is the dating app for Ethiopian and Eritrean singles. Find meaningful connections rooted in shared culture, values, and heritage.",
+      "Qal Dating is the dating app for Ethiopian and Eritrean singles. Find meaningful connections rooted in shared culture, values, and heritage.",
   };
   return <JsonLd data={data} />;
 }

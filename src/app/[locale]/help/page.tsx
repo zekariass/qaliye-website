@@ -62,7 +62,7 @@ export default async function HelpPage({
     <>
       <BreadcrumbJsonLd
         items={[
-          { name: "Qaliye", url: `/${locale}` },
+          { name: "Qal Dating", url: `/${locale}` },
           { name: "Help", url: `/${locale}/help` },
         ]}
       />

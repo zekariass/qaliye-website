@@ -541,19 +541,35 @@ export interface IdentityReview {
   userId: string;
   displayName?: string;
   gender?: string;
-  selfiePath: string;
-  profilePhotoPath?: string;
+  /** Signed URL for the selfie (1-hour TTL, ready to use in <img src>). Null/undefined if missing. */
+  selfieUrl?: string;
+  /** Signed URL for the profile photo (1-hour TTL, ready to use in <img src>). Null/undefined if missing. */
+  profilePhotoUrl?: string;
   createdAt: string;
 }
 
 export function adaptIdentityReview(raw: Record<string, unknown>): IdentityReview {
+  // Backend now returns selfieUrl / profilePhotoUrl as signed URLs (camelCase).
+  // Also check snake_case variants for robustness.
+  const selfieUrl = raw.selfieUrl
+    ? String(raw.selfieUrl)
+    : raw.selfie_url
+      ? String(raw.selfie_url)
+      : undefined;
+
+  const profilePhotoUrl = raw.profilePhotoUrl
+    ? String(raw.profilePhotoUrl)
+    : raw.profile_photo_url
+      ? String(raw.profile_photo_url)
+      : undefined;
+
   return {
     id: String(raw.id ?? ""),
     userId: String(raw.userId ?? raw.user_id ?? ""),
     displayName: raw.displayName ? String(raw.displayName) : raw.display_name ? String(raw.display_name) : undefined,
     gender: raw.gender ? String(raw.gender) : undefined,
-    selfiePath: String(raw.selfiePath ?? raw.selfie_path ?? ""),
-    profilePhotoPath: raw.profilePhotoPath ? String(raw.profilePhotoPath) : raw.profile_photo_path ? String(raw.profile_photo_path) : undefined,
+    selfieUrl,
+    profilePhotoUrl,
     createdAt: String(raw.createdAt ?? raw.created_at ?? ""),
   };
 }

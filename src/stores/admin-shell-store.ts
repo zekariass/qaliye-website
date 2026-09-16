@@ -18,6 +18,6 @@ export const useAdminShellStore = create<AdminShellState>()(
       setSidebarCollapsed: (collapsed) =>
         set({ sidebarCollapsed: collapsed }),
     }),
-    { name: "qaliye-admin-shell-prefs" }
+    { name: "qaldating-admin-shell-prefs" }
   )
 );

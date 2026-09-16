@@ -67,7 +67,7 @@ export function Navbar() {
               <button
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary-gradient text-white text-sm font-semibold shadow-md hover:shadow-lg transition-all hover:scale-105 min-h-[44px] download-glow"
                 aria-haspopup="menu"
-                aria-label="Download Qaliye app"
+                aria-label="Download Qal Dating app"
               >
                 <Download className="w-4 h-4" aria-hidden="true" />
                 <span>Download</span>

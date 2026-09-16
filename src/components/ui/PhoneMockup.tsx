@@ -22,7 +22,7 @@ export function PhoneMockup({
                 <div className="w-20 h-20 rounded-full bg-primary-gradient mx-auto flex items-center justify-center">
                   <span className="text-3xl font-bold text-white">Q</span>
                 </div>
-                <p className="text-sm text-text-secondary">Qaliye</p>
+                <p className="text-sm text-text-secondary">Qal Dating</p>
                 <div className="space-y-2">
                   <div className="h-3 bg-primary/20 rounded-full w-32 mx-auto" />
                   <div className="h-3 bg-primary/10 rounded-full w-24 mx-auto" />

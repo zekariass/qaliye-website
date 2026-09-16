@@ -14,25 +14,25 @@ export function PrivacyPolicyContent() {
       {/* Section 1 */}
       <Section number="1" title="Introduction">
         <p>
-          Qaliye respects your privacy and is committed to protecting your
+          Qal Dating respects your privacy and is committed to protecting your
           personal information.
         </p>
         <p>This Privacy Policy explains how we collect, use, store, share, and protect personal information when you use:</p>
         <List
           items={[
-            "the Qaliye mobile application;",
-            "the Qaliye website at www.qaliye.com;",
+            "the Qal Dating mobile application;",
+            "the Qal Dating website at www.qaldating.com;",
             "our customer-support services; and",
-            "any related Qaliye features, subscriptions, products, or services.",
+            "any related Qal Dating features, subscriptions, products, or services.",
           ]}
         />
         <p>Together, these are referred to as the &ldquo;Services.&rdquo;</p>
         <p>
-          Qaliye is a dating and relationship platform designed primarily for
+          Qal Dating is a dating and relationship platform designed primarily for
           Habesha communities, including Ethiopian and Eritrean people and
           members of the global diaspora.
         </p>
-        <p>Qaliye is available only to people aged 18 or over.</p>
+        <p>Qal Dating is available only to people aged 18 or over.</p>
         <p>
           This Privacy Policy should be read alongside our{" "}
           <a href="/terms" className="text-primary hover:underline">Terms of Use</a>{" "}
@@ -44,21 +44,21 @@ export function PrivacyPolicyContent() {
 
       {/* Section 2 */}
       <Section number="2" title="Who We Are">
-        <p>Qaliye is operated by:</p>
+        <p>Qal Dating is operated by:</p>
         <div className="space-y-1">
-          <p><strong>[YOUR FULL LEGAL NAME]</strong>, a sole trader trading as <strong>Qaliye</strong></p>
+          <p><strong>[YOUR FULL LEGAL NAME]</strong>, a sole trader trading as <strong>Qal Dating</strong></p>
           <p><strong>Business address:</strong> [YOUR BUSINESS ADDRESS]</p>
           <p>
             <strong>Email:</strong>{" "}
-            <a href="mailto:support@qaliye.com" className="text-primary hover:underline">support@qaliye.com</a>
+            <a href="mailto:support@qaldating.com" className="text-primary hover:underline">support@qaldating.com</a>
           </p>
           <p>
             <strong>Website:</strong>{" "}
-            <a href="http://www.qaliye.com" className="text-primary hover:underline">www.qaliye.com</a>
+            <a href="http://www.qaldating.com" className="text-primary hover:underline">www.qaldating.com</a>
           </p>
         </div>
         <p>
-          For the purposes of UK data-protection law, <strong>[YOUR FULL LEGAL NAME], trading as Qaliye</strong>, is the controller of the personal information described in this Privacy Policy.
+          For the purposes of UK data-protection law, <strong>[YOUR FULL LEGAL NAME], trading as Qal Dating</strong>, is the controller of the personal information described in this Privacy Policy.
         </p>
         <p>This means that we decide why and how your personal information is processed.</p>
         <p>
@@ -69,7 +69,7 @@ export function PrivacyPolicyContent() {
         <p>
           If you are located in the European Economic Area, this policy also
           complies with the EU General Data Protection Regulation (EU GDPR), and{" "}
-          <strong>[YOUR FULL LEGAL NAME], trading as Qaliye</strong>, is the
+          <strong>[YOUR FULL LEGAL NAME], trading as Qal Dating</strong>, is the
           controller for those purposes. We have not appointed an EU
           representative under Article 27 of the EU GDPR at this time; all
           privacy queries should be directed to the contact details above.
@@ -77,14 +77,14 @@ export function PrivacyPolicyContent() {
         <p>Questions about this Privacy Policy or our handling of personal information should be sent to:</p>
         <p>
           <strong>Email:</strong>{" "}
-          <a href="mailto:support@qaliye.com" className="text-primary hover:underline">support@qaliye.com</a>
+          <a href="mailto:support@qaldating.com" className="text-primary hover:underline">support@qaldating.com</a>
         </p>
       </Section>
 
       {/* Section 3 */}
       <Section number="3" title="Information We Collect">
         <p>
-          The personal information we collect depends on how you use Qaliye and
+          The personal information we collect depends on how you use Qal Dating and
           which features you choose to use.
         </p>
 
@@ -144,7 +144,7 @@ export function PrivacyPolicyContent() {
               "other profile details you choose to provide.",
             ]}
           />
-          <p>Some of this information may be visible to other Qaliye users.</p>
+          <p>Some of this information may be visible to other Qal Dating users.</p>
           <p>
             Your profile visibility depends on your settings, account status,
             discovery preferences, blocks, matches, and the operation of the
@@ -154,7 +154,7 @@ export function PrivacyPolicyContent() {
 
         <Subsection number="3.3" title="Special-category information">
           <p>
-            Some information processed through Qaliye may be considered
+            Some information processed through Qal Dating may be considered
             particularly sensitive under data-protection law.
           </p>
           <p>This may include information revealing or concerning:</p>
@@ -186,7 +186,7 @@ export function PrivacyPolicyContent() {
           <p>
             You may withdraw your consent through your account settings where
             available, by removing the information, or by contacting{" "}
-            <a href="mailto:support@qaliye.com" className="text-primary hover:underline">support@qaliye.com</a>.
+            <a href="mailto:support@qaldating.com" className="text-primary hover:underline">support@qaldating.com</a>.
           </p>
           <p>
             Withdrawing consent does not make earlier processing unlawful. It
@@ -196,7 +196,7 @@ export function PrivacyPolicyContent() {
         </Subsection>
 
         <Subsection number="3.4" title="Photographs and media">
-          <p>We collect content that you upload or send through Qaliye, including:</p>
+          <p>We collect content that you upload or send through Qal Dating, including:</p>
           <List
             items={[
               "profile photographs;",
@@ -247,7 +247,7 @@ export function PrivacyPolicyContent() {
           </p>
           <p>
             Automated moderation may occasionally make mistakes. You may contact{" "}
-            <a href="mailto:support@qaliye.com" className="text-primary hover:underline">support@qaliye.com</a>{" "}
+            <a href="mailto:support@qaldating.com" className="text-primary hover:underline">support@qaldating.com</a>{" "}
             to request a review of a moderation decision.
           </p>
           <p>
@@ -258,7 +258,7 @@ export function PrivacyPolicyContent() {
 
         <Subsection number="3.6" title="Location information">
           <p>
-            Qaliye uses location information to provide discovery, distance, and
+            Qal Dating uses location information to provide discovery, distance, and
             location-based dating features.
           </p>
           <p>We may collect:</p>
@@ -289,7 +289,7 @@ export function PrivacyPolicyContent() {
         </Subsection>
 
         <Subsection number="3.7" title="Dating, discovery, and interaction information">
-          <p>We process information about how you interact with Qaliye and other users, including:</p>
+          <p>We process information about how you interact with Qal Dating and other users, including:</p>
           <List
             items={[
               "Likes;",
@@ -323,7 +323,7 @@ export function PrivacyPolicyContent() {
         </Subsection>
 
         <Subsection number="3.8" title="Messages and communications">
-          <p>When you communicate through Qaliye, we may process:</p>
+          <p>When you communicate through Qal Dating, we may process:</p>
           <List
             items={[
               "text messages;",
@@ -336,7 +336,7 @@ export function PrivacyPolicyContent() {
               "timestamps;",
               "attachment information;",
               "reports relating to messages; and",
-              "support conversations with the Qaliye team.",
+              "support conversations with the Qal Dating team.",
             ]}
           />
           <p>We do not routinely have people read every private conversation.</p>
@@ -357,7 +357,7 @@ export function PrivacyPolicyContent() {
           />
           <p>
             A person you message may save, copy, screenshot, record, or share
-            your communication outside Qaliye. We cannot fully control what
+            your communication outside Qal Dating. We cannot fully control what
             another user does with content they receive.
           </p>
         </Subsection>
@@ -420,7 +420,7 @@ export function PrivacyPolicyContent() {
         </Subsection>
 
         <Subsection number="3.11" title="Device and technical information">
-          <p>When you use Qaliye, we may automatically collect:</p>
+          <p>When you use Qal Dating, we may automatically collect:</p>
           <List
             items={[
               "IP address;",
@@ -463,7 +463,7 @@ export function PrivacyPolicyContent() {
             Push notifications may be delivered through services provided by
             Expo, Apple, Google, or other notification infrastructure providers.
           </p>
-          <p>You can disable notifications through Qaliye&rsquo;s settings or your device settings.</p>
+          <p>You can disable notifications through Qal Dating&rsquo;s settings or your device settings.</p>
         </Subsection>
 
         <Subsection number="3.13" title="Customer support and feedback">
@@ -478,7 +478,7 @@ export function PrivacyPolicyContent() {
               "correspondence;",
               "complaint information;",
               "technical details; and",
-              "feedback about Qaliye.",
+              "feedback about Qal Dating.",
             ]}
           />
         </Subsection>
@@ -498,7 +498,7 @@ export function PrivacyPolicyContent() {
         </Subsection>
 
         <Subsection number="3.15" title="Website and cookie information">
-          <p>When you use www.qaliye.com, we may collect information through cookies and similar technologies, including:</p>
+          <p>When you use www.qaldating.com, we may collect information through cookies and similar technologies, including:</p>
           <List
             items={[
               "IP address;",
@@ -653,7 +653,7 @@ export function PrivacyPolicyContent() {
           <p>
             We use the information you choose to publish to make your profile
             available to eligible users according to your settings and
-            Qaliye&rsquo;s discovery rules.
+            Qal Dating&rsquo;s discovery rules.
           </p>
           <p><strong>Lawful basis:</strong> Performance of our contract with you.</p>
           <p>
@@ -701,7 +701,7 @@ export function PrivacyPolicyContent() {
           />
           <p>
             <strong>Lawful basis:</strong> Our legitimate interests in keeping
-            Qaliye safe, performance of our contract, compliance with legal
+            Qal Dating safe, performance of our contract, compliance with legal
             obligations, protection of vital interests in emergencies, and
             establishment, exercise, or defence of legal claims where
             applicable.
@@ -753,7 +753,7 @@ export function PrivacyPolicyContent() {
           </p>
         </Subsection>
 
-        <Subsection number="5.8" title="To improve and troubleshoot Qaliye">
+        <Subsection number="5.8" title="To improve and troubleshoot Qal Dating">
           <p>We use technical, usage, crash, and interaction information to:</p>
           <List
             items={[
@@ -768,7 +768,7 @@ export function PrivacyPolicyContent() {
           />
           <p>
             <strong>Lawful basis:</strong> Our legitimate interests in
-            maintaining and improving Qaliye.
+            maintaining and improving Qal Dating.
           </p>
           <p>
             Where cookies or similar technologies require consent, we rely on
@@ -790,7 +790,7 @@ export function PrivacyPolicyContent() {
           />
           <p>
             <strong>Lawful basis:</strong> Our legitimate interests in
-            protecting users, Qaliye, and our service providers, and compliance
+            protecting users, Qal Dating, and our service providers, and compliance
             with legal obligations where applicable.
           </p>
         </Subsection>
@@ -839,7 +839,7 @@ export function PrivacyPolicyContent() {
           <p>With any consent required by law, we may send information about:</p>
           <List
             items={[
-              "new Qaliye features;",
+              "new Qal Dating features;",
               "subscriptions;",
               "promotions;",
               "events;",
@@ -857,7 +857,7 @@ export function PrivacyPolicyContent() {
 
       {/* Section 6 */}
       <Section number="6" title="Required and Optional Information">
-        <p>Certain information is required to create and operate a Qaliye account, such as:</p>
+        <p>Certain information is required to create and operate a Qal Dating account, such as:</p>
         <List
           items={[
             "date of birth;",
@@ -881,7 +881,7 @@ export function PrivacyPolicyContent() {
 
       {/* Section 7 */}
       <Section number="7" title="Matching, Recommendations, and Profiling">
-        <p>Qaliye uses automated systems to organise and recommend profiles.</p>
+        <p>Qal Dating uses automated systems to organise and recommend profiles.</p>
         <p>These systems may consider:</p>
         <List
           items={[
@@ -940,7 +940,7 @@ export function PrivacyPolicyContent() {
           These automated decisions do not solely produce legal or similarly
           significant effects on you because you have the right to request human
           review of any moderation decision by contacting{" "}
-          <a href="mailto:support@qaliye.com" className="text-primary hover:underline">support@qaliye.com</a>.
+          <a href="mailto:support@qaldating.com" className="text-primary hover:underline">support@qaldating.com</a>.
           A human reviewer will assess the photograph and the moderation result
           and may overturn the automated decision.
         </p>
@@ -952,7 +952,7 @@ export function PrivacyPolicyContent() {
 
       {/* Section 9 */}
       <Section number="9" title="Who Can See Your Information">
-        <Subsection number="9.1" title="Other Qaliye users">
+        <Subsection number="9.1" title="Other Qal Dating users">
           <p>Other users may see information made available through your profile, such as:</p>
           <List
             items={[
@@ -981,7 +981,7 @@ export function PrivacyPolicyContent() {
               "discovery preferences;",
               "matching status;",
               "subscription features; and",
-              "Qaliye&rsquo;s safety systems.",
+              "Qal Dating&rsquo;s safety systems.",
             ]}
           />
         </Subsection>
@@ -997,9 +997,9 @@ export function PrivacyPolicyContent() {
             ]}
           />
         </Subsection>
-        <Subsection number="9.3" title="People outside Qaliye">
+        <Subsection number="9.3" title="People outside Qal Dating">
           <p>
-            Other users may copy, record, or share information outside Qaliye.
+            Other users may copy, record, or share information outside Qal Dating.
             Although this may violate our rules, we cannot guarantee that
             content visible to another person will remain within the
             application.
@@ -1013,7 +1013,7 @@ export function PrivacyPolicyContent() {
         <p>We may share information as described below.</p>
 
         <Subsection number="10.1" title="Service providers">
-          <p>We use providers that help us operate Qaliye, including providers of:</p>
+          <p>We use providers that help us operate Qal Dating, including providers of:</p>
           <List
             items={[
               "cloud infrastructure;",
@@ -1124,7 +1124,7 @@ export function PrivacyPolicyContent() {
 
         <Subsection number="10.4" title="Business transfers">
           <p>
-            If Qaliye is sold, reorganised, transferred, merged, or converted
+            If Qal Dating is sold, reorganised, transferred, merged, or converted
             into another legal structure, personal information may be disclosed
             to professional advisers and a prospective or actual successor.
           </p>
@@ -1142,7 +1142,7 @@ export function PrivacyPolicyContent() {
       {/* Section 11 */}
       <Section number="11" title="International Transfers">
         <p>
-          Qaliye is operated from the United Kingdom, but some users and service
+          Qal Dating is operated from the United Kingdom, but some users and service
           providers may be located in other countries.
         </p>
         <p>
@@ -1171,7 +1171,7 @@ export function PrivacyPolicyContent() {
         </p>
         <p>
           You may contact{" "}
-          <a href="mailto:support@qaliye.com" className="text-primary hover:underline">support@qaliye.com</a>{" "}
+          <a href="mailto:support@qaldating.com" className="text-primary hover:underline">support@qaldating.com</a>{" "}
           for further information about the safeguards used for a particular
           transfer.
         </p>
@@ -1340,7 +1340,7 @@ export function PrivacyPolicyContent() {
         <p>
           You may request deletion through the account settings where available
           or by emailing{" "}
-          <a href="mailto:support@qaliye.com" className="text-primary hover:underline">support@qaliye.com</a>.
+          <a href="mailto:support@qaldating.com" className="text-primary hover:underline">support@qaldating.com</a>.
         </p>
         <p>Deleting the application from your device does not delete your account.</p>
         <p>Cancelling a subscription does not automatically delete your account.</p>
@@ -1440,7 +1440,7 @@ export function PrivacyPolicyContent() {
           <p>
             In particular, if an automated photo-moderation decision adversely
             affects you, you may request human review by contacting{" "}
-            <a href="mailto:support@qaliye.com" className="text-primary hover:underline">support@qaliye.com</a>.
+            <a href="mailto:support@qaldating.com" className="text-primary hover:underline">support@qaldating.com</a>.
           </p>
         </Subsection>
         <Subsection number="14.10" title="Complain to a regulator">
@@ -1467,7 +1467,7 @@ export function PrivacyPolicyContent() {
         <p>
           You may also object to processing based on our legitimate interests.
           Contact{" "}
-          <a href="mailto:support@qaliye.com" className="text-primary hover:underline">support@qaliye.com</a>{" "}
+          <a href="mailto:support@qaldating.com" className="text-primary hover:underline">support@qaldating.com</a>{" "}
           and explain the processing to which you object.
         </p>
       </Section>
@@ -1478,7 +1478,7 @@ export function PrivacyPolicyContent() {
         <div className="space-y-1">
           <p>
             <strong>Email:</strong>{" "}
-            <a href="mailto:support@qaliye.com" className="text-primary hover:underline">support@qaliye.com</a>
+            <a href="mailto:support@qaldating.com" className="text-primary hover:underline">support@qaldating.com</a>
           </p>
           <p><strong>Subject:</strong> Privacy request</p>
         </div>
@@ -1515,7 +1515,7 @@ export function PrivacyPolicyContent() {
         <p>Questions or complaints about this Privacy Policy or our handling of your information should first be sent to:</p>
         <p>
           <strong>Email:</strong>{" "}
-          <a href="mailto:support@qaliye.com" className="text-primary hover:underline">support@qaliye.com</a>
+          <a href="mailto:support@qaldating.com" className="text-primary hover:underline">support@qaldating.com</a>
         </p>
         <p>
           You also have the right to complain to the UK Information
@@ -1586,7 +1586,7 @@ export function PrivacyPolicyContent() {
 
       {/* Section 20 */}
       <Section number="20" title="Children">
-        <p>Qaliye is strictly for people aged 18 and over.</p>
+        <p>Qal Dating is strictly for people aged 18 and over.</p>
         <p>
           We do not knowingly permit children to create accounts or use the
           dating Services.
@@ -1610,9 +1610,9 @@ export function PrivacyPolicyContent() {
           ]}
         />
         <p>
-          If you believe that a person under 18 is using Qaliye, report the
+          If you believe that a person under 18 is using Qal Dating, report the
           account through the application or contact{" "}
-          <a href="mailto:support@qaliye.com" className="text-primary hover:underline">support@qaliye.com</a>{" "}
+          <a href="mailto:support@qaldating.com" className="text-primary hover:underline">support@qaldating.com</a>{" "}
           immediately.
         </p>
       </Section>
@@ -1620,12 +1620,12 @@ export function PrivacyPolicyContent() {
       {/* Section 21 */}
       <Section number="21" title="Third-Party Links and Services">
         <p>
-          Qaliye may contain links to third-party websites, services, or
+          Qal Dating may contain links to third-party websites, services, or
           applications.
         </p>
         <p>
           We are not responsible for the privacy practices of third parties that
-          operate independently from Qaliye.
+          operate independently from Qal Dating.
         </p>
         <p>
           Review their privacy policies before providing them with personal
@@ -1641,11 +1641,11 @@ export function PrivacyPolicyContent() {
           items={[
             "using the unsubscribe option in the email;",
             "changing your account preferences; or",
-            "contacting support@qaliye.com.",
+            "contacting support@qaldating.com.",
           ]}
         />
         <p>
-          You can control promotional push notifications through your Qaliye or
+          You can control promotional push notifications through your Qal Dating or
           device settings.
         </p>
         <p>Even if you opt out of marketing, we may continue sending necessary service messages, including:</p>
@@ -1677,8 +1677,8 @@ export function PrivacyPolicyContent() {
         <p>
           Further details, including the specific cookies used, their purposes,
           and how to change your choices, are provided in the{" "}
-          <strong>Qaliye Cookie Policy</strong>, available at{" "}
-          <a href="http://www.qaliye.com/cookie-policy" className="text-primary hover:underline">www.qaliye.com/cookie-policy</a>.
+          <strong>Qal Dating Cookie Policy</strong>, available at{" "}
+          <a href="http://www.qaldating.com/cookie-policy" className="text-primary hover:underline">www.qaldating.com/cookie-policy</a>.
         </p>
       </Section>
 
@@ -1687,7 +1687,7 @@ export function PrivacyPolicyContent() {
         <p>We may update this Privacy Policy to reflect:</p>
         <List
           items={[
-            "changes to Qaliye;",
+            "changes to Qal Dating;",
             "new features;",
             "changes to service providers;",
             "legal or regulatory requirements;",
@@ -1730,16 +1730,16 @@ export function PrivacyPolicyContent() {
       <Section number="26" title="Contact Us">
         <p>For questions, requests, or complaints about privacy, contact:</p>
         <div className="space-y-1">
-          <p><strong>Qaliye</strong></p>
-          <p>Operated by <strong>[YOUR FULL LEGAL NAME], trading as Qaliye</strong></p>
+          <p><strong>Qal Dating</strong></p>
+          <p>Operated by <strong>[YOUR FULL LEGAL NAME], trading as Qal Dating</strong></p>
           <p><strong>Business address:</strong> [YOUR BUSINESS ADDRESS]</p>
           <p>
             <strong>Email:</strong>{" "}
-            <a href="mailto:support@qaliye.com" className="text-primary hover:underline">support@qaliye.com</a>
+            <a href="mailto:support@qaldating.com" className="text-primary hover:underline">support@qaldating.com</a>
           </p>
           <p>
             <strong>Website:</strong>{" "}
-            <a href="http://www.qaliye.com" className="text-primary hover:underline">www.qaliye.com</a>
+            <a href="http://www.qaldating.com" className="text-primary hover:underline">www.qaldating.com</a>
           </p>
         </div>
       </Section>

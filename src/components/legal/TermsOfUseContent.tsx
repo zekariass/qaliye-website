@@ -13,44 +13,44 @@ export function TermsOfUseContent() {
 
       <p className="text-text-secondary leading-relaxed">
         These Terms of Use (&ldquo;Terms&rdquo;) govern your access to and use of
-        the Qaliye mobile application, website at{" "}
+        the Qal Dating mobile application, website at{" "}
         <a
-          href="http://www.qaliye.com"
+          href="http://www.qaldating.com"
           className="text-primary hover:underline"
         >
-          www.qaliye.com
+          www.qaldating.com
         </a>
         , and any related features, content, products, subscriptions, and
         services that we provide together as the &ldquo;Services.&rdquo;
       </p>
       <p className="text-text-secondary leading-relaxed">
-        Qaliye is operated by <strong>[YOUR FULL LEGAL NAME]</strong>, a sole
-        trader trading as <strong>Qaliye</strong>, with a business address at{" "}
+        Qal Dating is operated by <strong>[YOUR FULL LEGAL NAME]</strong>, a sole
+        trader trading as <strong>Qal Dating</strong>, with a business address at{" "}
         <strong>[YOUR BUSINESS ADDRESS]</strong>.
       </p>
       <p className="text-text-secondary leading-relaxed">
-        In these Terms, &ldquo;Qaliye,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo;
+        In these Terms, &ldquo;Qal Dating,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo;
         and &ldquo;our&rdquo; refer to{" "}
-        <strong>[YOUR FULL LEGAL NAME], trading as Qaliye</strong>.
+        <strong>[YOUR FULL LEGAL NAME], trading as Qal Dating</strong>.
       </p>
       <p className="text-text-secondary leading-relaxed">You can contact us at:</p>
       <ul className="list-disc list-inside text-text-secondary leading-relaxed space-y-1">
         <li>
           <strong>Email:</strong>{" "}
           <a
-            href="mailto:support@qaliye.com"
+            href="mailto:support@qaldating.com"
             className="text-primary hover:underline"
           >
-            support@qaliye.com
+            support@qaldating.com
           </a>
         </li>
         <li>
           <strong>Website:</strong>{" "}
           <a
-            href="http://www.qaliye.com"
+            href="http://www.qaldating.com"
             className="text-primary hover:underline"
           >
-            www.qaliye.com
+            www.qaldating.com
           </a>
         </li>
         <li>
@@ -71,9 +71,9 @@ export function TermsOfUseContent() {
       </p>
 
       {/* Section 1 */}
-      <Section number="1" title="About Qaliye">
+      <Section number="1" title="About Qal Dating">
         <p>
-          Qaliye is a dating and relationship platform designed primarily for
+          Qal Dating is a dating and relationship platform designed primarily for
           Habesha communities, including Ethiopian and Eritrean people and
           members of the global diaspora.
         </p>
@@ -83,13 +83,13 @@ export function TermsOfUseContent() {
           and communities.
         </p>
         <p>
-          Qaliye welcomes respectful participation. Our cultural focus does not
+          Qal Dating welcomes respectful participation. Our cultural focus does not
           permit discrimination, harassment, hate speech, hostility, or abusive
           treatment based on ethnicity, nationality, religion, language, gender,
           disability, or any other protected characteristic.
         </p>
         <p>
-          Qaliye does not guarantee that you will find a match, enter a
+          Qal Dating does not guarantee that you will find a match, enter a
           relationship, marry, or achieve any particular outcome through the
           Services.
         </p>
@@ -97,20 +97,20 @@ export function TermsOfUseContent() {
 
       {/* Section 2 */}
       <Section number="2" title="Eligibility">
-        <p>You may create an account and use Qaliye only if:</p>
+        <p>You may create an account and use Qal Dating only if:</p>
         <List
           items={[
             "you are at least 18 years old;",
             "you have the legal capacity to enter into a binding agreement;",
             "you are not prohibited by applicable law from using the Services;",
-            "you have not previously been permanently removed or banned from Qaliye, unless we have given you written permission to return;",
+            "you have not previously been permanently removed or banned from Qal Dating, unless we have given you written permission to return;",
             "you are not required to register as a sex offender under any applicable law;",
             "you provide accurate and truthful information; and",
             "you agree to comply with these Terms and our Community Guidelines.",
           ]}
         />
         <p>
-          Qaliye is strictly for adults. People under 18 are not permitted to
+          Qal Dating is strictly for adults. People under 18 are not permitted to
           create accounts, appear in dating profiles, or use the Services.
         </p>
         <p>
@@ -125,13 +125,13 @@ export function TermsOfUseContent() {
           account.
         </p>
         <p>
-          If you become aware of a person under 18 using Qaliye, report the
+          If you become aware of a person under 18 using Qal Dating, report the
           account immediately through the in-app reporting feature or contact{" "}
           <a
-            href="mailto:support@qaliye.com"
+            href="mailto:support@qaldating.com"
             className="text-primary hover:underline"
           >
-            support@qaliye.com
+            support@qaldating.com
           </a>
           .
         </p>
@@ -164,7 +164,7 @@ export function TermsOfUseContent() {
             "create fake or misleading profiles;",
             "create another account to avoid a restriction, suspension, or ban;",
             "use automated tools, bots, scripts, or scraping technologies; or",
-            "falsely claim to be affiliated with Qaliye.",
+            "falsely claim to be affiliated with Qal Dating.",
           ]}
         />
         <p>
@@ -181,7 +181,7 @@ export function TermsOfUseContent() {
       {/* Section 4 */}
       <Section number="4" title="Your Responsibilities">
         <p>
-          You are responsible for your conduct on and outside Qaliye when
+          You are responsible for your conduct on and outside Qal Dating when
           interacting with people you meet through the Services.
         </p>
         <p>You agree to:</p>
@@ -196,7 +196,7 @@ export function TermsOfUseContent() {
             "follow our Community Guidelines.",
           ]}
         />
-        <p>You must not use Qaliye to:</p>
+        <p>You must not use Qal Dating to:</p>
         <List
           items={[
             "harass, threaten, intimidate, stalk, bully, or shame another person;",
@@ -229,7 +229,7 @@ export function TermsOfUseContent() {
         </p>
         <p>
           They explain the standards of behaviour and content expected from
-          everyone using Qaliye. You must review and accept them before
+          everyone using Qal Dating. You must review and accept them before
           uploading content or interacting with other users.
         </p>
         <p>
@@ -243,7 +243,7 @@ export function TermsOfUseContent() {
       <Section number="6" title="User Content">
         <p>
           &ldquo;User Content&rdquo; means content that you upload, create, send,
-          publish, display, or otherwise make available through Qaliye,
+          publish, display, or otherwise make available through Qal Dating,
           including:
         </p>
         <List
@@ -264,12 +264,12 @@ export function TermsOfUseContent() {
           <p>
             You must have all rights and permissions necessary to upload and
             share that content. You must not upload content owned by someone
-            else unless you have permission to use it through Qaliye.
+            else unless you have permission to use it through Qal Dating.
           </p>
         </Subsection>
-        <Subsection number="6.2" title="Licence granted to Qaliye">
+        <Subsection number="6.2" title="Licence granted to Qal Dating">
           <p>
-            By submitting User Content, you grant Qaliye a non-exclusive,
+            By submitting User Content, you grant Qal Dating a non-exclusive,
             worldwide, royalty-free, transferable and sublicensable licence to
             host, store, reproduce, process, adapt, display, distribute, and
             otherwise use the content only as reasonably necessary to:
@@ -345,13 +345,13 @@ export function TermsOfUseContent() {
         </p>
         <p>
           We may make the final decision about whether content is permitted on
-          Qaliye. Where appropriate, you may request a review of a moderation
+          Qal Dating. Where appropriate, you may request a review of a moderation
           decision by contacting{" "}
           <a
-            href="mailto:support@qaliye.com"
+            href="mailto:support@qaldating.com"
             className="text-primary hover:underline"
           >
-            support@qaliye.com
+            support@qaldating.com
           </a>
           .
         </p>
@@ -368,7 +368,7 @@ export function TermsOfUseContent() {
       {/* Section 8 */}
       <Section number="8" title="Reporting and Blocking">
         <p>
-          Qaliye provides in-app tools that allow users to report and block
+          Qal Dating provides in-app tools that allow users to report and block
           other users.
         </p>
         <p>You may report:</p>
@@ -396,7 +396,7 @@ export function TermsOfUseContent() {
             "view or discover your profile;",
             "like or match with you;",
             "send messages to you; or",
-            "otherwise interact with you through Qaliye.",
+            "otherwise interact with you through Qal Dating.",
           ]}
         />
         <p>
@@ -430,12 +430,12 @@ export function TermsOfUseContent() {
       {/* Section 9 */}
       <Section number="9" title="Safety and Interactions with Other Users">
         <p>
-          Qaliye provides a platform that allows users to discover and
+          Qal Dating provides a platform that allows users to discover and
           communicate with each other. We do not control the actions,
           intentions, identity, statements, or conduct of every user.
         </p>
         <p>
-          Unless we expressly state otherwise, Qaliye does not routinely conduct
+          Unless we expressly state otherwise, Qal Dating does not routinely conduct
           criminal-record, identity, immigration-status, employment, financial,
           or other background checks on all users.
         </p>
@@ -460,7 +460,7 @@ export function TermsOfUseContent() {
         <List
           items={[
             "avoid sending money or financial information;",
-            "keep early conversations within Qaliye where possible;",
+            "keep early conversations within Qal Dating where possible;",
             "be cautious about sharing your address, workplace, telephone number, or identification documents;",
             "meet for the first time in a public place;",
             "tell a trusted person where you are going;",
@@ -471,7 +471,7 @@ export function TermsOfUseContent() {
           ]}
         />
         <p>
-          Qaliye is not responsible for supervising offline meetings or private
+          Qal Dating is not responsible for supervising offline meetings or private
           interactions between users.
         </p>
         <p>
@@ -482,7 +482,7 @@ export function TermsOfUseContent() {
 
       {/* Section 10 */}
       <Section number="10" title="Matches, Likes and Discovery">
-        <p>Qaliye may provide features such as:</p>
+        <p>Qal Dating may provide features such as:</p>
         <List
           items={[
             "Likes;",
@@ -526,7 +526,7 @@ export function TermsOfUseContent() {
       {/* Section 11 */}
       <Section number="11" title="Paid Services, Subscriptions and Virtual Items">
         <p>
-          Qaliye may offer paid features, including subscriptions, premium
+          Qal Dating may offer paid features, including subscriptions, premium
           access, Boosts, credits, or other digital benefits.
         </p>
         <p>
@@ -550,7 +550,7 @@ export function TermsOfUseContent() {
         </Subsection>
         <Subsection number="11.2" title="Other payment methods">
           <p>
-            Where Qaliye offers web-based or local payment methods, the
+            Where Qal Dating offers web-based or local payment methods, the
             applicable price, payment instructions, duration, and renewal terms
             will be shown before purchase.
           </p>
@@ -567,7 +567,7 @@ export function TermsOfUseContent() {
         </Subsection>
         <Subsection number="11.4" title="Cancelling a subscription">
           <p>
-            Deleting your Qaliye account does not necessarily cancel a
+            Deleting your Qal Dating account does not necessarily cancel a
             subscription purchased through Apple, Google, or another third-party
             payment provider.
           </p>
@@ -601,7 +601,7 @@ export function TermsOfUseContent() {
           <List
             items={[
               "are digital features and not legal currency;",
-              "have no cash value outside Qaliye;",
+              "have no cash value outside Qal Dating;",
               "may not be sold, transferred, or exchanged unless we expressly allow it;",
               "may be subject to limits or expiry disclosed at purchase;",
               "may be removed where obtained fraudulently or through payment reversal; and",
@@ -644,7 +644,7 @@ export function TermsOfUseContent() {
       {/* Section 13 */}
       <Section number="13" title="Account Suspension and Termination">
         <p>
-          You may stop using Qaliye at any time and may request account deletion
+          You may stop using Qal Dating at any time and may request account deletion
           through the available account settings or by contacting us.
         </p>
         <p>We may restrict, suspend, or terminate your account where we reasonably believe that:</p>
@@ -656,7 +656,7 @@ export function TermsOfUseContent() {
             "you have engaged in fraud, harassment, abuse, or illegal activity;",
             "your account is fake, misleading, compromised, or being misused;",
             "you have attempted to bypass a previous restriction;",
-            "your activity threatens Qaliye, its users, or third parties;",
+            "your activity threatens Qal Dating, its users, or third parties;",
             "suspension is required by law or a competent authority; or",
             "action is reasonably necessary to investigate a serious report.",
           ]}
@@ -684,10 +684,10 @@ export function TermsOfUseContent() {
         <p>
           You may request a review of an account decision by contacting{" "}
           <a
-            href="mailto:support@qaliye.com"
+            href="mailto:support@qaldating.com"
             className="text-primary hover:underline"
           >
-            support@qaliye.com
+            support@qaldating.com
           </a>
           . Submitting an appeal does not guarantee that the decision will be
           reversed.
@@ -706,7 +706,7 @@ export function TermsOfUseContent() {
             "respond to an emergency involving danger, death, or serious injury;",
             "report suspected child exploitation or other serious criminal activity;",
             "prevent fraud, abuse, or threats;",
-            "protect the rights and safety of users, Qaliye, or the public; or",
+            "protect the rights and safety of users, Qal Dating, or the public; or",
             "establish, exercise, or defend legal claims.",
           ]}
         />
@@ -725,16 +725,16 @@ export function TermsOfUseContent() {
           information.
         </p>
         <p>
-          By using Qaliye, you acknowledge that your personal information will
+          By using Qal Dating, you acknowledge that your personal information will
           be handled as described in the Privacy Policy.
         </p>
         <p>
           The Privacy Policy is available through the app and at{" "}
           <a
-            href="http://www.qaliye.com"
+            href="http://www.qaldating.com"
             className="text-primary hover:underline"
           >
-            www.qaliye.com
+            www.qaldating.com
           </a>
           .
         </p>
@@ -748,7 +748,7 @@ export function TermsOfUseContent() {
       {/* Section 16 */}
       <Section number="16" title="Intellectual Property">
         <p>
-          Except for User Content, Qaliye and its licensors own or control all
+          Except for User Content, Qal Dating and its licensors own or control all
           rights in the Services, including:
         </p>
         <List
@@ -780,11 +780,11 @@ export function TermsOfUseContent() {
             "create a competing database using our content;",
             "scrape user profiles;",
             "modify or distribute our software; or",
-            "use Qaliye\u2019s intellectual property in a misleading or unauthorised way.",
+            "use Qal Dating\u2019s intellectual property in a misleading or unauthorised way.",
           ]}
         />
         <p>
-          &ldquo;Qaliye,&rdquo; its logo, and related branding may not be used
+          &ldquo;Qal Dating,&rdquo; its logo, and related branding may not be used
           without our prior written permission.
         </p>
       </Section>
@@ -792,13 +792,13 @@ export function TermsOfUseContent() {
       {/* Section 17 */}
       <Section number="17" title="Copyright and Other Rights Complaints">
         <p>
-          If you believe content on Qaliye infringes your copyright, privacy,
+          If you believe content on Qal Dating infringes your copyright, privacy,
           image rights, or other legal rights, contact{" "}
           <a
-            href="mailto:support@qaliye.com"
+            href="mailto:support@qaldating.com"
             className="text-primary hover:underline"
           >
-            support@qaliye.com
+            support@qaldating.com
           </a>
           .
         </p>
@@ -845,7 +845,7 @@ export function TermsOfUseContent() {
       {/* Section 19 */}
       <Section number="19" title="Online Safety Obligations">
         <p>
-          Qaliye is a user-to-user service subject to the UK Online Safety Act
+          Qal Dating is a user-to-user service subject to the UK Online Safety Act
           2023 and other applicable online-safety laws.
         </p>
         <p>We are committed to:</p>
@@ -866,10 +866,10 @@ export function TermsOfUseContent() {
           You can report illegal or harmful content through the in-app reporting
           feature or by contacting{" "}
           <a
-            href="mailto:support@qaliye.com"
+            href="mailto:support@qaldating.com"
             className="text-primary hover:underline"
           >
-            support@qaliye.com
+            support@qaldating.com
           </a>
           .
         </p>
@@ -883,7 +883,7 @@ export function TermsOfUseContent() {
       <Section number="20" title="Service Availability and Changes">
         <p>
           We aim to provide a reliable service, but we cannot guarantee that
-          Qaliye will always be:
+          Qal Dating will always be:
         </p>
         <List
           items={[
@@ -924,7 +924,7 @@ export function TermsOfUseContent() {
       {/* Section 21 */}
       <Section number="21" title="Disclaimers">
         <p>
-          Qaliye is provided as a platform for adult users to connect.
+          Qal Dating is provided as a platform for adult users to connect.
         </p>
         <p>To the extent permitted by law:</p>
         <List
@@ -968,7 +968,7 @@ export function TermsOfUseContent() {
         />
         <p>
           We are not responsible for loss of profit, business opportunity,
-          business interruption, or commercial data where you use Qaliye for
+          business interruption, or commercial data where you use Qal Dating for
           business purposes contrary to these Terms.
         </p>
         <p>
@@ -984,7 +984,7 @@ export function TermsOfUseContent() {
         </p>
         <List
           items={[
-            "your unlawful use of Qaliye;",
+            "your unlawful use of Qal Dating;",
             "your material breach of these Terms;",
             "content you upload without the necessary rights; or",
             "fraud or deliberate misuse committed through your account.",
@@ -992,7 +992,7 @@ export function TermsOfUseContent() {
         />
         <p>
           You will not be responsible to the extent that the loss was caused by
-          Qaliye&rsquo;s own breach, negligence, or failure to take reasonable
+          Qal Dating&rsquo;s own breach, negligence, or failure to take reasonable
           steps.
         </p>
       </Section>
@@ -1082,10 +1082,10 @@ export function TermsOfUseContent() {
         <p>
           Before beginning legal proceedings, we encourage you to contact{" "}
           <a
-            href="mailto:support@qaliye.com"
+            href="mailto:support@qaldating.com"
             className="text-primary hover:underline"
           >
-            support@qaliye.com
+            support@qaldating.com
           </a>{" "}
           so that we can attempt to resolve the matter.
         </p>
@@ -1121,7 +1121,7 @@ export function TermsOfUseContent() {
           <p>
             These Terms, the Privacy Policy, the Community Guidelines, and any
             purchase-specific terms presented to you form the agreement
-            governing your use of Qaliye.
+            governing your use of Qal Dating.
           </p>
         </Subsection>
         <Subsection number="27.2" title="Severability">
@@ -1152,7 +1152,7 @@ export function TermsOfUseContent() {
         <Subsection number="27.5" title="No partnership or agency">
           <p>
             These Terms do not create an employment, partnership, joint venture,
-            fiduciary, franchise, or agency relationship between you and Qaliye.
+            fiduciary, franchise, or agency relationship between you and Qal Dating.
           </p>
         </Subsection>
         <Subsection number="27.6" title="Third-party rights">
@@ -1187,10 +1187,10 @@ export function TermsOfUseContent() {
         </p>
         <div className="space-y-1">
           <p>
-            <strong>Qaliye</strong>
+            <strong>Qal Dating</strong>
           </p>
           <p>
-            Operated by <strong>[YOUR FULL LEGAL NAME], trading as Qaliye</strong>
+            Operated by <strong>[YOUR FULL LEGAL NAME], trading as Qal Dating</strong>
           </p>
           <p>
             <strong>Address:</strong> [YOUR BUSINESS ADDRESS]
@@ -1198,19 +1198,19 @@ export function TermsOfUseContent() {
           <p>
             <strong>Email:</strong>{" "}
             <a
-              href="mailto:support@qaliye.com"
+              href="mailto:support@qaldating.com"
               className="text-primary hover:underline"
             >
-              support@qaliye.com
+              support@qaldating.com
             </a>
           </p>
           <p>
             <strong>Website:</strong>{" "}
             <a
-              href="http://www.qaliye.com"
+              href="http://www.qaldating.com"
               className="text-primary hover:underline"
             >
-              www.qaliye.com
+              www.qaldating.com
             </a>
           </p>
         </div>

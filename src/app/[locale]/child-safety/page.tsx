@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import type { Metadata } from "next";
 import { PageHeader, ProseSection } from "@/components/ui/Primitives";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
-import { SafetyTipsContent } from "@/components/legal/SafetyTipsContent";
+import { ChildSafetyContent } from "@/components/legal/ChildSafetyContent";
 
 export async function generateMetadata({
   params,
@@ -12,23 +12,23 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "safetyTips" });
+  const t = await getTranslations({ locale, namespace: "childSafety" });
   return {
     title: t("title"),
     description: t("intro"),
     alternates: {
-      canonical: `/${locale}/safety-tips`,
+      canonical: `/${locale}/child-safety`,
       languages: {
-        en: "/en/safety-tips",
-        am: "/am/safety-tips",
-        ti: "/ti/safety-tips",
-        om: "/om/safety-tips",
+        en: "/en/child-safety",
+        am: "/am/child-safety",
+        ti: "/ti/child-safety",
+        om: "/om/child-safety",
       },
     },
   };
 }
 
-export default async function SafetyTipsPage({
+export default async function ChildSafetyPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
@@ -41,22 +41,22 @@ export default async function SafetyTipsPage({
       <BreadcrumbJsonLd
         items={[
           { name: "Qal Dating", url: `/${locale}` },
-          { name: "Dating Safety Tips", url: `/${locale}/safety-tips` },
+          { name: "Child Safety Standards", url: `/${locale}/child-safety` },
         ]}
       />
-      <SafetyTipsContentSection />
+      <ChildSafetyContentSection />
     </>
   );
 }
 
-function SafetyTipsContentSection() {
-  const t = useTranslations("safetyTips");
+function ChildSafetyContentSection() {
+  const t = useTranslations("childSafety");
 
   return (
     <>
       <PageHeader title={t("title")} subtitle={t("lastUpdated")} />
       <ProseSection>
-        <SafetyTipsContent />
+        <ChildSafetyContent />
       </ProseSection>
     </>
   );

@@ -38,7 +38,7 @@ interface NavGroup {
   adminOnly?: boolean;
 }
 
-const ADMIN_BASE = "/__qaliye_console";
+const ADMIN_BASE = "/__qaldating_console";
 
 const NAV_GROUPS: NavGroup[] = [
   {
@@ -202,7 +202,7 @@ export function AdminSidebar({ role, adminConsolePath }: AdminSidebarProps) {
         </div>
         {!sidebarCollapsed && (
           <div className="min-w-0">
-            <p className="text-sm font-semibold text-white truncate">Qaliye Console</p>
+            <p className="text-sm font-semibold text-white truncate">Qal Dating Console</p>
             <p className="text-xs text-white/40 truncate capitalize">{role.toLowerCase()}</p>
           </div>
         )}

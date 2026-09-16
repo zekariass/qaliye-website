@@ -8,7 +8,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
           <ShieldCheck className="h-7 w-7 text-white" />
         </div>
         <div className="text-center">
-          <h1 className="text-xl font-semibold text-[#17171B]">Qaliye Console</h1>
+          <h1 className="text-xl font-semibold text-[#17171B]">Qal Dating Console</h1>
           <p className="text-sm text-[#666672]">Admin Operations</p>
         </div>
       </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { toast } from "sonner";
@@ -11,8 +11,9 @@ import { CopyIdButton } from "@/components/admin/shared/CopyIdButton";
 import { ConfirmDialog } from "@/components/admin/shared/ConfirmDialog";
 import { ErrorState, EmptyState } from "@/components/admin/tables/EmptyState";
 import { AdminDataTable, type Column } from "@/components/admin/tables/AdminDataTable";
+import { InternalApiError, parseInternalApiError } from "@/lib/admin/errors";
 import type { IdentityReview } from "@/lib/admin/adapters";
-import { ShieldCheck, ShieldX, ZoomIn, X, User } from "lucide-react";
+import { ShieldCheck, ShieldX, ZoomIn, X, User, AlertCircle, Loader2 } from "lucide-react";
 
 const PAGE_SIZE = 20;
 
@@ -21,6 +22,53 @@ interface ReviewDialogState {
   action: "approve" | "reject";
 }
 
+// ── Image with loading/error states ───────────────────────────────────────────
+function ReviewImage({ src, alt, label }: { src?: string; alt: string; label: string }) {
+  const [status, setStatus] = useState<"loading" | "loaded" | "error">("loading");
+
+  useEffect(() => {
+    if (!src) { setStatus("error"); return; }
+    setStatus("loading");
+  }, [src]);
+
+  return (
+    <div>
+      <p className="text-xs font-medium text-[#666672] mb-2 uppercase tracking-wider">{label}</p>
+      <div className="aspect-[3/4] bg-[#F7F7FA] rounded-xl overflow-hidden border border-[#E5E5EA] relative">
+        {src && status === "loading" && (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <Loader2 className="h-8 w-8 text-[#D1D5DB] animate-spin" />
+          </div>
+        )}
+        {src && status !== "error" && (
+          <img
+            src={src}
+            alt={alt}
+            className={`w-full h-full object-cover transition-opacity duration-200 ${
+              status === "loaded" ? "opacity-100" : "opacity-0"
+            }`}
+            onLoad={() => setStatus("loaded")}
+            onError={() => setStatus("error")}
+          />
+        )}
+        {(!src || status === "error") && (
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-[#D1D5DB]">
+            {src ? (
+              <>
+                <AlertCircle className="h-8 w-8" />
+                <p className="text-xs text-[#9CA3AF]">Failed to load</p>
+              </>
+            ) : (
+              <User className="h-16 w-16" />
+            )}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// ── Review Modal ──────────────────────────────────────────────────────────────
 function ReviewModal({
   review,
   onClose,
@@ -36,81 +84,82 @@ function ReviewModal({
 }) {
   const [note, setNote] = useState("");
 
+  // Close on Escape
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") onClose();
+    }
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [onClose]);
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-      <div className="relative w-full max-w-2xl bg-white rounded-2xl shadow-xl mx-4 overflow-hidden">
-        <div className="flex items-center justify-between p-5 border-b border-[#E5E5EA]">
-          <div>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-3 sm:p-4">
+      {/* Backdrop click target */}
+      <div className="absolute inset-0" onClick={onClose} />
+
+      {/* Modal panel */}
+      <div
+        role="dialog"
+        aria-modal="true"
+        className="relative w-full max-w-2xl bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col max-h-[95vh] sm:max-h-[90vh]"
+      >
+        {/* Header — fixed */}
+        <div className="flex items-center justify-between p-4 sm:p-5 border-b border-[#E5E5EA] shrink-0">
+          <div className="min-w-0">
             <h2 className="text-base font-semibold text-[#17171B]">Identity Review</h2>
-            <p className="text-sm text-[#666672] mt-0.5">
+            <p className="text-sm text-[#666672] mt-0.5 truncate">
               {review.displayName ?? "Unknown user"} — {review.gender ?? "—"}
             </p>
           </div>
           <button
             type="button"
             onClick={onClose}
-            className="p-2 text-[#666672] hover:text-[#17171B] hover:bg-[#F7F7FA] rounded-lg"
+            className="p-2 text-[#666672] hover:text-[#17171B] hover:bg-[#F7F7FA] rounded-lg shrink-0"
+            aria-label="Close"
           >
             <X className="h-5 w-5" />
           </button>
         </div>
 
-        <div className="p-5 grid grid-cols-2 gap-4">
-          <div>
-            <p className="text-xs font-medium text-[#666672] mb-2 uppercase tracking-wider">Selfie</p>
-            <div className="aspect-[3/4] bg-[#F7F7FA] rounded-xl overflow-hidden border border-[#E5E5EA]">
-              {review.selfiePath ? (
-                <img
-                  src={review.selfiePath}
-                  alt="User selfie"
-                  className="w-full h-full object-cover"
-                  onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
-                />
-              ) : (
-                <div className="flex items-center justify-center h-full">
-                  <User className="h-16 w-16 text-[#D1D5DB]" />
-                </div>
-              )}
-            </div>
+        {/* Scrollable body */}
+        <div className="overflow-y-auto flex-1">
+          {/* Photos — stack on mobile, side-by-side on sm+ */}
+          <div className="p-4 sm:p-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <ReviewImage
+              src={review.selfieUrl}
+              alt="User selfie"
+              label="Selfie"
+            />
+            <ReviewImage
+              src={review.profilePhotoUrl}
+              alt="Profile photo"
+              label="Profile Photo"
+            />
           </div>
-          <div>
-            <p className="text-xs font-medium text-[#666672] mb-2 uppercase tracking-wider">Profile Photo</p>
-            <div className="aspect-[3/4] bg-[#F7F7FA] rounded-xl overflow-hidden border border-[#E5E5EA]">
-              {review.profilePhotoPath ? (
-                <img
-                  src={review.profilePhotoPath}
-                  alt="Profile photo"
-                  className="w-full h-full object-cover"
-                  onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
-                />
-              ) : (
-                <div className="flex items-center justify-center h-full">
-                  <User className="h-16 w-16 text-[#D1D5DB]" />
-                </div>
-              )}
-            </div>
+
+          {/* Note */}
+          <div className="px-4 sm:px-5 pb-3">
+            <label className="block text-xs font-medium text-[#17171B] mb-1.5">Note (optional)</label>
+            <textarea
+              value={note}
+              onChange={(e) => setNote(e.target.value)}
+              placeholder="Add a note for the audit log..."
+              rows={2}
+              className="w-full px-3 py-2 text-sm border border-[#E5E5EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/30 focus:border-[#7C3AED] resize-none"
+            />
           </div>
         </div>
 
-        <div className="px-5 pb-2">
-          <label className="block text-xs font-medium text-[#17171B] mb-1.5">Note (optional)</label>
-          <textarea
-            value={note}
-            onChange={(e) => setNote(e.target.value)}
-            placeholder="Add a note for the audit log..."
-            rows={2}
-            className="w-full px-3 py-2 text-sm border border-[#E5E5EA] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/30 focus:border-[#7C3AED] resize-none"
-          />
-        </div>
-
-        <div className="flex items-center justify-end gap-3 p-5 pt-3 border-t border-[#E5E5EA]">
+        {/* Footer — fixed */}
+        <div className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 border-t border-[#E5E5EA] shrink-0">
           <CopyIdButton id={review.userId} label="User ID" />
           <div className="flex-1" />
           <button
             type="button"
             onClick={() => onReject(note.trim() || undefined)}
             disabled={isLoading}
-            className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-[#C63B4E] border border-[#FECDD3] bg-white hover:bg-[#FFF1F2] rounded-xl disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 text-sm font-medium text-[#C63B4E] border border-[#FECDD3] bg-white hover:bg-[#FFF1F2] rounded-xl disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <ShieldX className="h-4 w-4" />
             Reject
@@ -119,7 +168,7 @@ function ReviewModal({
             type="button"
             onClick={() => onApprove(note.trim() || undefined)}
             disabled={isLoading}
-            className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-[#16815D] hover:bg-[#15694E] rounded-xl disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 text-sm font-semibold text-white bg-[#16815D] hover:bg-[#15694E] rounded-xl disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <ShieldCheck className="h-4 w-4" />
             Approve
@@ -130,6 +179,7 @@ function ReviewModal({
   );
 }
 
+// ── Main page ─────────────────────────────────────────────────────────────────
 export default function IdentityReviewsPage() {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -141,6 +191,8 @@ export default function IdentityReviewsPage() {
   const [confirmDialog, setConfirmDialog] = useState<ReviewDialogState | null>(null);
   const [pendingNote, setPendingNote] = useState<string | undefined>();
 
+  const signInPath = `${pathname.replace(/\/identity-reviews.*$/, "")}/sign-in`;
+
   function updateParams(updates: Record<string, string>) {
     const params = new URLSearchParams(searchParams.toString());
     for (const [k, v] of Object.entries(updates)) {
@@ -149,18 +201,25 @@ export default function IdentityReviewsPage() {
     router.push(`${pathname}?${params.toString()}`);
   }
 
-  const { data, isLoading, isError, refetch } = useQuery({
+  const { data, isLoading, isError, error, refetch } = useQuery({
     queryKey: adminKeys.identityReviews.list({ page }),
     queryFn: async () => {
       const qs = new URLSearchParams();
       if (page > 1) qs.set("page", String(page));
       qs.set("pageSize", String(PAGE_SIZE));
       const res = await fetch(`/api/internal-admin/identity-reviews?${qs}`);
-      if (!res.ok) throw new Error(`${res.status}`);
-      return res.json() as Promise<{ items: IdentityReview[]; total: number; page: number; page_size: number }>;
+      if (!res.ok) throw await parseInternalApiError(res);
+      return res.json() as Promise<{ items: IdentityReview[]; total: number; page: number; pageSize: number }>;
     },
     staleTime: 30_000,
   });
+
+  // Redirect on 401
+  useEffect(() => {
+    if (error instanceof InternalApiError && error.status === 401) {
+      router.push(signInPath);
+    }
+  }, [error, router, signInPath]);
 
   const reviewMutation = useMutation({
     mutationFn: async ({ review, action, note }: { review: IdentityReview; action: "approve" | "reject"; note?: string }) => {
@@ -169,10 +228,7 @@ export default function IdentityReviewsPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ note }),
       });
-      if (!res.ok) {
-        const e = await res.json().catch(() => ({}));
-        throw new Error(e.error ?? `${action} failed`);
-      }
+      if (!res.ok) throw await parseInternalApiError(res);
       return { action };
     },
     onSuccess: ({ action }) => {
@@ -182,7 +238,13 @@ export default function IdentityReviewsPage() {
       setConfirmDialog(null);
       setPendingNote(undefined);
     },
-    onError: (e: Error) => toast.error(e.message),
+    onError: (err: Error) => {
+      if (err instanceof InternalApiError) {
+        if (err.status === 401) { router.push(signInPath); return; }
+        if (err.code === "FORBIDDEN") { toast.error("You do not have permission to perform this action."); return; }
+      }
+      toast.error(err.message);
+    },
   });
 
   const items = data?.items ?? [];

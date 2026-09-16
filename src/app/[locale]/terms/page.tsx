@@ -40,7 +40,7 @@ export default async function TermsPage({
     <>
       <BreadcrumbJsonLd
         items={[
-          { name: "Qaliye", url: `/${locale}` },
+          { name: "Qal Dating", url: `/${locale}` },
           { name: "Terms of Use", url: `/${locale}/terms` },
         ]}
       />

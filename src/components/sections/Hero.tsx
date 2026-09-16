@@ -18,7 +18,7 @@ export function Hero() {
           <div className="text-center lg:text-left space-y-6">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
               <Sparkles className="w-4 h-4" aria-hidden="true" />
-              <span>Qaliye</span>
+              <span>Qal Dating</span>
             </div>
             <h1
               id="hero-heading"

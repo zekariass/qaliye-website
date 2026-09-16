@@ -40,7 +40,7 @@ export default async function AccountDeletionPage({
     <>
       <BreadcrumbJsonLd
         items={[
-          { name: "Qaliye", url: `/${locale}` },
+          { name: "Qal Dating", url: `/${locale}` },
           { name: "Account Deletion", url: `/${locale}/account-deletion` },
         ]}
       />
@@ -109,7 +109,7 @@ function AccountDeletionContent() {
               {t("emailDescription")}
             </p>
             <a
-              href="mailto:support@qaliye.com?subject=Account%20Deletion%20Request"
+              href="mailto:support@qaldating.com?subject=Account%20Deletion%20Request"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-white font-semibold hover:bg-primary-dark transition-colors min-h-[44px]"
             >
               <Mail className="w-4 h-4" aria-hidden="true" />

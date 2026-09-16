@@ -21,7 +21,7 @@ function toSnakeCase(value: unknown): unknown {
   return value;
 }
 
-const BACKEND_URL = process.env.QALIYE_API_URL ?? "";
+const BACKEND_URL = process.env.QALDATING_API_URL ?? "";
 
 export const getUserRole = cache(async (): Promise<string> => {
   const supabase = await createSupabaseServerClient();

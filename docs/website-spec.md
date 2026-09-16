@@ -1,12 +1,12 @@
-# Qaliye Dating App — Informational Website Specification
+# Qal Dating Dating App — Informational Website Specification
 
 > Version 1.0 · July 2026 · Draft for dev/design hand-off
 
 ## 1. Website Purpose & Scope
 
-The Qaliye website is **informational only** — not the dating platform. Goals:
+The Qal Dating website is **informational only** — not the dating platform. Goals:
 
-- Showcase app features and explain how Qaliye works
+- Showcase app features and explain how Qal Dating works
 - Build trust through transparency about safety, privacy, cultural alignment
 - Drive downloads to App Store and Play Store
 - Provide support and legal info
@@ -45,7 +45,7 @@ The Qaliye website is **informational only** — not the dating platform. Goals:
 - Legal: Privacy Policy, Terms & Conditions
 - Social: Instagram, Telegram, TikTok, X/Twitter
 - Language: EN / አማ / ትግ / Orom
-- Bottom: © 2026 Qaliye. Made with ❤️ for the Horn of Africa
+- Bottom: © 2026 Qal Dating. Made with ❤️ for the Horn of Africa
 
 ---
 
@@ -141,11 +141,11 @@ The Qaliye website is **informational only** — not the dating platform. Goals:
 **en.json example:**
 ```json
 {
-  "site": { "name": "Qaliye", "tagline": "Where hearts connect" },
+  "site": { "name": "Qal Dating", "tagline": "Where hearts connect" },
   "nav": { "home": "Home", "about": "About", "features": "Features", "help": "Help", "contact": "Contact" },
   "hero": {
     "headline": "Where hearts connect",
-    "subheadline": "Qaliye is the dating app for Ethiopian and Eritrean singles...",
+    "subheadline": "Qal Dating is the dating app for Ethiopian and Eritrean singles...",
     "downloadIOS": "Download on the App Store",
     "downloadAndroid": "Get it on Google Play"
   },
@@ -159,7 +159,7 @@ The Qaliye website is **informational only** — not the dating platform. Goals:
 **am.json example (partial):**
 ```json
 {
-  "site": { "name": "ቃልዬ", "tagline": "ልቦች የሚገናኙበት" },
+  "site": { "name": "ቃል ዴይቲንግ", "tagline": "ልቦች የሚገናኙበት" },
   "nav": { "home": "መነሻ", "about": "ስለ እኛ", "features": "ባህሪያት", "help": "እገዛ", "contact": "አግኙን" }
 }
 ```
@@ -303,7 +303,7 @@ App supports dark mode. Website may follow. Reference: bg `#0D0712`, surface `#1
     /contact/route.ts      → Contact form handler (optional)
 ```
 
-- URL pattern: `qaliye.app/en/features`, `qaliye.app/am/features`
+- URL pattern: `qaldating.com/en/features`, `qaldating.com/am/features`
 - Default redirect: `/` → `/en` (or detected locale)
 - Generate static params for all 4 locales at build time
 
