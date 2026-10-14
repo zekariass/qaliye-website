@@ -70,17 +70,20 @@ export const adminKeys = {
   },
 
   matchmaking: {
+    stats: () => ["mm-stats"] as const,
     requests: {
-      list: (page: number, size: number) =>
-        ["mm-requests", page, size] as const,
+      list: (params: Record<string, unknown>) =>
+        ["mm-requests", params] as const,
       detail: (id: string) => ["mm-request", id] as const,
+      candidates: (id: string) => ["mm-candidates", id] as const,
     },
     notes: (requestId: string) => ["mm-notes", requestId] as const,
-    messages: (requestId: string) => ["mm-messages", requestId] as const,
     introductions: {
-      forRequest: (requestId: string) => ["mm-intros", requestId] as const,
+      list: (params: Record<string, unknown>) =>
+        ["mm-intros", params] as const,
+      forRequest: (requestId: string) =>
+        ["mm-request-intros", requestId] as const,
       detail: (introId: string) => ["mm-intro", introId] as const,
     },
-    videoCalls: (introId: string) => ["mm-calls", introId] as const,
   },
 } as const;

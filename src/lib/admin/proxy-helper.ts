@@ -16,6 +16,13 @@ import {
  * regardless of whether the error originated from the backend or the proxy
  * itself (auth/role checks).
  */
+/** JSON response that must never be cached by the browser or intermediaries. */
+export function noStoreJson(data: unknown, init?: ResponseInit): NextResponse {
+  const res = NextResponse.json(data, init);
+  res.headers.set("Cache-Control", "no-store");
+  return res;
+}
+
 export function adminErrorResponse(error: unknown): NextResponse {
   if (error instanceof AdminAuthError) {
     return NextResponse.json(

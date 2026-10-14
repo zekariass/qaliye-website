@@ -3,7 +3,8 @@ import { adminFetch } from "@/lib/admin/api-client";
 import { adminErrorResponse } from "@/lib/admin/proxy-helper";
 
 // PATCH /api/v1/admin/matchmaking/users/{userId}/matchmaking-preferences/notes
-// Proxied at this path to avoid gitignore conflict with "notes" directory name.
+// Sets the admin-only matchmaker_notes field. Proxied at this path to avoid the
+// gitignore conflict with a directory literally named "notes".
 export async function PATCH(
   request: NextRequest,
   { params }: { params: Promise<{ userId: string }> }

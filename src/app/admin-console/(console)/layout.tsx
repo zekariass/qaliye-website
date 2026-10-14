@@ -13,14 +13,13 @@ export default async function ConsoleLayout({
   const supabase = await createSupabaseServerClient();
 
   const {
-    data: { session },
-  } = await supabase.auth.getSession();
+    data: { user },
+  } = await supabase.auth.getUser();
 
-  if (!session) {
+  if (!user) {
     redirect(adminConsolePath + "/sign-in");
   }
 
-  const user = session.user;
   const role = await getUserRole();
   const displayName =
     (user.user_metadata?.full_name as string) ??

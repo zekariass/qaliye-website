@@ -75,7 +75,7 @@ export function AdminDataTable<T>({
                   <ErrorState onRetry={onRetry} />
                 </td>
               </tr>
-            ) : !data || data.length === 0 ? (
+            ) : !Array.isArray(data) || data.length === 0 ? (
               <tr>
                 <td colSpan={columns.length}>
                   <EmptyState title={emptyTitle} description={emptyDescription} />

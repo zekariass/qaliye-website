@@ -28,6 +28,7 @@ interface NavItem {
   label: string;
   href: string;
   activePrefix?: string;
+  exact?: boolean;
   icon: React.ReactNode;
   adminOnly?: boolean;
 }
@@ -56,10 +57,22 @@ const NAV_GROUPS: NavGroup[] = [
     adminOnly: true,
     items: [
       {
-        label: "Request Queue",
+        label: "Overview",
+        href: `${ADMIN_BASE}/matchmaking`,
+        exact: true,
+        icon: <LayoutDashboard className="h-4 w-4" />,
+        adminOnly: true,
+      },
+      {
+        label: "Requests",
         href: `${ADMIN_BASE}/matchmaking/requests`,
-        activePrefix: `${ADMIN_BASE}/matchmaking`,
         icon: <HeartHandshake className="h-4 w-4" />,
+        adminOnly: true,
+      },
+      {
+        label: "Introductions",
+        href: `${ADMIN_BASE}/matchmaking/introductions`,
+        icon: <UsersRound className="h-4 w-4" />,
         adminOnly: true,
       },
     ],
@@ -194,8 +207,9 @@ export function AdminSidebar({ role, adminConsolePath }: AdminSidebarProps) {
 
   function isActive(item: NavItem) {
     const href = item.href;
-    const prefix = item.activePrefix ?? href;
     if (href === ADMIN_BASE) return pathname === ADMIN_BASE || pathname === ADMIN_BASE + "/";
+    if (item.exact) return pathname === href || pathname === href + "/";
+    const prefix = item.activePrefix ?? href;
     return pathname.startsWith(prefix);
   }
 

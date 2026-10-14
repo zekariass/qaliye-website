@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { adminFetch } from "@/lib/admin/api-client";
-import { adminErrorResponse } from "@/lib/admin/proxy-helper";
+import { adminErrorResponse, noStoreJson } from "@/lib/admin/proxy-helper";
 
+// GET /api/v1/admin/matchmaking/requests/{requestId}/introductions
+// → IntroductionRow[] (bare array, newest first; [] when none).
 export async function GET(
   _request: NextRequest,
   { params }: { params: Promise<{ requestId: string }> }
@@ -15,7 +17,7 @@ export async function GET(
       const body = await res.json().catch(() => ({}));
       return NextResponse.json(body, { status: res.status });
     }
-    return NextResponse.json(await res.json());
+    return noStoreJson(await res.json());
   } catch (error) {
     return adminErrorResponse(error);
   }

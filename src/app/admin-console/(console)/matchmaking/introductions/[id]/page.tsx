@@ -14,9 +14,18 @@ import { CopyIdButton } from "@/components/admin/shared/CopyIdButton";
 import { ConfirmDialog } from "@/components/admin/shared/ConfirmDialog";
 import { ErrorState } from "@/components/admin/tables/EmptyState";
 import { IntroStatusBadge } from "@/components/admin/matchmaking/MmStatusBadges";
-import { VideoCallPanel } from "@/components/admin/matchmaking/VideoCallPanel";
-import type { Introduction, VideoCall } from "@/lib/admin/matchmaking-types";
-import { ChevronLeft, Trash2, CalendarClock } from "lucide-react";
+import { PersonCard, personName } from "@/components/admin/matchmaking/PersonCard";
+import { CompatibilityScore } from "@/components/admin/matchmaking/CompatibilityScore";
+import { MatchBreakdown } from "@/components/admin/matchmaking/MatchBreakdown";
+import { DecisionFlow } from "@/components/admin/matchmaking/DecisionFlow";
+import {
+  normIntroductionRow,
+  normProfile,
+  normRequestDetail,
+  type IntroductionRow,
+  type ProfileCard,
+} from "@/lib/admin/matchmaking-types";
+import { ArrowDownUp, ChevronLeft, Trash2 } from "lucide-react";
 
 function Row({ label, value }: { label: string; value: React.ReactNode }) {
   return (
@@ -27,23 +36,31 @@ function Row({ label, value }: { label: string; value: React.ReactNode }) {
   );
 }
 
-function DecisionBadge({ decision }: { decision: string }) {
-  const styles: Record<string, string> = {
-    PENDING: "bg-gray-100 text-gray-500",
-    INTERESTED: "bg-[#ECFDF5] text-[#16815D]",
-    NOT_INTERESTED: "bg-[#FFF1F2] text-[#C63B4E]",
-  };
-  return (
-    <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-medium ${styles[decision] ?? "bg-gray-100 text-gray-500"}`}>
-      {decision}
-    </span>
-  );
+/** Fallback profile fetch when the introduction payload doesn't embed cards. */
+function useRequestProfile(requestId: string | undefined, enabled: boolean) {
+  return useQuery<ProfileCard | null>({
+    queryKey: ["mm-request-profile", requestId],
+    queryFn: async () => {
+      const res = await fetch(`/api/internal-admin/matchmaking/requests/${requestId}`, {
+        cache: "no-store",
+      });
+      if (!res.ok) return null;
+      const detail = normRequestDetail(await res.json());
+      if (detail.profile) return detail.profile;
+      if (!detail.request.user_id) return null;
+      const userRes = await fetch(
+        `/api/internal-admin/users/${detail.request.user_id}`,
+        { cache: "no-store" }
+      );
+      if (!userRes.ok) return null;
+      return normProfile(await userRes.json());
+    },
+    enabled: enabled && !!requestId,
+    staleTime: 60_000,
+  });
 }
 
-// PROPOSED/MUTUAL_INTEREST polls actively (decisions can change)
-const ACTIVE_INTRO_STATUSES = ["PROPOSED", "MUTUAL_INTEREST"];
-
-export default function IntroDetailPage({
+export default function IntroductionDetailsPage({
   params,
 }: {
   params: Promise<{ id: string }>;
@@ -52,32 +69,34 @@ export default function IntroDetailPage({
   const pathname = usePathname();
   const queryClient = useQueryClient();
   const adminConsolePath = pathname.replace(/\/matchmaking.*$/, "");
+  const mm = `${adminConsolePath}/matchmaking`;
 
   const [cancelOpen, setCancelOpen] = useState(false);
 
-  const { data: intro, isLoading, isError, refetch } = useQuery<Introduction>({
+  const { data: intro, isLoading, isError, refetch } = useQuery<IntroductionRow>({
     queryKey: adminKeys.matchmaking.introductions.detail(id),
     queryFn: async () => {
-      const res = await fetch(`/api/internal-admin/matchmaking/introductions/${id}`);
+      const res = await fetch(`/api/internal-admin/matchmaking/introductions/${id}`, {
+        cache: "no-store",
+      });
       if (!res.ok) throw new Error(`${res.status}`);
-      return res.json();
+      return normIntroductionRow(await res.json());
     },
+    staleTime: 0,
     refetchInterval: (query) => {
-      const data = query.state.data as Introduction | undefined;
-      return data && ACTIVE_INTRO_STATUSES.includes(data.status) ? 15_000 : false;
+      const data = query.state.data as IntroductionRow | undefined;
+      return data?.status === "PROPOSED" ? 30_000 : false;
     },
   });
 
-  const { data: calls = [] } = useQuery<VideoCall[]>({
-    queryKey: adminKeys.matchmaking.videoCalls(id),
-    queryFn: async () => {
-      const res = await fetch(`/api/internal-admin/matchmaking/introductions/${id}/video-calls`);
-      if (!res.ok) return [];
-      return res.json();
-    },
-    enabled: !!intro,
-    refetchInterval: intro && ACTIVE_INTRO_STATUSES.includes(intro.status) ? 15_000 : false,
-  });
+  const requesterFallback = useRequestProfile(
+    intro?.requester_request_id,
+    !!intro && !intro.requester
+  );
+  const candidateFallback = useRequestProfile(
+    intro?.candidate_request_id,
+    !!intro && !intro.candidate
+  );
 
   const cancelMutation = useMutation({
     mutationFn: async () => {
@@ -87,17 +106,25 @@ export default function IntroDetailPage({
       if (!res.ok) {
         const err = await parseInternalApiError(res);
         if (err.status === 409) {
-          await queryClient.invalidateQueries({ queryKey: adminKeys.matchmaking.introductions.detail(id) });
+          await queryClient.invalidateQueries({
+            queryKey: adminKeys.matchmaking.introductions.detail(id),
+          });
         }
         throw err;
       }
     },
     onSuccess: () => {
-      toast.success("Introduction cancelled (call/requests cascade applied)");
+      toast.success("Introduction cancelled — both requests released back to OPEN");
       setCancelOpen(false);
       queryClient.invalidateQueries({ queryKey: adminKeys.matchmaking.introductions.detail(id) });
-      queryClient.invalidateQueries({ queryKey: adminKeys.matchmaking.videoCalls(id) });
+      queryClient.invalidateQueries({ queryKey: adminKeys.matchmaking.stats() });
       if (intro) {
+        queryClient.invalidateQueries({
+          queryKey: adminKeys.matchmaking.requests.detail(intro.requester_request_id),
+        });
+        queryClient.invalidateQueries({
+          queryKey: adminKeys.matchmaking.requests.detail(intro.candidate_request_id),
+        });
         queryClient.invalidateQueries({
           queryKey: adminKeys.matchmaking.introductions.forRequest(intro.requester_request_id),
         });
@@ -115,158 +142,179 @@ export default function IntroDetailPage({
   if (isLoading) return <PageSkeleton rows={6} />;
   if (isError || !intro) return <ErrorState onRetry={refetch} />;
 
-  const isTerminal = ["MATCHED", "CANCELLED", "EXPIRED", "DECLINED"].includes(intro.status);
-  const canCancel = !isTerminal;
-  const isMutualInterest = intro.status === "MUTUAL_INTEREST";
-  const arrangingCall = calls.find((c) => c.status === "ARRANGING");
+  const requester = intro.requester ?? requesterFallback.data ?? null;
+  const candidate = intro.candidate ?? candidateFallback.data ?? null;
+  const requesterName = personName(requester);
+  const candidateName = personName(candidate);
+  const canCancel = intro.status === "PROPOSED";
+
+  const hasScore =
+    intro.overall_percentage != null ||
+    intro.forward_percentage != null ||
+    intro.reverse_percentage != null;
 
   return (
-    <div className="max-w-3xl">
+    <div className="max-w-4xl">
       <div className="mb-4">
         <Link
-          href={`${adminConsolePath}/matchmaking/requests`}
+          href={`${mm}/introductions`}
           className="inline-flex items-center gap-1 text-sm text-[#666672] hover:text-[#7C3AED]"
         >
-          <ChevronLeft className="h-4 w-4" /> Back to Queue
+          <ChevronLeft className="h-4 w-4" /> Introductions
         </Link>
       </div>
 
       <PageHeader
-        title="Introduction"
+        title={`Introduction #${intro.id.slice(0, 8)}`}
         badge={<IntroStatusBadge status={intro.status} />}
         actions={
           canCancel ? (
             <button
               type="button"
               onClick={() => setCancelOpen(true)}
-              className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-[#C63B4E] border border-[#FECDD3] bg-white hover:bg-[#FFF1F2] rounded-xl"
+              className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-[#C63B4E] border border-[#FECDD3] bg-white hover:bg-[#FFF1F2] rounded-xl transition-colors"
             >
-              <Trash2 className="h-4 w-4" /> Cancel Intro
+              <Trash2 className="h-4 w-4" /> Cancel Introduction
             </button>
           ) : null
         }
       />
 
-      {/* Mutual interest CTA — a call row now exists in ARRANGING */}
-      {isMutualInterest && (
-        <div className="mb-4 p-4 bg-[#FFFBEB] border border-[#FDE68A] rounded-xl flex items-center gap-3">
-          <CalendarClock className="h-5 w-5 text-[#B7791F] shrink-0" />
-          <div>
-            <p className="text-sm font-semibold text-[#B7791F]">Both parties are interested!</p>
-            <p className="text-xs text-[#B7791F] mt-0.5">
-              {arrangingCall
-                ? "A video call row is waiting in ARRANGING — expand it below and fill in the Arrange form."
-                : "Waiting for the video-call row to appear — polling every 15s."}
-            </p>
+      <div className="bg-white border border-[#E5E5EA] rounded-xl p-6 mb-5">
+        {/* The pair */}
+        <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] gap-4 items-center">
+          <Link href={`${mm}/requests/${intro.requester_request_id}`} className="block">
+            <PersonCard profile={requester} title="Requester" />
+          </Link>
+          <div className="flex justify-center">
+            <div className="h-10 w-10 rounded-full bg-[#F7F2FF] flex items-center justify-center">
+              <ArrowDownUp className="h-5 w-5 text-[#7C3AED]" />
+            </div>
           </div>
+          <Link href={`${mm}/requests/${intro.candidate_request_id}`} className="block">
+            <PersonCard profile={candidate} title="Candidate" />
+          </Link>
         </div>
-      )}
 
-      {/* Details */}
-      <div className="bg-white border border-[#E5E5EA] rounded-xl p-4 mb-4">
+        {hasScore && (
+          <>
+            <div className="my-6 border-t border-[#E5E5EA]" />
+            <CompatibilityScore
+              score={{
+                forward_percentage: intro.forward_percentage ?? 0,
+                reverse_percentage: intro.reverse_percentage ?? 0,
+                overall_percentage:
+                  intro.overall_percentage ??
+                  Math.round(
+                    ((intro.forward_percentage ?? 0) + (intro.reverse_percentage ?? 0)) / 2
+                  ),
+              }}
+              forwardLabel={`${requesterName} → ${candidateName}`}
+              reverseLabel={`${candidateName} → ${requesterName}`}
+            />
+          </>
+        )}
+
+        <div className="my-6 border-t border-[#E5E5EA]" />
+
+        {/* Decisions */}
+        <p className="text-[10px] font-semibold uppercase tracking-widest text-[#9CA3AF] mb-4">
+          Decisions
+        </p>
+        <DecisionFlow
+          requesterName={requesterName}
+          candidateName={candidateName}
+          requesterDecision={intro.requester_decision}
+          candidateDecision={intro.candidate_decision}
+          status={intro.status}
+          decisionExpiresAt={intro.decision_expires_at}
+        />
+
+        {intro.reason && (
+          <>
+            <div className="my-6 border-t border-[#E5E5EA]" />
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-[#9CA3AF] mb-2">
+              Why this introduction?
+            </p>
+            <p className="text-sm text-[#17171B] leading-relaxed">{intro.reason}</p>
+          </>
+        )}
+
+        {intro.match_details && intro.match_details.length > 0 && (
+          <>
+            <div className="my-6 border-t border-[#E5E5EA]" />
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-[#9CA3AF] mb-3">
+              Matching breakdown
+            </p>
+            <MatchBreakdown details={intro.match_details} />
+          </>
+        )}
+      </div>
+
+      {/* Record details */}
+      <div className="bg-white border border-[#E5E5EA] rounded-xl p-5 mb-5">
+        <p className="text-[10px] font-semibold uppercase tracking-widest text-[#9CA3AF] mb-1">
+          Record
+        </p>
         <Row label="Introduction ID" value={<CopyIdButton id={intro.id} />} />
         <Row
-          label="Requester Request"
+          label="Requester request"
           value={
-            <Link href={`${adminConsolePath}/matchmaking/requests/${intro.requester_request_id}`} className="text-[#7C3AED] hover:underline font-mono text-xs">
+            <Link
+              href={`${mm}/requests/${intro.requester_request_id}`}
+              className="text-[#7C3AED] hover:underline font-mono text-xs"
+            >
               {intro.requester_request_id.slice(0, 8)}…
             </Link>
           }
         />
         <Row
-          label="Candidate Request"
+          label="Candidate request"
           value={
-            <Link href={`${adminConsolePath}/matchmaking/requests/${intro.candidate_request_id}`} className="text-[#7C3AED] hover:underline font-mono text-xs">
+            <Link
+              href={`${mm}/requests/${intro.candidate_request_id}`}
+              className="text-[#7C3AED] hover:underline font-mono text-xs"
+            >
               {intro.candidate_request_id.slice(0, 8)}…
             </Link>
           }
         />
         <Row label="Status" value={<IntroStatusBadge status={intro.status} />} />
-        <Row label="Search Source" value={intro.search_source ?? "—"} />
-        <Row label="Proposed At" value={formatDateTime(intro.proposed_at)} />
+        <Row label="Proposed" value={formatDateTime(intro.proposed_at)} />
         <Row
-          label="Decision Expires"
+          label="Decision deadline"
           value={
             intro.decision_expires_at ? (
               <span title={formatDateTime(intro.decision_expires_at)}>
                 {formatRelative(intro.decision_expires_at)}
               </span>
-            ) : "—"
+            ) : (
+              "—"
+            )
           }
         />
+        {intro.requester_decided_at && (
+          <Row label="Requester decided" value={formatDateTime(intro.requester_decided_at)} />
+        )}
+        {intro.candidate_decided_at && (
+          <Row label="Candidate decided" value={formatDateTime(intro.candidate_decided_at)} />
+        )}
         {intro.match_id && (
           <Row label="Match ID" value={<CopyIdButton id={intro.match_id} />} />
         )}
-      </div>
-
-      {/* Decisions */}
-      <div className="bg-white border border-[#E5E5EA] rounded-xl p-4 mb-4">
-        <h3 className="text-sm font-semibold text-[#17171B] mb-3">Decisions</h3>
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <p className="text-xs text-[#9CA3AF] mb-1">Requester</p>
-            <DecisionBadge decision={intro.requester_decision} />
-            {intro.requester_decided_at && (
-              <p className="text-[10px] text-[#9CA3AF] mt-1">{formatDateTime(intro.requester_decided_at)}</p>
-            )}
-          </div>
-          <div>
-            <p className="text-xs text-[#9CA3AF] mb-1">Candidate</p>
-            <DecisionBadge decision={intro.candidate_decision} />
-            {intro.candidate_decided_at && (
-              <p className="text-[10px] text-[#9CA3AF] mt-1">{formatDateTime(intro.candidate_decided_at)}</p>
-            )}
-          </div>
-        </div>
-      </div>
-
-      {/* Filter params diff */}
-      {(intro.effective_filter_params || intro.admin_override_params) && (
-        <div className="bg-white border border-[#E5E5EA] rounded-xl p-4 mb-4">
-          <h3 className="text-sm font-semibold text-[#17171B] mb-3">Filter Params</h3>
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <p className="text-xs font-medium text-[#666672] mb-1">Effective</p>
-              <pre className="text-xs bg-[#F7F7FA] p-2 rounded-lg overflow-auto max-h-48">
-                {JSON.stringify(intro.effective_filter_params, null, 2)}
-              </pre>
-            </div>
-            <div>
-              <p className="text-xs font-medium text-[#666672] mb-1">Admin Overrides</p>
-              <pre className="text-xs bg-[#F7F7FA] p-2 rounded-lg overflow-auto max-h-48">
-                {JSON.stringify(intro.admin_override_params, null, 2)}
-              </pre>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Video calls */}
-      <div className="mb-4">
-        <h3 className="text-sm font-semibold text-[#17171B] mb-3">
-          Video Calls {calls.length > 0 && <span className="text-[#9CA3AF]">({calls.length})</span>}
-        </h3>
-        {calls.length === 0 && (
-          <div className="p-4 text-sm text-[#9CA3AF] text-center border border-dashed border-[#E5E5EA] rounded-xl">
-            No video calls yet
-            {isMutualInterest && " — the call row is created automatically on MUTUAL_INTEREST."}.
-          </div>
+        {intro.completed_at && (
+          <Row label="Completed" value={formatDateTime(intro.completed_at)} />
         )}
-        <div className="space-y-2">
-          {/* API returns newest first */}
-          {calls.map((c) => (
-            <VideoCallPanel key={c.id} call={c} introId={id} />
-          ))}
-        </div>
       </div>
 
       <ConfirmDialog
         open={cancelOpen}
         onClose={() => setCancelOpen(false)}
         onConfirm={() => cancelMutation.mutate()}
-        title="Cancel Introduction"
-        description="This will cancel the introduction, cancel the active video call, and release both requests back to OPEN. Continue?"
+        title="Cancel this introduction?"
+        description={`${requesterName} ↔ ${candidateName}. Neither user will be able to continue with this proposal — both requests will be released back to OPEN.`}
         confirmLabel="Cancel Introduction"
+        cancelLabel="Keep"
         variant="danger"
         isLoading={cancelMutation.isPending}
       />

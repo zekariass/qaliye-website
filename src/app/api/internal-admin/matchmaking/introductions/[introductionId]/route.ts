@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { adminFetch } from "@/lib/admin/api-client";
-import { adminErrorResponse } from "@/lib/admin/proxy-helper";
+import { adminErrorResponse, noStoreJson } from "@/lib/admin/proxy-helper";
 
 export async function GET(
   _request: NextRequest,
@@ -15,12 +15,14 @@ export async function GET(
       const body = await res.json().catch(() => ({}));
       return NextResponse.json(body, { status: res.status });
     }
-    return NextResponse.json(await res.json());
+    return noStoreJson(await res.json());
   } catch (error) {
     return adminErrorResponse(error);
   }
 }
 
+// DELETE /api/v1/admin/matchmaking/introductions/{introductionId}
+// Cancels a PROPOSED introduction; both requests release back to OPEN.
 export async function DELETE(
   _request: NextRequest,
   { params }: { params: Promise<{ introductionId: string }> }
@@ -34,7 +36,6 @@ export async function DELETE(
       const body = await res.json().catch(() => ({}));
       return NextResponse.json(body, { status: res.status });
     }
-    // 204 No Content
     return new NextResponse(null, { status: 204 });
   } catch (error) {
     return adminErrorResponse(error);
