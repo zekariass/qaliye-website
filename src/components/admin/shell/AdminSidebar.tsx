@@ -52,6 +52,19 @@ const NAV_GROUPS: NavGroup[] = [
     ],
   },
   {
+    label: "Matchmaking",
+    adminOnly: true,
+    items: [
+      {
+        label: "Request Queue",
+        href: `${ADMIN_BASE}/matchmaking/requests`,
+        activePrefix: `${ADMIN_BASE}/matchmaking`,
+        icon: <HeartHandshake className="h-4 w-4" />,
+        adminOnly: true,
+      },
+    ],
+  },
+  {
     label: "Operations",
     items: [
       {

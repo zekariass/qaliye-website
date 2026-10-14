@@ -68,4 +68,19 @@ export const adminKeys = {
     featureActions: () => ["admin", "payment-config", "feature-actions"] as const,
     countrySettings: () => ["admin", "payment-config", "country-settings"] as const,
   },
+
+  matchmaking: {
+    requests: {
+      list: (page: number, size: number) =>
+        ["mm-requests", page, size] as const,
+      detail: (id: string) => ["mm-request", id] as const,
+    },
+    notes: (requestId: string) => ["mm-notes", requestId] as const,
+    messages: (requestId: string) => ["mm-messages", requestId] as const,
+    introductions: {
+      forRequest: (requestId: string) => ["mm-intros", requestId] as const,
+      detail: (introId: string) => ["mm-intro", introId] as const,
+    },
+    videoCalls: (introId: string) => ["mm-calls", introId] as const,
+  },
 } as const;
