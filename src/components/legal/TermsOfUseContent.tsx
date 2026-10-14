@@ -15,7 +15,7 @@ export function TermsOfUseContent() {
         These Terms of Use (&ldquo;Terms&rdquo;) govern your access to and use of
         the Qal Dating mobile application, website at{" "}
         <a
-          href="http://www.qaldating.com"
+          href="https://www.qaldating.com"
           className="text-primary hover:underline"
         >
           www.qaldating.com
@@ -24,14 +24,14 @@ export function TermsOfUseContent() {
         services that we provide together as the &ldquo;Services.&rdquo;
       </p>
       <p className="text-text-secondary leading-relaxed">
-        Qal Dating is operated by <strong>[YOUR FULL LEGAL NAME]</strong>, a sole
-        trader trading as <strong>Qal Dating</strong>, with a business address at{" "}
-        <strong>[YOUR BUSINESS ADDRESS]</strong>.
+        Qal Dating is operated by <strong>Qal Habesha Dating</strong>, trading as{" "}
+        <strong>Qal Dating</strong>, with a business address at{" "}
+        <strong>Strathmore Avenue, Leeds, LS9 6AY, United Kingdom</strong>.
       </p>
       <p className="text-text-secondary leading-relaxed">
         In these Terms, &ldquo;Qal Dating,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo;
         and &ldquo;our&rdquo; refer to{" "}
-        <strong>[YOUR FULL LEGAL NAME], trading as Qal Dating</strong>.
+        <strong>Qal Habesha Dating, trading as Qal Dating</strong>.
       </p>
       <p className="text-text-secondary leading-relaxed">You can contact us at:</p>
       <ul className="list-disc list-inside text-text-secondary leading-relaxed space-y-1">
@@ -47,14 +47,14 @@ export function TermsOfUseContent() {
         <li>
           <strong>Website:</strong>{" "}
           <a
-            href="http://www.qaldating.com"
+            href="https://www.qaldating.com"
             className="text-primary hover:underline"
           >
             www.qaldating.com
           </a>
         </li>
         <li>
-          <strong>Address:</strong> [YOUR BUSINESS ADDRESS]
+          <strong>Address:</strong> Strathmore Avenue, Leeds, LS9 6AY, United Kingdom
         </li>
       </ul>
       <p className="text-text-secondary leading-relaxed">
@@ -521,6 +521,29 @@ export function TermsOfUseContent() {
           Users may unmatch, withdraw an interaction, pass, block, or delete
           their accounts at any time, subject to the features available.
         </p>
+        <Subsection number="10.1" title="Blind Date sessions">
+          <p>
+            Qal Dating may offer a Blind Date feature that lets eligible users
+            take part in anonymous question-and-answer dating sessions. You may
+            be able to host a session or join a session hosted by another user.
+          </p>
+          <p>
+            During a session, participants answer prompts or questions, and the
+            host may advance, eliminate, or select a finalist. If both parties
+            confirm interest at the end of the session, identities may be
+            revealed and a match may be created.
+          </p>
+          <p>Please note:</p>
+          <List
+            items={[
+              "anonymity is a feature, not a guarantee — do not share identifying details you are not comfortable revealing;",
+              "your questions, answers, and other contributions are User Content and may be shown to the host and other participants;",
+              "a session may end early, expire, or be cancelled, and we do not guarantee that a match will result;",
+              "you may only take part in one active session at a time, and you may leave a session at any time; and",
+              "all Community Guidelines, moderation, reporting, and blocking rules apply during Blind Date sessions.",
+            ]}
+          />
+        </Subsection>
       </Section>
 
       {/* Section 11 */}
@@ -731,7 +754,7 @@ export function TermsOfUseContent() {
         <p>
           The Privacy Policy is available through the app and at{" "}
           <a
-            href="http://www.qaldating.com"
+            href="https://www.qaldating.com"
             className="text-primary hover:underline"
           >
             www.qaldating.com
@@ -1096,9 +1119,10 @@ export function TermsOfUseContent() {
             without going to court.
           </p>
           <p>
-            In the UK, the competent ADR body for consumer disputes is [INSERT
-            ADR PROVIDER NAME AND WEBSITE — e.g. the Centre for Effective
-            Dispute Resolution (CEDR) at cedr.com]. We are not currently obliged
+            In the UK, the competent ADR body for consumer disputes is the
+            Centre for Effective Dispute Resolution (CEDR) at{" "}
+            <a href="https://www.cedr.com" className="text-primary hover:underline">cedr.com</a>.
+            We are not currently obliged
             to participate in an ADR scheme but may do so voluntarily.
           </p>
           <p>
@@ -1190,10 +1214,10 @@ export function TermsOfUseContent() {
             <strong>Qal Dating</strong>
           </p>
           <p>
-            Operated by <strong>[YOUR FULL LEGAL NAME], trading as Qal Dating</strong>
+            Operated by <strong>Qal Habesha Dating, trading as Qal Dating</strong>
           </p>
           <p>
-            <strong>Address:</strong> [YOUR BUSINESS ADDRESS]
+            <strong>Address:</strong> Strathmore Avenue, Leeds, LS9 6AY, United Kingdom
           </p>
           <p>
             <strong>Email:</strong>{" "}
@@ -1207,7 +1231,7 @@ export function TermsOfUseContent() {
           <p>
             <strong>Website:</strong>{" "}
             <a
-              href="http://www.qaldating.com"
+              href="https://www.qaldating.com"
               className="text-primary hover:underline"
             >
               www.qaldating.com

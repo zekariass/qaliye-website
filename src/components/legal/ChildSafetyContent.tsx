@@ -6,10 +6,10 @@ export function ChildSafetyContent() {
       {/* Header info */}
       <div className="space-y-1">
         <p className="text-text-secondary">
-          <strong>Effective date:</strong> [INSERT EFFECTIVE DATE]
+          <strong>Effective date:</strong> 14 October 2026
         </p>
         <p className="text-text-secondary">
-          <strong>Last updated:</strong> [INSERT LAST-UPDATED DATE]
+          <strong>Last updated:</strong> 14 October 2026
         </p>
       </div>
 
@@ -274,15 +274,15 @@ export function ChildSafetyContent() {
         </p>
         <div className="space-y-1">
           <p><strong>Qal Dating</strong></p>
-          <p>Operated by <strong>[YOUR FULL LEGAL NAME], trading as Qal Dating</strong></p>
-          <p><strong>Business address:</strong> [YOUR BUSINESS ADDRESS]</p>
+          <p>Operated by <strong>Qal Habesha Dating, trading as Qal Dating</strong></p>
+          <p><strong>Business address:</strong> Strathmore Avenue, Leeds, LS9 6AY, United Kingdom</p>
           <p>
             <strong>Email:</strong>{" "}
             <a href="mailto:support@qaldating.com" className="text-primary hover:underline">support@qaldating.com</a>
           </p>
           <p>
             <strong>Website:</strong>{" "}
-            <a href="http://www.qaldating.com" className="text-primary hover:underline">www.qaldating.com</a>
+            <a href="https://www.qaldating.com" className="text-primary hover:underline">www.qaldating.com</a>
           </p>
         </div>
       </Section>

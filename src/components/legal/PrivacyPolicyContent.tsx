@@ -4,10 +4,10 @@ export function PrivacyPolicyContent() {
       {/* Header info */}
       <div className="space-y-1">
         <p className="text-text-secondary">
-          <strong>Effective date:</strong> [INSERT EFFECTIVE DATE]
+          <strong>Effective date:</strong> 14 October 2026
         </p>
         <p className="text-text-secondary">
-          <strong>Last updated:</strong> [INSERT LAST-UPDATED DATE]
+          <strong>Last updated:</strong> 14 October 2026
         </p>
       </div>
 
@@ -46,19 +46,19 @@ export function PrivacyPolicyContent() {
       <Section number="2" title="Who We Are">
         <p>Qal Dating is operated by:</p>
         <div className="space-y-1">
-          <p><strong>[YOUR FULL LEGAL NAME]</strong>, a sole trader trading as <strong>Qal Dating</strong></p>
-          <p><strong>Business address:</strong> [YOUR BUSINESS ADDRESS]</p>
+          <p><strong>Qal Habesha Dating</strong>, trading as <strong>Qal Dating</strong></p>
+          <p><strong>Business address:</strong> Strathmore Avenue, Leeds, LS9 6AY, United Kingdom</p>
           <p>
             <strong>Email:</strong>{" "}
             <a href="mailto:support@qaldating.com" className="text-primary hover:underline">support@qaldating.com</a>
           </p>
           <p>
             <strong>Website:</strong>{" "}
-            <a href="http://www.qaldating.com" className="text-primary hover:underline">www.qaldating.com</a>
+            <a href="https://www.qaldating.com" className="text-primary hover:underline">www.qaldating.com</a>
           </p>
         </div>
         <p>
-          For the purposes of UK data-protection law, <strong>[YOUR FULL LEGAL NAME], trading as Qal Dating</strong>, is the controller of the personal information described in this Privacy Policy.
+          For the purposes of UK data-protection law, <strong>Qal Habesha Dating, trading as Qal Dating</strong>, is the controller of the personal information described in this Privacy Policy.
         </p>
         <p>This means that we decide why and how your personal information is processed.</p>
         <p>
@@ -69,7 +69,7 @@ export function PrivacyPolicyContent() {
         <p>
           If you are located in the European Economic Area, this policy also
           complies with the EU General Data Protection Regulation (EU GDPR), and{" "}
-          <strong>[YOUR FULL LEGAL NAME], trading as Qal Dating</strong>, is the
+          <strong>Qal Habesha Dating, trading as Qal Dating</strong>, is the
           controller for those purposes. We have not appointed an EU
           representative under Article 27 of the EU GDPR at this time; all
           privacy queries should be directed to the contact details above.
@@ -178,6 +178,12 @@ export function PrivacyPolicyContent() {
             <strong>explicit consent</strong>.
           </p>
           <p>
+            We collect information such as your religion, ethnicity, and dating
+            preferences so that we can show you more relevant and compatible
+            matches, apply the filters that you and other members choose to
+            use, and improve the quality of our matching features.
+          </p>
+          <p>
             You are not required to provide optional information about religion,
             ethnicity, or similar characteristics. However, some dating or
             filtering features may not function without the information required
@@ -201,6 +207,8 @@ export function PrivacyPolicyContent() {
             items={[
               "profile photographs;",
               "photographs sent in conversations;",
+              "voice messages and audio recordings;",
+              "selfies or photographs submitted for identity or age verification;",
               "image metadata;",
               "upload dates and times;",
               "storage identifiers; and",
@@ -270,6 +278,7 @@ export function PrivacyPolicyContent() {
               "latitude and longitude;",
               "location selected manually by you;",
               "location obtained from your device with permission;",
+              "location inferred from your IP address;",
               "distance between users; and",
               "location-update dates and times.",
             ]}
@@ -308,6 +317,9 @@ export function PrivacyPolicyContent() {
               "country preferences;",
               "verification preferences;",
               "previously displayed profiles;",
+              "Blind Date session participation;",
+              "questions asked and answers given during Blind Date sessions;",
+              "advancement, elimination, finalist, and reveal decisions;",
               "Boost activation;",
               "Incognito or Private Mode settings;",
               "online or activity status;",
@@ -328,6 +340,7 @@ export function PrivacyPolicyContent() {
             items={[
               "text messages;",
               "image messages;",
+              "voice messages;",
               "sender and recipient identifiers;",
               "conversation and match identifiers;",
               "message sequence;",
@@ -339,6 +352,13 @@ export function PrivacyPolicyContent() {
               "support conversations with the Qal Dating team.",
             ]}
           />
+          <p>
+            Voice and video calls are facilitated by real-time communications
+            providers such as Agora, which transmit call audio and video to
+            connect the call. We may process call metadata, such as
+            participants, timestamps, and duration, to operate, bill for, and
+            secure the call features.
+          </p>
           <p>We do not routinely have people read every private conversation.</p>
           <p>
             However, authorised personnel or service providers may access
@@ -968,8 +988,9 @@ export function PrivacyPolicyContent() {
               "relationship intentions;",
               "lifestyle information;",
               "family preferences;",
-              "verification status; and",
-              "approximate distance or activity information.",
+              "verification status;",
+              "approximate distance or activity information; and",
+              "your answers and other contributions during Blind Date sessions, shown to participants while identities are concealed.",
             ]}
           />
           <p>The information shown may depend on:</p>
@@ -1073,8 +1094,13 @@ export function PrivacyPolicyContent() {
                   <td className="py-2">Processor</td>
                 </tr>
                 <tr className="border-b border-border">
-                  <td className="py-2 pr-4">[ANALYTICS PROVIDER, e.g. PostHog / Sentry]</td>
-                  <td className="py-2 pr-4">Analytics and crash reporting</td>
+                  <td className="py-2 pr-4">Sentry</td>
+                  <td className="py-2 pr-4">Crash reporting and diagnostics</td>
+                  <td className="py-2">Processor</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="py-2 pr-4">Agora</td>
+                  <td className="py-2 pr-4">Real-time voice and video calls</td>
                   <td className="py-2">Processor</td>
                 </tr>
                 <tr>
@@ -1678,7 +1704,7 @@ export function PrivacyPolicyContent() {
           Further details, including the specific cookies used, their purposes,
           and how to change your choices, are provided in the{" "}
           <strong>Qal Dating Cookie Policy</strong>, available at{" "}
-          <a href="http://www.qaldating.com/cookie-policy" className="text-primary hover:underline">www.qaldating.com/cookie-policy</a>.
+          <a href="https://www.qaldating.com/cookie-policy" className="text-primary hover:underline">www.qaldating.com/cookie-policy</a>.
         </p>
       </Section>
 
@@ -1731,24 +1757,18 @@ export function PrivacyPolicyContent() {
         <p>For questions, requests, or complaints about privacy, contact:</p>
         <div className="space-y-1">
           <p><strong>Qal Dating</strong></p>
-          <p>Operated by <strong>[YOUR FULL LEGAL NAME], trading as Qal Dating</strong></p>
-          <p><strong>Business address:</strong> [YOUR BUSINESS ADDRESS]</p>
+          <p>Operated by <strong>Qal Habesha Dating, trading as Qal Dating</strong></p>
+          <p><strong>Business address:</strong> Strathmore Avenue, Leeds, LS9 6AY, United Kingdom</p>
           <p>
             <strong>Email:</strong>{" "}
             <a href="mailto:support@qaldating.com" className="text-primary hover:underline">support@qaldating.com</a>
           </p>
           <p>
             <strong>Website:</strong>{" "}
-            <a href="http://www.qaldating.com" className="text-primary hover:underline">www.qaldating.com</a>
+            <a href="https://www.qaldating.com" className="text-primary hover:underline">www.qaldating.com</a>
           </p>
         </div>
       </Section>
-
-      <p className="text-text-secondary italic text-sm pt-4 border-t border-border">
-        This Privacy Policy is provided for informational purposes and does not
-        constitute legal advice. You should have a qualified data-protection
-        solicitor review this document before publication.
-      </p>
     </div>
   );
 }

@@ -4,10 +4,10 @@ export function SafetyTipsContent() {
       {/* Header info */}
       <div className="space-y-1">
         <p className="text-text-secondary">
-          <strong>Effective date:</strong> [INSERT EFFECTIVE DATE]
+          <strong>Effective date:</strong> 14 October 2026
         </p>
         <p className="text-text-secondary">
-          <strong>Last updated:</strong> [INSERT LAST-UPDATED DATE]
+          <strong>Last updated:</strong> 14 October 2026
         </p>
       </div>
 
@@ -696,7 +696,7 @@ export function SafetyTipsContent() {
           </p>
           <p>
             <strong>Website:</strong>{" "}
-            <a href="http://www.qaldating.com" className="text-primary hover:underline">www.qaldating.com</a>
+            <a href="https://www.qaldating.com" className="text-primary hover:underline">www.qaldating.com</a>
           </p>
         </div>
         <p>
